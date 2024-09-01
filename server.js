@@ -9,19 +9,36 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.set('view engine', 'ejs');
+
 // Define API URL and headers
-const api_url = "https://api.api-ninjas.com/v1/airlines?name=Brussels Airlines";
-const api_key = process.env.API_KEY; // Make sure to set this in your .env file
+const aipNinjas_url = "https://api.apininjas.com/aviation/v1/flight/status";
+const avaitionStack_url = "https://api.aviationstack.com/v1/flights"
+const avaition_api_key= process.env.Avaition_stack_Api_key
+const airport_code = process.env.AIRPORT_CODE;
 
 // Define routes
-app.get("/", async (req, res) => {
+// Define routes
+app.get("/flight_status", async (req, res) => {
     try {
-        const response = await axios.get(api_url, {
-            headers: {
-                'X-Api-Key': api_key // Correct header key for API key
+        const response = await axios.get( avaitionStack_url, {
+            params: {
+                access_key: avaition_api_key,
+             
+     
             }
         });
-        res.send(response.data); // Send only the data part of the response
+
+        // Handle the response data
+        const flights = response.data.data; 
+        const flightsInLiberia = flights.filter(flight => 
+            flight.departure.iata === airport_code || flight.arrival.iata ===airport_code
+        );
+
+        res.send(flightsInLiberia); // Send only the filtered data
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");

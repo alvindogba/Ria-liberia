@@ -1,0 +1,450 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   text-decoration: none;
+   list-style: none;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+:root {
+    --herobg: #0000008f;
+    --red: #D21312;
+    --blue: #070A52;
+    --white: #ffffff;
+    --black: #000000;
+    --gray:  rgb(247, 245, 245);
+    font-size: 16px;
+    --poppin: 'Poppins', sans-serif;
+    --grayfortext: #7b7b7bc0;
+    --roboto: "Roboto", sans-serif;
+}
+
+html{
+    font: 16px;
+overflow-x: hidden;
+}
+
+/**************************************
+        Media Query START
+For Desktop or large-size screen: 1024px -1200px
+For Extra-large size device: 1200px and more
+***************************************/
+
+/*The scroll bar on the home page styling starts here*/
+/* width
+.scroll_bar::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+   */
+  /* Track 
+  .scroll_bar::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   */
+  /* Handle 
+  .scroll_bar::-webkit-scrollbar-thumb {
+    background: var(--red);
+     border-radius: 2rem;
+  }
+  */
+  /* Handle on hover 
+  .scroll_bar::-webkit-scrollbar-thumb:hover {
+    background: var(--grayfortext); 
+  }
+*/
+/*The scroll bar on the home page styling ends here*/
+
+
+
+header{
+    height: max-content;
+    width: 100vw;
+    position: fixed;
+    z-index: 99;
+    
+}
+  
+.header_1st_section{
+    height: 9rem;
+    width: 100%;
+    display: flex;
+    background-color: var(--white);
+   
+}
+/*displaying the logo div and the search bar div container*/
+
+/*styling the logo div and search_bar_div_container*/
+ 
+.logo_div{
+    height: 100%;
+    width: 30%;
+   background-color: var(--red);
+   display: flex;
+    justify-content: center;
+    align-items: center;
+
+    clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);  
+}
+.logo_div img{
+    height: 10em;
+    width: 15em;
+   
+}
+/*styling the search_bar container*/
+.white_header_container{
+    height: 100%;
+    width: 70%;
+ 
+}
+
+.white_div_containerA{
+    width: 86%;
+    height: 40%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    
+}
+
+.white_div_container_a1{
+    display: flex;
+    height: 50%;
+    gap: 8rem;
+    width: fit-content;
+    padding-left: 30%;
+    align-items: center;
+   
+}
+
+.flag_container{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.Liberia_flag_icon{
+    width: 3.125rem;
+    height: 1.875rem;
+}
+
+.search_bar_form{
+    display: flex;
+    align-items: center;
+
+}
+
+.search_bar_form input{
+    width: 12rem;
+    height: 2rem;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 1.25rem;
+    font-size: 1.25rem;
+
+}
+.search_bar_form input:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(163, 155, 155, 0.511);
+    border-radius: 10px;
+    padding-right: 3rem;
+}
+
+ .fa-magnifying-glass:hover{
+    color: var(--red);
+ }
+
+.fa-magnifying-glass{
+    position: relative;
+    right: 40px;
+    font-size: 1.2rem;
+    color: gray;
+    transition: 0.5s ease;
+}
+
+
+.white_div_containerB{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    height: fit-content;
+}
+
+.call_icon_text_container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.icon_div{
+    padding: 10px;
+    border: 2px dotted var(--red);
+    border-radius: 50%;
+    color: var(--red);
+}
+
+
+.email_icon_text{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.handBurger_menu_dropdown{
+    animation: slidUP_nav 1.5s ease;
+    display:none;
+ }
+/*styling the blue nav-bar that has the left side been transparent*/
+.navbar_container{
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    
+}
+/*HAND BURGER MENU ***************************************************/
+.hand_burger_menu{
+    display: none;
+}
+
+.handBurger_menu_dropdown{
+    animation: slidup_burger 1s ease;
+    
+}
+
+
+@keyframes slidUp_burger{
+    from {transform: translateY(200px)}
+    to{transform: translateY(0px);}
+}
+
+
+.transparent_div{
+    width: 20%;
+    background: transparent;
+}
+
+/*Styling the blue navigation bar*/
+.blue_navbar_container{
+    background: var(--blue);
+    width: 80%;
+    height: 13vh;
+    /*clip-path: polygon(3% 0, 100% 0, 100% 48%, 100% 100%, 0 100%);*/
+    position: relative;
+    bottom: 22px;
+}
+
+.nav-bar {
+width: 75%;
+display: flex;
+height: 13vh;
+align-items: center;
+justify-content: center;
+}
+
+.nav-link{
+   display: flex;
+   width: 75%;
+   justify-content: space-between;
+}
+
+
+.nav-bar .nav-link li a{
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+.line :hover{
+   border-bottom: 3px solid var(--white);
+    padding-bottom: 1.8rem;
+}
+
+.nav-bar .nav-link .dropdown li :hover{
+    border-bottom: 0px solid var(--white);
+    padding-bottom: 0rem;
+}
+
+.white_line_list{
+    background: var(--white);
+    width: .1rem;
+    height: 4vh;
+}
+
+.main_link_label{
+ position: relative;
+
+}
+
+/*********************************************************/
+/*KEYFRAMES ANIMATION*/
+@keyframes slidUp_nav{
+    from {transform: translateY(20px)}
+    to{transform: translateY(0px);}
+}
+
+@keyframes slidRight {
+    from{transform: translateX(-500px);}
+    to{transform: translateX(0px)}
+}
+
+
+/*KEYFRAMES ANIMATION ENDS*********************************************/
+.dropdown{
+    position: absolute;
+    top: 3.1rem;
+    width: 11rem;
+    height: 17vh;
+    background: var(--blue) ;
+    display: none;
+    opacity: 0;
+    z-index: 1;
+    visibility: hidden;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    border-bottom: none;
+}
+
+.subMenu01{
+    right: -3rem;
+}
+
+.subMenu02{
+    right: -1rem;
+    height: 20vh;
+}
+
+.dropdown:hover li {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.main_link_label:hover .dropdown{
+  display: block;
+  opacity: 1;
+  animation: slidUp_nav .5s ease ;
+  visibility: visible;
+  
+}
+
+.dropdown li {
+    width: 100%;
+    gap: 3rem;
+    line-height: 2.2rem;
+     opacity: .7;
+    }
+    .dropdown li:hover{
+         opacity: 1;
+    }
+     
+    .dropdown a{
+        color: var(--white);
+       font-family: var(--poppin);
+    }
+    
+
+
+    /* The footer section */
+    
+footer{
+    color: var(--white);
+    height: 65vh;
+    width: 100vw;
+    background: var(--blue);
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 2.5fr 1fr;
+    padding: 20px;
+    transition: 0.5s ease;
+    overflow-x: hidden;
+    
+    
+}
+
+footer a{
+    color: var(--white);
+    
+   
+}
+
+footer a:hover{
+    color: var(--red);
+}
+
+/*The footer logo container  */
+#footer_logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/*The footer Feature Destination container  */
+.feature_destination_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 15px;
+   
+}
+.destinations_links_contianer{
+    line-height: 2;
+    text-align: left;
+}
+
+/*The footer airport container*/
+.the_airport_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 15px;
+    
+}
+
+.the_airport_link_container{
+    line-height: 1.8;
+    text-align: center;
+    text-align: left;
+}
+
+/*The footer quick link container*/
+.the_quick_link_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.the_quick_link{
+    line-height: 1.5;
+    text-align: left;
+}
+
+/*The footer Connect with us section*/
+.connect_with_us_copyright_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: span 4;
+    border-top: 2px solid white;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.connect_withus_container{
+  line-height: 2;
+}
+
+.connect_icons{
+    word-spacing: 20px;
+}
+
+.small_logo{
+    display: none;
+}
