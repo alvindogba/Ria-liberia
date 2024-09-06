@@ -47,7 +47,10 @@
       </tr>
   </thead>
   <tbody>
-
+    <%flightLib.forEach(flightData => {%>
+      <td><%= flightData.airlines %></td>
+      <td><%= flightData.flight %></td>
+    <%}); %>
   </tbody>
 </table> 
 

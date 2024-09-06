@@ -20,25 +20,23 @@ const avaitionStack_url = "https://api.aviationstack.com/v1/flights"
 const avaition_api_key= process.env.Avaition_stack_Api_key
 const airport_code = process.env.AIRPORT_CODE;
 
-// Define routes
+// Define routes home routes
+app.get("/", (req, res)=>{
+    res.render("home");
+})
 // Define routes
 app.get("/flight_status", async (req, res) => {
     try {
         const response = await axios.get( avaitionStack_url, {
             params: {
                 access_key: avaition_api_key,
-             
-     
             }
         });
 
         // Handle the response data
         const flights = response.data.data; 
-        const flightsInLiberia = flights.filter(flight => 
-            flight.departure.iata === airport_code || flight.arrival.iata ===airport_code
-        );
-
-        res.send(flightsInLiberia); // Send only the filtered data
+        console.log(flights)
+        res.render("flight_status.ejs", {flightLib: flights}); 
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");
