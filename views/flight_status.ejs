@@ -47,10 +47,22 @@
       </tr>
   </thead>
   <tbody>
+   
     <%flightLib.forEach(flightData => {%>
-      <td><%= flightData.airlines %></td>
-      <td><%= flightData.flight %></td>
+      <tr>
+          <td><%= flightData.airline.name %></td>
+          <td><%= flightData.flight.number %></td>
+          <td><%= flightData.departure.timezone %></td>
+          <td><%= flightData.arrival.estimated %></td>
+          <td>Delayed: 30 (min)</td>
+          <td><%= flightData.flight_status %></td>
+        </tr>
     <%}); %>
+
+     
+      
+
+
   </tbody>
 </table> 
 
