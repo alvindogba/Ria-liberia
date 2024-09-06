@@ -25,7 +25,7 @@ app.get("/", (req, res)=>{
     res.render("home");
 })
 // Define routes
-app.get("/flight_status", async (req, res) => {
+app.get("/flight-status", async (req, res) => {
     try {
         const response = await axios.get( avaitionStack_url, {
             params: {
@@ -33,7 +33,7 @@ app.get("/flight_status", async (req, res) => {
             }
         });
 
-        // Handle the response data
+        // Handle the response data 
         const flights = response.data.data; 
         console.log(flights)
         res.render("flight_status.ejs", {flightLib: flights}); 
@@ -43,7 +43,7 @@ app.get("/flight_status", async (req, res) => {
     }
 });
 
-// Start the server
+// Start the server on this port 
 app.listen(port, () => {
     console.log(`App is running on http://localhost:${port}`);
 });

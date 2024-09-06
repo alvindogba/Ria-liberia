@@ -27,12 +27,12 @@
     
 }
 
-.flight_status_box_shadow{
+/* .flight_status_box_shadow{
   box-shadow: 2px 2px 2px 1px;
     width: 97%;
     margin: auto;
     padding: 1rem;
-}
+} */
 
 .flight_search_div1{
     width: 100%;
@@ -73,8 +73,8 @@
     height: 8vh;
     border-radius: 2rem;
     align-items: center;
-    color: var(--white);
-    background: var(--blue);
+    
+  
 }
 
 .departure{
@@ -83,7 +83,6 @@
     justify-content: center;
     height: 8vh;
     align-items: center;
-    color: #7b7b7bc0;
 }
 
 
