@@ -27,7 +27,7 @@ app.get("/", (req, res)=>{
 // Define routes
 app.get("/flight-status", async (req, res) => {
     try {
-        const response = await axios.get( avaitionStack_url, {
+        const response = await axios.get(avaitionStack_url, {
             params: {
                 access_key: avaition_api_key,
             }
@@ -35,13 +35,94 @@ app.get("/flight-status", async (req, res) => {
 
         // Handle the response data 
         const flights = response.data.data; 
-        console.log(flights)
-        res.render("flight_status.ejs", {flightLib: flights}); 
+        console.log(flights);
+        console.log("API Key:", avaition_api_key);
+        res.render("flight_status.ejs", {flightLib: flights, showArrival: true}); // By default, show arrival data
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");
     }
 });
+
+
+// Route to handle dynamic content starts
+app.get('/arrivals', (req, res) => {
+    res.render('partials/arrival_data');
+});
+
+app.get('/departures', (req, res) => {
+    res.render('partials/departure_data');
+});
+
+// Route to handle dynamic content ends
+
+app.get("/business_opportities", (req, res)=>{
+    res.render("business_opportities");
+})
+
+app.get("/flight_info", (req, res)=>{
+    res.render("flight_info");
+})
+
+app.get("/newsroom", (req, res)=>{
+    res.render("newsroom");
+})
+
+app.get("/passenager", (req, res)=>{
+    res.render("passenager");
+})
+
+app.get("/privacy_cookies", (req, res)=>{
+    res.render("privacy_cookies");
+})
+
+app.get("/services", (req, res)=>{
+    res.render("services");
+})
+
+app.get("/term_of_use", (req, res)=>{
+    res.render("term_of_use");
+})
+
+app.get("/thingsto_know", (req, res)=>{
+    res.render("thingsto_know");
+})
+
+app.get("/visit_monrovia", (req, res)=>{
+    res.render("visit_monrovia");
+})
+
+app.get("/advertisting", (req, res)=>{
+    res.render("advertisting");
+})
+
+app.get("/about", (req, res)=>{
+    res.render("about");
+})
+
+app.get("/parking_transport", (req, res)=>{
+    res.render("parking_transport");
+})
+
+app.get("/faqs", (req, res)=>{
+    res.render("faqs");
+})
+
+app.get("/see_more", (req, res)=>{
+    res.render("see_more");
+})
+
+app.get("/show_more", (req, res)=>{
+    res.render("show_more");
+})
+
+app.get("/destination", (req, res)=>{
+    res.render("destination");
+})
+
+app.get("/contact", (req, res)=>{
+    res.render("contact");
+})
 
 // Start the server on this port 
 app.listen(port, () => {

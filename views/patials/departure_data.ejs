@@ -1,0 +1,29 @@
+
+
+<!-- Departure  -->
+<table class="table tab-pane fade" border="2px" id="departure">
+  <thead>
+      <tr>
+          <th>Airlines</th>
+          <th>Flight</th>
+          <th>Origin</th>
+          <th>Estimated Departure Time</th>
+          <th>Update</th>
+          <th>Status</th>
+      </tr>
+  </thead>
+  <tbody>
+ 
+    <%flightLib.forEach(flightData => {%>
+      <tr>
+          <td><%= flightData.airline.name %></td>
+          <td><%= flightData.flight.number %></td>
+          <td><%= flightData.departure.timezone %></td>
+          <td><%= flightData.departure.estimated %></td>
+          <td><%= flightData.departure.delay ? `Delayed: ${flightData.delay} (min)` : 'On Time' %></td>
+          <td><%= flightData.flight_status %></td>
+        </tr>
+    <%}); %>
+
+  </tbody>
+</table> 

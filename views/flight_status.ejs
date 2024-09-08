@@ -27,73 +27,24 @@
       </div>
 
       <!-- Arrival and Departure label  -->
-<div class="arrivals_and_departure nav nav-pills" id="myTab">
+<div class="arrivals_and_departure nav nav-pills" id="">
  
     <div class="nav-item">
-    <a href="#arrival" class="arrivals nav-link"><h3 class="arrivals_h3">ARRIVALS</h3></a>
+    <button id="arrival" class="arrivals nav-link"><h3 class="arrivals_h3">ARRIVALS</h3></button>
     </div>
     <div class="nav-item"></div>
-       <a href="#departure" class="departure nav-link"><h3 class="departure_h3">DEPARTURE</h3></a>
+       <button id="departure" class="departure nav-link"><h3 class="departure_h3">DEPARTURE</h3></button>
     </div>
      
 </div>
 
-<!-- Table for arrivals -->
- <div class="tab-content table-responsive">
-  <table class="table table-striped table-hover tab-pane fade show active" border="2px" id="arrival">
-  <thead class="table-dark">
-      <tr>
-          <th>Airlines</th>
-          <th>Flight</th>
-          <th>Origin</th>
-          <th>Estimated Arrival Time</th>
-          <th>Update</th>
-          <th>Status</th>
-      </tr>
-  </thead>
-  <tbody>
-   
-    <%flightLib.forEach(flightData => {%>
-      <tr>
-          <td><%= flightData.airline.name %></td>
-          <td><%= flightData.flight.number %></td>
-          <td><%= flightData.arrival.timezone %></td>
-          <td><%= flightData.arrival.estimated %></td>
-          <td><%= flightData.arrival.delay ? `Delayed: ${flightData.delay} (min)` : 'On Time' %></td>
-          <td><%= flightData.flight_status %></td>
-        </tr>
-    <%}); %>
-  </tbody>
-</table> 
-
-<!-- Departure  -->
-<table class="table tab-pane fade" border="2px" id="departure">
-  <thead>
-      <tr>
-          <th>Airlines</th>
-          <th>Flight</th>
-          <th>Origin</th>
-          <th>Estimated Departure Time</th>
-          <th>Update</th>
-          <th>Status</th>
-      </tr>
-  </thead>
-  <tbody>
- 
-    <%flightLib.forEach(flightData => {%>
-      <tr>
-          <td><%= flightData.airline.name %></td>
-          <td><%= flightData.flight.number %></td>
-          <td><%= flightData.departure.timezone %></td>
-          <td><%= flightData.departure.estimated %></td>
-          <td><%= flightData.departure.delay ? `Delayed: ${flightData.delay} (min)` : 'On Time' %></td>
-          <td><%= flightData.flight_status %></td>
-        </tr>
-    <%}); %>
-
-  </tbody>
-</table> 
- </div>
+<!-- Content Area for Arrivals or Departures -->
+<div class="tab-content table-responsive" id="data-content">
+  <!-- Arrival data will be shown by default -->
+  <% if (showArrival) { %>
+    <%- include('partials/arrival_data') %>
+  <% } %>
+</div>
 
 
 

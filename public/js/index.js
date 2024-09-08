@@ -1,8 +1,6 @@
 //The script for the scroll up arrow
 
-
 var scrollUpArrow = document.getElementById("scroll_arrow");
-
 
     $(scrollUpArrow).fadeOut()
 
@@ -10,13 +8,9 @@ var scrollUpArrow = document.getElementById("scroll_arrow");
 
 window.onscroll= function scrollFunction(){
 
- 
-
   var myHeader=$("header");
     if (document.documentElement.scrollTop > 100 ){
       $(myHeader).slideUp(400);
-      
-
   }
   else{$(myHeader).slideDown(800);}
 
@@ -44,7 +38,6 @@ flightDropDown();
 faqsDropDown();
 function showNavDropDown(){
     
-
 $(".fa-bars").on("click", function(){
   //Displaying the handburger drop down
     $(this).toggleClass("fa-x");
@@ -59,12 +52,8 @@ $(".terminal_info_btn").on("click", function(){
   $(".terminal_drop_down1").toggleClass("show_ter_info");
 });
 
-
 }
 showNavDropDown();
-
-
-
 
 //Creating a callback function to display the find your flight options and also rotate the angle down
 var angleDown=$(".fa-angle-down"); 
@@ -75,12 +64,7 @@ var greede=0;
 angleDown.on("click", function(){
     chooseFlightDropDown.toggleClass("show");
     $(this).toggleClass("rotate_angle");
-     
-
-
 });
-
-
 
 //Creating Image slider to change the hero Image  after every three seconds
 var slideIndex=0; // This variable is declear to keep track of the current slide that is displayed
@@ -110,7 +94,6 @@ function showImg(){
   setTimeout(showImg, 5000);
 }
 
-
 //This is a function that display the FAQS Question to bring out the Answer for Each of the question
 function faqsDropDown(){
   var ques=$(".question");
@@ -125,7 +108,6 @@ for(i = 0; i < ques.length; i++){
   });
 }
 }
-
 
 // Creating the Latest News section functionality
 var litNewsIndex = 1;
@@ -154,16 +136,7 @@ function displaySlides(n) {
   litNews_slides[litNewsIndex - 1].style.display = "flex";
 }
 
-
 //example
-
-
-
-
-
-
-
-
 
 //Animation Function
 
