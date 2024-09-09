@@ -19,24 +19,18 @@
 
 #flight_status_hero_text{
     margin-top: 3rem;
+    
 }
 
 /* still on flight status  */
 .flight_search_section_container{
-    height: 100vh;
+    height: max-content;
+   
     
 }
 
-/* .flight_status_box_shadow{
-  box-shadow: 2px 2px 2px 1px;
-    width: 97%;
-    margin: auto;
-    padding: 1rem;
-} */
-
 .flight_search_div1{
-    width: 100%;
-    text-align: center;
+  text-align: center;
     padding-top: 2rem;
 }
 /* still on flight status  */
@@ -66,7 +60,7 @@
     border-radius: 2rem;
 }
 
-.arrivals{
+/* .arrivals{
     width: 50%;
     display: flex;
     justify-content: center;
@@ -83,10 +77,28 @@
     justify-content: center;
     height: 8vh;
     align-items: center;
-}
+} */
 
 
 /* Table Section */
-.table{
+table{
     text-align: center;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+   
+    
+}
+ #arrival td {
+    font-weight: 600; 
+    color: rgb(65, 65, 65); 
+  }
+
+  #arrival th{
+    font-weight: 900; 
+    color: rgb(36, 35, 35); 
+  }
+
+#data-content{
+    width: 100vw;
 }

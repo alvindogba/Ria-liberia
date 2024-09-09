@@ -1,4 +1,4 @@
-<%-include("patials/header.ejs") %>
+<%-include("partials/header.ejs") %>
 
 <!--BEGAINING of the flight status page hero Section--->    
 <Section class="flight_status_hero_section">
@@ -8,7 +8,7 @@
 </section>   
 
 <!-- Flight search  -->
-<section class="flight_search_section_container container-fluid">
+<section class="flight_search_section_container">
   <div class="flight_search_div1">
           <h2 class="flight_search_label">Flight Search</h2>
           <p class="flight_search_text">Stay Informed of your flight status with real-time updates.</p>
@@ -21,7 +21,8 @@
           </div>
         
           <form action="" class="flight_status_search_bar_form">
-              <input type="text" name="Search" placeholder="Search">
+              <!-- <input type="text" name="Search" placeholder="Search"> -->
+              <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search flights...">
               <i class="fa-solid fa-magnifying-glass flight_search_icon"></i>
           </form>
       </div>
@@ -38,11 +39,11 @@
      
 </div>
 
-<!-- Content Area for Arrivals or Departures -->
+<!-- Content Area for Arrivals or Departures Data -->
 <div class="tab-content table-responsive" id="data-content">
   <!-- Arrival data will be shown by default -->
   <% if (showArrival) { %>
-    <%- include('partials/arrival_data') %>
+    <%- include("partials/arrival_data") %>
   <% } %>
 </div>
 
@@ -53,4 +54,35 @@
 
 
 </section>
-<%-include("patials/footer.ejs") %>
+
+
+<%-include("partials/footer.ejs") %>
+
+
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const flightTableBody = document.getElementById('flightTableBody');
+
+  searchInput.addEventListener('keyup', function () {
+    const filter = searchInput.value.toLowerCase();
+    const rows = flightTableBody.getElementsByTagName('tr');
+
+    // Loop through all table rows, and hide those that don't match the search query
+    for (let i = 0; i < rows.length; i++) {
+      const cells = rows[i].getElementsByTagName('td');
+      let match = false;
+
+      // Check if any cell in the row matches the search query
+      for (let j = 0; j < cells.length; j++) {
+        if (cells[j].innerText.toLowerCase().includes(filter)) {
+          match = true;
+          break;
+        }
+      }
+
+      // Toggle row visibility based on match
+      rows[i].style.display = match ? '' : 'none';
+    }
+  });
+</script>

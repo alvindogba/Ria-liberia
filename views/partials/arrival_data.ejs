@@ -1,0 +1,29 @@
+<!-- Arrival data -->
+
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover w-100" id="arrival">
+    <thead class="table-primary">
+      <tr>
+        <th>Airlines</th>
+        <th>Flight</th>
+        <th>Origin</th>
+        <th>Estimated Arrival Time</th>
+        <th>Update</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="flightTableBody">
+      <% flightLib.forEach(flightData => { %>
+        <tr>
+          <td><%= flightData.airline.name %></td>
+          <td><%= flightData.flight.number %></td>
+          <td><%= flightData.arrival.timezone %></td>
+          <td><%= flightData.arrival.estimated %></td>
+          <td><%= flightData.arrival.delay ? `Delayed: ${flightData.arrival.delay} (min)` : 'On Time' %></td>
+          <td><%= flightData.flight_status %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

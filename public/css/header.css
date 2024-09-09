@@ -1535,30 +1535,6 @@ outline: none;
     font-size: 1.2rem;
 }
 
-/*The portion of the search flight on the flight status page styling starts here*/
-.flight_search_section_container{
-    width: 100vw;
-    height: 110vh;
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.flight_search_div1{
-    width: 60%;
-    height: 6rem;
-    margin-left: 20rem;
-}
-
-.label_and_text_div{
-   
-    margin-top: 1.5rem;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: .2rem;
-}
 
 .flight_search_label{
     color: var(--red);
