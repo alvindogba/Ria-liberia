@@ -37,7 +37,7 @@ app.get("/flight-status", async (req, res) => {
         const flights = response.data.data; 
         // console.log(flights);
         console.log("API Key:", avaition_api_key);
-        res.render("flight_status.ejs", {flightLib: flights, showArrival: true}); // By default, show arrival data
+        res.render("flight_status.ejs", {flightLib: flights});
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");
@@ -45,42 +45,6 @@ app.get("/flight-status", async (req, res) => {
 });
 
 
-// Route to handle dynamic content starts
-app.get('/arrival', async (req, res) => {
-    try {
-        // Fetch data or define flightLib here
-        const response = await axios.get(avaitionStack_url, {
-            params: {
-                access_key: avaition_api_key,
-            }
-        });
-
-        const flights = response.data.data; 
-
-        res.render('partials/arrival_data', { flightLib: flights }); // Pass flightLib to the template
-    } catch (error) {
-        console.error("Failed to fetch flight data:", error.message);
-        res.status(500).send("Failed to fetch flight data.");
-    }
-});
-
-app.get('/departures', async (req, res) => {
-    try {
-        // Fetch data or define flightLib here
-        const response = await axios.get(avaitionStack_url, {
-            params: {
-                access_key: avaition_api_key,
-            }
-        });
-
-        const flights = response.data.data; // Assuming flights is the data you need
-
-        res.render('partials/departure_data', { flightLib: flights }); // Pass flightLib to the template
-    } catch (error) {
-        console.error("Failed to fetch flight data:", error.message);
-        res.status(500).send("Failed to fetch flight data.");
-    }
-});
 
 // Route to handle dynamic content ends
 

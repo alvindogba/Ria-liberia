@@ -1,5 +1,12 @@
 <%-include("partials/header.ejs") %>
-
+<script>
+  $(document).ready(function(){
+      $("#myTab a").click(function(e){
+          e.preventDefault();
+          $(this).tab("show");
+      });
+  });
+  </script>
 <!--BEGAINING of the flight status page hero Section--->    
 <Section class="flight_status_hero_section">
           <div class="flight_status_hero_div">
@@ -28,28 +35,70 @@
       </div>
 
       <!-- Arrival and Departure label  -->
-<div class="arrivals_and_departure nav nav-pills" id="">
+      <ul class="nav nav-pills" id="myTab">
+          <li class="nav-item">
+              <a href="#arrival_table" class="nav-link active">Arrival</a>
+          
+          </li>
+          <li class="nav-item">
+              <a href="#departure_table" class="nav-link">Departure</a>
+          </li>
+      </ul>
+      <div class="tab-content">
+          <table class="tab-pane table-striped table-hover w-100 fade show active" id="arrival_table">
+            <thead class="table-primary">
+              <tr>
+                <th>Airlines</th>
+                <th>Flight</th>
+                <th>Origin</th>
+                <th>Estimated Arrival Time</th>
+                <th>Update</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody class="flightTableBody">
+              <% flightLib.forEach(flightData => { %>
+                <tr>
+                  <td><%= flightData.airline.name %></td>
+                  <td><%= flightData.flight.number %></td>
+                  <td><%= flightData.arrival.timezone %></td>
+                  <td><%= flightData.arrival.estimated %></td>
+                  <td><%= flightData.arrival.delay ? `Delayed: ${flightData.arrival.delay} (min)` : 'On Time' %></td>
+                  <td><%= flightData.flight_status %></td>
+                </tr>
+              <% }); %>
+            </tbody>
+              </table>
+        
+<!-- Departure  -->
+<table class="table tab-pane fade table-striped table-hover w-100" id="departure_table">
+  <thead>
+      <tr>
+          <th>Airlines</th>
+          <th>Flight</th>
+          <th>Origin</th>
+          <th>Estimated Departure Time</th>
+          <th>Update</th>
+          <th>Status</th>
+      </tr>
+  </thead>
+  <tbody class="flightTableBody">
  
-    <div class="nav-item">
-    <button id="arrival" class="arrivals nav-link"><h3 class="arrivals_h3">ARRIVALS</h3></button>
-    </div>
-    <div class="nav-item"></div>
-       <button id="departure" class="departure nav-link"><h3 class="departure_h3">DEPARTURE</h3></button>
-    </div>
-     
-</div>
+    <%flightLib.forEach(flightData => {%>
+      <tr>
+          <td><%= flightData.airline.name %></td>
+          <td><%= flightData.flight.number %></td>
+          <td><%= flightData.departure.timezone %></td>
+          <td><%= flightData.departure.estimated %></td>
+          <td><%= flightData.departure.delay ? `Delayed: ${flightData.delay} (min)` : 'On Time' %></td>
+          <td><%= flightData.flight_status %></td>
+        </tr>
+    <%}); %>
 
-<!-- Content Area for Arrivals or Departures Data -->
-<div class="tab-content table-responsive" id="data-content">
-  <!-- Arrival data will be shown by default -->
-  <% if (showArrival) { %>
-    <%- include("partials/arrival_data") %>
-  <% } %>
-</div>
-
-
-
-</div>
+  </tbody>
+</table> 
+         
+      </div>
 
 
 
@@ -62,27 +111,30 @@
 
 <script>
   const searchInput = document.getElementById('searchInput');
-  const flightTableBody = document.getElementById('flightTableBody');
+  const flightTableBodies = document.querySelectorAll('.flightTableBody');
 
+  // Event listener for search input
   searchInput.addEventListener('keyup', function () {
-    const filter = searchInput.value.toLowerCase();
-    const rows = flightTableBody.getElementsByTagName('tr');
+    const filter = searchInput.value.toLowerCase(); // Get the search term in lowercase
 
-    // Loop through all table rows, and hide those that don't match the search query
-    for (let i = 0; i < rows.length; i++) {
-      const cells = rows[i].getElementsByTagName('td');
-      let match = false;
+    // Loop through each table body with class 'flightTableBody'
+    flightTableBodies.forEach(tbody => {
+      const rows = tbody.getElementsByTagName('tr'); // Get all rows within the current table body
 
-      // Check if any cell in the row matches the search query
-      for (let j = 0; j < cells.length; j++) {
-        if (cells[j].innerText.toLowerCase().includes(filter)) {
-          match = true;
-          break;
+      // Loop through all table rows and hide those that don't match the search query
+      for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let match = false;
+
+        // Check if any cell in the row matches the search query
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].innerText.toLowerCase().includes(filter)) {
+            match = true; // If a match is found, set the flag to true
+            break; // Stop checking other cells in the row
+          }
         }
+        rows[i].style.display = match ? '' : 'none';
       }
-
-      // Toggle row visibility based on match
-      rows[i].style.display = match ? '' : 'none';
-    }
+    });
   });
 </script>
