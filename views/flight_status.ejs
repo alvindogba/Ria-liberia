@@ -45,7 +45,7 @@
           </li>
       </ul>
       <div class="tab-content">
-          <table class="tab-pane table-striped table-hover w-100 fade show active" id="arrival_table">
+          <table class="table tab-pane fade table-striped table-hover w-100 show active" id="arrival_table">
             <thead class="table-primary">
               <tr>
                 <th>Airlines</th>
@@ -62,7 +62,7 @@
                   <td><%= flightData.airline.name %></td>
                   <td><%= flightData.flight.number %></td>
                   <td><%= flightData.arrival.timezone %></td>
-                  <td><%= flightData.arrival.estimated %></td>
+                  <td><%=moment(flightData.arrival.estimated).tz('Africa/Monrovia').format('MMMM Do YYYY, h:mm A')%></td>
                   <td><%= flightData.arrival.delay ? `Delayed: ${flightData.arrival.delay} (min)` : 'On Time' %></td>
                   <td><%= flightData.flight_status %></td>
                 </tr>
@@ -89,7 +89,7 @@
           <td><%= flightData.airline.name %></td>
           <td><%= flightData.flight.number %></td>
           <td><%= flightData.departure.timezone %></td>
-          <td><%= flightData.departure.estimated %></td>
+          <td><%=moment(flightData.departure.estimated).tz('Africa/Monrovia').format('MMMM Do YYYY, h:mm A') %></td>
           <td><%= flightData.departure.delay ? `Delayed: ${flightData.delay} (min)` : 'On Time' %></td>
           <td><%= flightData.flight_status %></td>
         </tr>

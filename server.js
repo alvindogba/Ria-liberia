@@ -1,6 +1,10 @@
 import express from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import moment from 'moment-timezone';
+
+
+
 
 // Initialize environment variables
 dotenv.config();
@@ -9,6 +13,7 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+app.locals.moment=moment;
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -30,6 +35,8 @@ app.get("/flight-status", async (req, res) => {
         const response = await axios.get(avaitionStack_url, {
             params: {
                 access_key: avaition_api_key,
+                arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
+        limit: 100, // Adjust this as needed
             }
         });
 
