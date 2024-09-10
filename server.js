@@ -12,8 +12,7 @@ dotenv.config();
 // Initialize app
 const app = express();
 const port = 3000;
-
-app.locals.moment=moment;
+app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -21,7 +20,7 @@ app.set('view engine', 'ejs');
 
 // Define API URL and headers
 const aipNinjas_url = "https://api.apininjas.com/aviation/v1/flight/status";
-const avaitionStack_url = "https://api.aviationstack.com/v1/flights"
+const avaitionStack_url = "https://api.aviationstack.com/v1/"
 const avaition_api_key= process.env.Avaition_stack_Api_key
 const airport_code = process.env.AIRPORT_CODE;
 
@@ -32,7 +31,7 @@ app.get("/", (req, res)=>{
 // Define routes
 app.get("/flight-status", async (req, res) => {
     try {
-        const response = await axios.get(avaitionStack_url, {
+        const response = await axios.get(avaitionStack_url +"flights", {
             params: {
                 access_key: avaition_api_key,
                 arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
