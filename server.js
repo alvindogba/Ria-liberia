@@ -2,6 +2,7 @@ import express from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import moment from 'moment-timezone';
+import mailchimp from '@mailchimp/mailchimp_marketing';
 
 
 
@@ -50,8 +51,32 @@ app.get("/flight-status", async (req, res) => {
     }
 });
 
+// Mailchimp API configuration
+mailchimp.setConfig({
+    apiKey: process.env.MAILCHIMP_API_KEY,
+    server: process.env.MAILCHIMP_SERVER_PREFIX,
+  });
+  
+  // POST route for subscribing
+  app.post('/subscribe', async (req, res) => {
+    const { email } = req.body; // Capture email from the form
+    
+    const data = {
+      email_address: req.body.email,  // Use the captured email
+      status: 'subscribed'
+    };
 
-
+    console.log(data);
+  
+    try {
+      await mailchimp.lists.addListMember('2050a26d2c', data);
+      res.send('Successfully subscribed!');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error subscribing user');
+    }
+  });
+  
 // Route to handle dynamic content ends
 
 app.get("/business_opportities", (req, res)=>{
