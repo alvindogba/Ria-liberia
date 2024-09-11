@@ -32,14 +32,13 @@ app.get("/", (req, res)=>{
 // Define routes
 app.get("/flight-status", async (req, res) => {
     try {
-        const response = await axios.get(avaitionStack_url +"flights", {
+        const response = await axios.get(avaitionStack_url + "flights", {
             params: {
                 access_key: avaition_api_key,
-                arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
+                arr_iata: airport_code, // IATA code for Roberts International Airport, Liberia
         limit: 100, // Adjust this as needed
             }
         });
-
         // Handle the response data 
         const flights = response.data.data; 
         // console.log(flights);
@@ -60,7 +59,6 @@ mailchimp.setConfig({
   // POST route for subscribing
   app.post('/subscribe', async (req, res) => {
     const { email } = req.body; // Capture email from the form
-    
     const data = {
       email_address: req.body.email,  // Use the captured email
       status: 'subscribed'
@@ -79,12 +77,23 @@ mailchimp.setConfig({
   
 // Route to handle dynamic content ends
 
-app.get("/business_opportities", (req, res)=>{
-    res.render("business_opportities");
-})
-
-app.get("/flight_info", (req, res)=>{
-    res.render("flight_info");
+app.get("/flight_info", async (req, res)=>{
+    try {
+        const response = await axios.get(avaitionStack_url + 'flights', {
+          params: {
+            access_key: avaition_api_key,
+            dep_iata: airport_code // Flights departing from Liberia
+          },
+        });
+    
+        // Extract flight data
+        const flights = response.data.data;
+        console.log(flights)
+        res.render("flight_info", {airlineLib: flights})
+      } catch (error) {
+        console.error('Error fetching flight data:', error.message);
+      }
+    
 })
 
 app.get("/newsroom", (req, res)=>{
