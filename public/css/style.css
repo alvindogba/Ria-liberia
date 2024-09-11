@@ -41,56 +41,8 @@
 }
 
 
-.arrivals_and_departure{
-    display: flex;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
-    background: var(--gray);
-    height: 8vh;
-    border-radius: 2rem;
-    margin: 1.5rem auto;
-}
-
-.inner_arrivals_and_departure{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background: var(--gray);
-    border-radius: 2rem;
-}
-
-/* .arrivals{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    height: 8vh;
-    border-radius: 2rem;
-    align-items: center;
-    
-  
-}
-
-.departure{
-    width: 50%; 
-    display: flex;
-    justify-content: center;
-    height: 8vh;
-    align-items: center;
-} */
-
 
 /* Table Section */
-table{
-    text-align: center;
-    height: 500px;
-    overflow-y: scroll;
-    overflow-x: scroll;
-    margin-left: auto;
-    margin-right: auto;
-   
-    
-}
  #arrival td {
     font-weight: 600; 
     color: rgb(65, 65, 65); 
@@ -104,3 +56,5 @@ table{
 #data-content{
     width: 100vw;
 }
+
+

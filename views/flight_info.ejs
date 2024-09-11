@@ -28,56 +28,48 @@
 
 <!--A scroll to the arrow div ends here-->
 <!--The airline serve in Monrovia and table starts here-->
-<section class="airline_information_serve_table">
-<div class="airline_information_serve">
-  <h3 class="airline_information_label">Airlines Serving Robert International Airport</h3>
+<section class="container pb-4">
+<div class="pt-4 ">
+  <h3 class="">Airlines Serving Robert International Airport</h3>
  
-  <p class="airline_information_text">Serveral daily flights comes Monrovia with other capitals of the sub-region and international flight allow passenger traffic between Europe, Middle East and other contients, directly with a connection.</p>
+  <p class="">Serveral daily flights comes Monrovia with other capitals of the sub-region and international flight allow passenger traffic between Europe, Middle East and other contients, directly with a connection.</p>
 </div>
-<div class="airline_information_table_container_outer">
-  <div class="airline_information_table_container">
-     <div class="table_description_div"><i class="fa-solid fa-phone-volume table_label_icon"></i>
-    <p class="table_description">Airlines flying from/to Monrovia Robert airport (updated weekly)</p>
+<div class="">
+  <div class="">
+     <div class=""><i class="fa-solid fa-phone-volume table_label_icon"></i>
+    <p class="">Airlines flying from/to Monrovia Robert airport (updated weekly)</p>
   </div>
   
-  <section class="airline_information_table_section">
-    <!--The table head starts here-->
-    <div class="white img_div_size"><p class="table_head">Airline</p></div>
-    <div class="black code_width"><p class="table_head">Code(IATA)</p></div>
-    <div class="white code_width"><p class="table_head">Code(ICOA)</p></div>
-    <div class="black website_link_width"><p class="table_head">Website</p></div>
-    <!--The table head ends here-->
-
-    <!--The table data starts here-->
-
-    <!--The table first row data starts here-->
-    <div class="gray img_div_size"><img src="Images/klm-removebg-preview.png" alt="KML logo" class="table-airline-logo-static"></div>
-    <div class="gray code_width text-size"><p>KL</p></div>
-    <div class="gray code_width text-size"><p>KL</p></div>
-    <div class="gray website_link_width"><a href="" class="airlineInformationTableLink">-</a></div>
-
-    <div class="data_white img_div_size"><img src="Images/Kenya-Airways-Logo-removebg-preview.png" alt="Kenya Airways Logo" class="table-airline-logo-static"></div>
-    <div class="data_white code_width text-size"><p>KQ</p></div>
-    <div class="data_white code_width text-size"><p>KQA</p></div>
-    <div class="data_white website_link_width"><a href="#" class="airlineInformationTableLink">https://www.kenya-airway.com/ph/en/</a></div>
-
-    <div class="gray img_div_size"><img src="Images/Brussels_Airlines.svg-removebg-preview.png" alt="Brussels Airlines logo" class="table-airline-logo-static"></div>
-    <div class="gray code_width text-size"><p>SN</p></div>
-    <div class="gray code_width text-size"><p></p></div>
-    <div class="gray website_link_width"><a href="#" class="airlineInformationTableLink">https://www.brusselsairlines.com/en/be/</a></div>
-
-    <div class="data_white img_div_size"><img src="Images/Royal-Air-Maroc-logo-removebg-preview.png" alt="Royal Air Maroc Logo" class="one-large"></div>
-    <div class="data_white code_width text-size"><p>AT</p></div>
-    <div class="data_white code_width text-size"><p>RAM</p></div>
-    <div class="data_white website_link_width"><a href="" class="airlineInformationTableLink">-</a></div>
-
-
-
-    <div class="gray img_div_size"><img src="Images/Air_Cote_dIvoire_logo-removebg-preview (2).png" alt="Air Cote dIvoire logo" class="table-airline-logo-static"></div>
-    <div class="gray code_width text-size"><p>HF</p></div>
-    <div class="gray code_width text-size"><p>VRE</p></div>
-    <div class="gray website_link_width"><a href="#" class="airlineInformationTableLink">https://www.aircotedivoire.com/</a></div>
-
+  <section >
+    <table  class="table table-responsive container text-center">
+      <!-- The table head starts here -->
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Code (IATA)</th>
+          <th>Code (ICAO)</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <!-- The table head ends here -->
+      <tbody>
+        <% airlineLib.forEach(airline => { %>
+          <tr>
+            <td><%= airline.airline.name %></td>
+            <td><%= airline.airline.iata || 'N/A' %></td>
+            <td><%= airline.airline.icao || 'N/A' %></td>
+            <td>
+              <% if (airline.website) { %>
+                <a href="<%= airline.website %>" target="_blank"><%= airline.website %></a>
+              <% } else { %>
+                N/A
+              <% } %>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    
 
     <!--The table data starts here-->
     </section>
@@ -92,20 +84,7 @@
 
 
 
-<!--The destination serve from airport starts here-->
-<section class="destination_serve">
-<div class="destination_serve">
-  <h3 class="destination_serve_label">Destinations serve from our airport</h3>
-  <ul >
-      <li class="location_icon_text"><span><i class="fa-solid fa-map-location-dot location-icon"></i></span><p class="location_text">Abidjan</p></li>
-      <li class="location_icon_text"><span><i class="fa-solid fa-map-location-dot location-icon"></i></span><p class="location_text">Kotoka Airport</p></li>
-      <li class="location_icon_text"><span><i class="fa-solid fa-map-location-dot location-icon"></i></span><p class="location_text">Amsterdam Schiphal</p></li>
-      <li class="location_icon_text"><span><i class="fa-solid fa-map-location-dot location-icon"></i></span><p class="location_text">Lungi International Airport</p></li>
-      <li class="location_icon_text"><span><i class="fa-solid fa-map-location-dot location-icon"></i></span><p class="location_text">Brussels Airport</p></li>
-      <li class="location_icon_text"><span><i class="fa-solid fa-map-location-dot location-icon"></i></span><p class="location_text">Mohamed V Airport</p></li>
-  </ul>
-</div>
-</section>
+
 <!--The destination serve from airport ends here-->
 
   
