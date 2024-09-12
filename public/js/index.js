@@ -281,7 +281,7 @@ function headerSearchBar() {
     results.forEach((link) => {
       const li = document.createElement('li');
       li.classList.add('result-item'); // Add class for styling
-      li.innerHTML = `<a href="${link.url}" target="_blank">${link.title}</a> - ${link.category}`;
+      li.innerHTML = `<a href="${link.url}">${link.title}</a> - ${link.category}`;
       resultsContainer.appendChild(li);
     });
   
