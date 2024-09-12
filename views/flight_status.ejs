@@ -34,75 +34,82 @@
           </form>
       </div>
 
-      <!-- Arrival and Departure label  -->
-      <ul class="nav nav-pills w-100 justify-content-center " id="myTab">
-          <li class="nav-item w-50">
-              <a href="#arrival_table" class="nav-link active text-center">Arrival</a>
+        <!-- Arrival and Departure label  -->
+      <ul class="container pr-5 pl-5 d-flex justify-content-between nav nav-tabs" id="myTab">
+          <li class="nav-item w-50 text-center">
+              <a href="#arrival_table" class="nav-link active w-100 text-center" data-toggle="tab">Arrival</a>
           </li>
-          <li class="nav-item w-50 ">
-              <a href="#departure_table" class="nav-link text-center">Departure</a>
+          <li class="nav-item w-50 text-center">
+              <a href="#departure_table" class="nav-link w-100 text-center" data-toggle="tab">Departure</a>
           </li>
       </ul>
-      <div class="table-responsive tab-content w-100" id="arrival-depature_container">
-          <table class="table-responsive table tab-pane fade table-striped table-hover w-100 show active" id="arrival_table">
-            <thead class="table-primary">
-              <tr>
-                <th>Airlines</th>
-                <th>Flight</th>
-                <th>Origin</th>
-                <th>Estimated Arrival Time</th>
-                <th>Update</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody class="flightTableBody">
-              <% flightLib.forEach(flightData => { %>
-                <tr>
-                  <td><%= flightData.airline.name %></td>
-                  <td><%= flightData.flight.number %></td>
-                  <td><%= flightData.arrival.timezone %></td>
-                  <td><%=moment(flightData.arrival.estimated).tz('Africa/Monrovia').format('MMMM Do YYYY, h:mm A')%></td>
-                  <td><%= flightData.arrival.delay ? `Delayed: ${flightData.arrival.delay} (min)` : 'On Time' %></td>
-                  <td><%= flightData.flight_status %></td>
-                </tr>
-              <% }); %>
-            </tbody>
-              </table>
-        
-<!-- Departure  -->
-<table class="table tab-pane fade table-striped table-hover w-100" id="departure_table">
-  <thead>
-      <tr>
-          <th>Airlines</th>
-          <th>Flight</th>
-          <th>Origin</th>
-          <th>Estimated Departure Time</th>
-          <th>Update</th>
-          <th>Status</th>
-      </tr>
-  </thead>
-  <tbody class="flightTableBody">
- 
-    <%flightLib.forEach(flightData => {%>
-      <tr>
-          <td><%= flightData.airline.name %></td>
-          <td><%= flightData.flight.number %></td>
-          <td><%= flightData.departure.timezone %></td>
-          <td><%=moment(flightData.departure.estimated).tz('Africa/Monrovia').format('MMMM Do YYYY, h:mm A') %></td>
-          <td><%= flightData.departure.delay ? `Delayed: ${flightData.delay} (min)` : 'On Time' %></td>
-          <td><%= flightData.flight_status %></td>
-        </tr>
-    <%}); %>
 
-  </tbody>
-</table> 
-         
+      <div class="tab-content container pb-4">
+          <!-- Arrival Table -->
+          <div class="tab-pane active" id="arrival_table">
+              <table class="table table-striped table-bordered table-hover table-sm text-center">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Airlines</th>
+                          <th>Flight</th>
+                          <th>Origin</th>
+                          <th>Estimated Arrival Time</th>
+                          <th>Update</th>
+                          <th>Status</th>
+                      </tr>
+                  </thead>
+                  <tbody class="flightTableBody">
+                      <% flightLib.forEach(flightData => { %>
+                          <tr>
+                              <td><%= flightData.airline.name %></td>
+                              <td><%= flightData.flight.number %></td>
+                              <td><%= flightData.arrival.timezone %></td>
+                              <td><%= moment(flightData.arrival.estimated).tz('Africa/Monrovia').format('MMMM Do YYYY, h:mm A') %></td>
+                              <td><%= flightData.arrival.delay ? `Delayed: ${flightData.arrival.delay} (min)` : 'On Time' %></td>
+                              <td><%= flightData.flight_status %></td>
+                          </tr>
+                      <% }); %>
+                  </tbody>
+              </table>
+          </div>
+      
+          <!-- Departure Table -->
+          <div class="tab-pane" id="departure_table">
+              <table class="table table-striped table-bordered table-hover table-sm text-center">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>Airlines</th>
+                          <th>Flight</th>
+                          <th>Origin</th>
+                          <th>Estimated Departure Time</th>
+                          <th>Update</th>
+                          <th>Status</th>
+                      </tr>
+                  </thead>
+                  <tbody class="flightTableBody">
+                      <% flightLib.forEach(flightData => { %>
+                          <tr>
+                              <td><%= flightData.airline.name %></td>
+                              <td><%= flightData.flight.number %></td>
+                              <td><%= flightData.departure.timezone %></td>
+                              <td><%= moment(flightData.departure.estimated).tz('Africa/Monrovia').format('MMMM Do YYYY, h:mm A') %></td>
+                              <td><%= flightData.departure.delay ? `Delayed: ${flightData.departure.delay} (min)` : 'On Time' %></td>
+                              <td><%= flightData.flight_status %></td>
+                          </tr>
+                      <% }); %>
+                  </tbody>
+              </table>
+          </div>
       </div>
-      </div>
+  </div>
 </section>
 
+<%- include("partials/footer.ejs") %>
 
-<%-include("partials/footer.ejs") %>
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Full version of jQuery -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 
 
