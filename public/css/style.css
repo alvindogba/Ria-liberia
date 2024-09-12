@@ -41,27 +41,6 @@
 }
 
 
-<<<<<<< HEAD
-.arrivals_and_departure{
-    display: flex;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
-    background: var(--gray);
-    height: 8vh;
-    border-radius: 2rem;
-    margin: 1.5rem auto;
-}
-
-.inner_arrivals_and_departure{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background: var(--gray);
-    border-radius: 2rem;
-}
-=======
->>>>>>> 3ddee512487da936c124b10ac10124032b97d020
 
 /* Table Section */
  #arrival td {
@@ -78,7 +57,6 @@
     width: 100vw;
 }
 
-<<<<<<< HEAD
 /* Header search bar style */
 .result-box {
     border: 1px solid #ccc;
@@ -94,7 +72,7 @@
     z-index: 9999;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    display: none;
+    display: none; /* Hide by default */
     opacity: 0; /* Initially hidden */
     transition: opacity 0.4s ease, transform 0.4s ease; /* Add transition for fade and scaling */
 }
@@ -130,6 +108,4 @@
     background-color: #ccc;
     border-radius: 4px;
 }
-=======
 
->>>>>>> 3ddee512487da936c124b10ac10124032b97d020

@@ -273,37 +273,38 @@ function headerSearchBar() {
   const displayResults = (results) => {
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = ''; // Clear previous results
-
+  
     if (results.length === 0) {
       resultsContainer.innerHTML = '<li>No results found</li>';
     }
-
+  
     results.forEach((link) => {
       const li = document.createElement('li');
       li.classList.add('result-item'); // Add class for styling
-      li.innerHTML = `<a href="${link.url}">${link.title}</a> - ${link.category}`;
+      li.innerHTML = `<a href="${link.url}" target="_blank">${link.title}</a> - ${link.category}`;
       resultsContainer.appendChild(li);
     });
-
+  
     // Show the results container with animation
-    resultsContainer.style.display = 'block';
+    resultsContainer.style.display = 'block';  // Display results container
     setTimeout(() => {
-      resultsContainer.classList.add('show'); // Add class to trigger animation
-    }, 10); // Small delay to ensure the display style is applied
+      resultsContainer.classList.add('show');  // Trigger fade/scale animation
+    }, 10); // Slight delay ensures animation starts after display is set
   };
 
-  // Hide results with animation
   const hideResults = () => {
     const resultsContainer = document.getElementById('results');
-    
+  
     // Start fading out the results
-    resultsContainer.classList.remove('show'); // Remove the animation class
-    
+    resultsContainer.classList.remove('show');  // Remove the animation class
+  
     // Set a timeout to hide the container completely after the animation is done
     setTimeout(() => {
-      resultsContainer.style.display = 'none';
-    }, 400); // Matches the 0.4s transition duration
+      resultsContainer.style.display = 'none';  // Fully hide the container
+    }, 400);  // Matches the 0.4s transition duration
   };
+  
+
 
   // Filter links based on the search term
   const filterLinks = (links, searchTerm) => {
@@ -348,13 +349,5 @@ function headerSearchBar() {
   // Add event listener for the search bar input with debounce
   const debouncedSearch = debounce(handleSearch, 300);
   hSearchInput.addEventListener('input', debouncedSearch);
-
-  // Fetch and display all links when the page loads
-  (async () => {
-    const links = await fetchLinks();
-    if (links) {
-      displayResults(sortLinks(links));
-    }
-  })();
 }
 

@@ -96,7 +96,11 @@ app.get("/flight_info", async (req, res)=>{
 
 app.get("/newsroom", (req, res)=>{
     res.render("newsroom");
-})
+});
+
+app.get("/business_opportities", (req, res)=>{
+    res.render("business_opportities");
+});
 
 app.get("/passenager", (req, res)=>{
     res.render("passenager");
