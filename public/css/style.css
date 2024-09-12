@@ -41,6 +41,7 @@
 }
 
 
+<<<<<<< HEAD
 .arrivals_and_departure{
     display: flex;
     width: 80%;
@@ -59,18 +60,10 @@
     background: var(--gray);
     border-radius: 2rem;
 }
+=======
+>>>>>>> 3ddee512487da936c124b10ac10124032b97d020
 
 /* Table Section */
-table{
-    text-align: center;
-    height: 500px;
-    overflow-y: scroll;
-    overflow-x: scroll;
-    margin-left: auto;
-    margin-right: auto;
-   
-    
-}
  #arrival td {
     font-weight: 600; 
     color: rgb(65, 65, 65); 
@@ -85,6 +78,7 @@ table{
     width: 100vw;
 }
 
+<<<<<<< HEAD
 /* Header search bar style */
 .result-box {
     border: 1px solid #ccc;
@@ -136,3 +130,6 @@ table{
     background-color: #ccc;
     border-radius: 4px;
 }
+=======
+
+>>>>>>> 3ddee512487da936c124b10ac10124032b97d020

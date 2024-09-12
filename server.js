@@ -13,8 +13,7 @@ dotenv.config();
 // Initialize app
 const app = express();
 const port = 3000;
-
-app.locals.moment=moment;
+app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -22,7 +21,7 @@ app.set('view engine', 'ejs');
 
 // Define API URL and headers
 const aipNinjas_url = "https://api.apininjas.com/aviation/v1/flight/status";
-const avaitionStack_url = "https://api.aviationstack.com/v1/flights"
+const avaitionStack_url = "https://api.aviationstack.com/v1/"
 const avaition_api_key= process.env.Avaition_stack_Api_key
 const airport_code = process.env.AIRPORT_CODE;
 
@@ -33,14 +32,18 @@ app.get("/", (req, res)=>{
 // Define routes
 app.get("/flight-status", async (req, res) => {
     try {
-        const response = await axios.get(avaitionStack_url, {
+        const response = await axios.get(avaitionStack_url + "flights", {
             params: {
                 access_key: avaition_api_key,
+<<<<<<< HEAD
                 arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
         limit: 100, 
+=======
+                arr_iata: airport_code, // IATA code for Roberts International Airport, Liberia
+        limit: 100, // Adjust this as needed
+>>>>>>> 3ddee512487da936c124b10ac10124032b97d020
             }
         });
-
         // Handle the response data 
         const flights = response.data.data; 
         // console.log(flights);
@@ -60,8 +63,12 @@ mailchimp.setConfig({
   
   // POST route for subscribing
   app.post('/subscribe', async (req, res) => {
+<<<<<<< HEAD
     const { email } = req.body;  // Capture the email from the form
     
+=======
+    const { email } = req.body; // Capture email from the form
+>>>>>>> 3ddee512487da936c124b10ac10124032b97d020
     const data = {
       email_address: email,
       status: 'subscribed'
@@ -78,12 +85,23 @@ mailchimp.setConfig({
   
 // Route to handle dynamic content ends
 
-app.get("/business_opportities", (req, res)=>{
-    res.render("business_opportities");
-})
-
-app.get("/flight_info", (req, res)=>{
-    res.render("flight_info");
+app.get("/flight_info", async (req, res)=>{
+    try {
+        const response = await axios.get(avaitionStack_url + 'flights', {
+          params: {
+            access_key: avaition_api_key,
+            dep_iata: airport_code // Flights departing from Liberia
+          },
+        });
+    
+        // Extract flight data
+        const flights = response.data.data;
+        console.log(flights)
+        res.render("flight_info", {airlineLib: flights})
+      } catch (error) {
+        console.error('Error fetching flight data:', error.message);
+      }
+    
 })
 
 app.get("/newsroom", (req, res)=>{
