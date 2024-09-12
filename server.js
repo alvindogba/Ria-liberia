@@ -37,7 +37,7 @@ app.get("/flight-status", async (req, res) => {
             params: {
                 access_key: avaition_api_key,
                 arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
-        limit: 100, // Adjust this as needed
+        limit: 100, 
             }
         });
 
@@ -60,23 +60,21 @@ mailchimp.setConfig({
   
   // POST route for subscribing
   app.post('/subscribe', async (req, res) => {
-    const { email } = req.body; // Capture email from the form
+    const { email } = req.body;  // Capture the email from the form
     
     const data = {
-      email_address: req.body.email,  // Use the captured email
+      email_address: email,
       status: 'subscribed'
     };
 
-    console.log(data);
-  
     try {
       await mailchimp.lists.addListMember('2050a26d2c', data);
-      res.send('Successfully subscribed!');
+      res.json({ message: 'Successfully subscribed! to Robert International Airport Newsletter' });  // Send success message as JSON
     } catch (error) {
       console.error(error);
-      res.status(500).send('Error subscribing user');
+      res.status(500).json({ message: 'Error subscribing user' });  // Send error message as JSON
     }
-  });
+});
   
 // Route to handle dynamic content ends
 

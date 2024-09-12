@@ -60,26 +60,6 @@
     border-radius: 2rem;
 }
 
-/* .arrivals{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    height: 8vh;
-    border-radius: 2rem;
-    align-items: center;
-    
-  
-}
-
-.departure{
-    width: 50%; 
-    display: flex;
-    justify-content: center;
-    height: 8vh;
-    align-items: center;
-} */
-
-
 /* Table Section */
 table{
     text-align: center;
@@ -103,4 +83,56 @@ table{
 
 #data-content{
     width: 100vw;
+}
+
+/* Header search bar style */
+.result-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    width: 600px;
+    height: 400px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8); /* Start with a smaller scale */
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    display: none;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Add transition for fade and scaling */
+}
+
+/* When results are visible, scale and fade in */
+.result-box.show {
+    opacity: 1;
+    transform: translateX(-50%) scale(1); /* Scale to full size */
+}
+
+/* Style for each result item */
+.result-item {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.result-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.result-item a:hover {
+    text-decoration: underline;
+}
+
+/* Scrollbar style for the result box (optional) */
+.result-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.result-box::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
 }

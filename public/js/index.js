@@ -230,3 +230,133 @@ function airLine(entries){
 }
 }
 
+// Js for the box model on the newsletter
+// document.getElementById('subscribeForm').addEventListener('submit', async function (e) {
+//   e.preventDefault();
+
+//   const email = document.getElementById('subscriberName').value;
+
+//   try {
+//     const response = await fetch('/subscribe', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ email })
+//     });
+
+//     const result = await response.json();  // Parse the response as JSON
+//     document.getElementById('subscribeMessage').textContent = result.message;
+
+//     const modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+//     modal.show();
+//   } catch (error) {
+//     document.getElementById('subscribeMessage').textContent = 'Subscription failed!';
+//     const modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
+//     modal.show();
+//   }
+// });
+// JavaScript for the header search bar
+function headerSearchBar() {
+  let hSearchInput = document.querySelector(".header-input");
+
+  // Fetch the local JSON file
+  const fetchLinks = async () => {
+    try {
+      const response = await fetch('json/hearder_search.json'); // Ensure the path is correct
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching the JSON data:', error);
+    }
+  };
+
+  // Display search results with animation
+  const displayResults = (results) => {
+    const resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = '<li>No results found</li>';
+    }
+
+    results.forEach((link) => {
+      const li = document.createElement('li');
+      li.classList.add('result-item'); // Add class for styling
+      li.innerHTML = `<a href="${link.url}" target="_blank">${link.title}</a> - ${link.category}`;
+      resultsContainer.appendChild(li);
+    });
+
+    // Show the results container with animation
+    resultsContainer.style.display = 'block';
+    setTimeout(() => {
+      resultsContainer.classList.add('show'); // Add class to trigger animation
+    }, 10); // Small delay to ensure the display style is applied
+  };
+
+  // Hide results with animation
+  const hideResults = () => {
+    const resultsContainer = document.getElementById('results');
+    
+    // Start fading out the results
+    resultsContainer.classList.remove('show'); // Remove the animation class
+    
+    // Set a timeout to hide the container completely after the animation is done
+    setTimeout(() => {
+      resultsContainer.style.display = 'none';
+    }, 400); // Matches the 0.4s transition duration
+  };
+
+  // Filter links based on the search term
+  const filterLinks = (links, searchTerm) => {
+    return links.filter(link => 
+      link.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      link.category.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  };
+
+  // Sort links alphabetically by title
+  const sortLinks = (links) => {
+    return links.sort((a, b) => a.title.localeCompare(b.title));
+  };
+
+  // Handle search input and filter/sort links
+  const handleSearch = async () => {
+    const searchTerm = hSearchInput.value;
+    let links = await fetchLinks(); // Get the links data from the JSON file
+
+    if (!searchTerm.trim()) {
+      // Hide the result box if the search term is empty
+      hideResults();
+      return;
+    }
+
+    links = filterLinks(links, searchTerm); // Filter the links
+    links = sortLinks(links); // Sort the links alphabetically
+    displayResults(links); // Display the filtered and sorted results
+  };
+
+  // Debounce function
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
+  // Add event listener for the search bar input with debounce
+  const debouncedSearch = debounce(handleSearch, 300);
+  hSearchInput.addEventListener('input', debouncedSearch);
+
+  // Fetch and display all links when the page loads
+  (async () => {
+    const links = await fetchLinks();
+    if (links) {
+      displayResults(sortLinks(links));
+    }
+  })();
+}
+
+// Initialize the headerSearchBar function when the page loads
+window.onload = headerSearchBar;
