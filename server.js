@@ -35,8 +35,8 @@ app.get("/flight-status", async (req, res) => {
         const response = await axios.get(avaitionStack_url + "flights", {
             params: {
                 access_key: avaition_api_key,
-                arr_iata: airport_code, // IATA code for Roberts International Airport, Liberia
-        limit: 100, // Adjust this as needed
+                arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
+        limit: 100, 
             }
         });
         // Handle the response data 
@@ -58,8 +58,7 @@ mailchimp.setConfig({
   
   // POST route for subscribing
   app.post('/subscribe', async (req, res) => {
-    
-    const { email } = req.body; // Capture email from the form
+    const { email } = req.body;  // Capture the email from the form
     const data = {
       email_address: email,
       status: 'subscribed'
