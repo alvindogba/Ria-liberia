@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Business Opportunities",
+    "url": "/business_opportities",
+    "category": "Business"
+  },
+  {
+    "title": "Advertisting Your Business",
+    "url": "/advertisting",
+    "category": "Business"
+  },
+  {
+    "title": "Flight Information",
+    "url": "/flight_info",
+    "category": "Travel"
+  },
+  {
+    "title": "Flight Status",
+    "url": "/flight-status",
+    "category": "Travel"
+  },
+  {
+    "title": "Newsroom",
+    "url": "/newsroom",
+    "category": "News"
+  },
+  {
+    "title": "More News",
+    "url": "/see_more",
+    "category": "News"
+  },
+  {
+    "title": "Passenger Services",
+    "url": "/passenager",
+    "category": "Travel"
+  },
+  {
+    "title": "Destination",
+    "url": "/destination",
+    "category": "Travel"
+  },
+  {
+    "title": "Privacy and Cookies",
+    "url": "/privacy_cookies",
+    "category": "Legal"
+  },
+  {
+    "title": "Our Services",
+    "url": "/services",
+    "category": "General"
+  },
+  {
+    "title": "Parking and Transport",
+    "url": "/parking_transport",
+    "category": "General"
+  },
+  {
+    "title": "Faquent Ask Questions",
+    "url": "/faqs",
+    "category": "General"
+  },
+  {
+    "title": "Visit Momrovia",
+    "url": "/visit_monrovia",
+    "category": "General"
+  },
+  {
+    "title": "Things To Know",
+    "url": "/thingsto_know",
+    "category": "General"
+  },
+  {
+    "title": "Our Contact",
+    "url": "/contact",
+    "category": "General"
+  },
+  {
+    "title": "About Us",
+    "url": "/about",
+    "category": "General"
+  },
+  {
+    "title": "More Relaxazition Spot",
+    "url": "/show_more",
+    "category": "General"
+  },
+  {
+    "title": "Terms of Use",
+    "url": "/term_of_use",
+    "category": "Legal"
+  }
+]

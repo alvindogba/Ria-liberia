@@ -35,8 +35,13 @@ app.get("/flight-status", async (req, res) => {
         const response = await axios.get(avaitionStack_url + "flights", {
             params: {
                 access_key: avaition_api_key,
+<<<<<<< HEAD
+                arr_iata: 'ROB', // IATA code for Roberts International Airport, Liberia
+        limit: 100, 
+=======
                 arr_iata: airport_code, // IATA code for Roberts International Airport, Liberia
         limit: 100, // Adjust this as needed
+>>>>>>> 3ddee512487da936c124b10ac10124032b97d020
             }
         });
         // Handle the response data 
@@ -58,22 +63,25 @@ mailchimp.setConfig({
   
   // POST route for subscribing
   app.post('/subscribe', async (req, res) => {
+<<<<<<< HEAD
+    const { email } = req.body;  // Capture the email from the form
+    
+=======
     const { email } = req.body; // Capture email from the form
+>>>>>>> 3ddee512487da936c124b10ac10124032b97d020
     const data = {
-      email_address: req.body.email,  // Use the captured email
+      email_address: email,
       status: 'subscribed'
     };
 
-    console.log(data);
-  
     try {
       await mailchimp.lists.addListMember('2050a26d2c', data);
-      res.send('Successfully subscribed!');
+      res.json({ message: 'Successfully subscribed! to Robert International Airport Newsletter' });  // Send success message as JSON
     } catch (error) {
       console.error(error);
-      res.status(500).send('Error subscribing user');
+      res.status(500).json({ message: 'Error subscribing user' });  // Send error message as JSON
     }
-  });
+});
   
 // Route to handle dynamic content ends
 
