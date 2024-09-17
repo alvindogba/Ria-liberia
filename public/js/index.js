@@ -231,29 +231,52 @@ function airLine(entries){
 }
 
 // Js for the box model on the newsletter
-// document.getElementById('subscribeForm').addEventListener('submit', async function (e) {
-//   e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const subscribeForm = document.getElementById('subscribeForm');
+  const successEmail = document.querySelector('.alert-primary');
+  const failEmail = document.querySelector('.alert-danger');
+  
+  subscribeForm.addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-//   const email = document.getElementById('subscriberName').value;
+    const email = document.getElementById('subscriberName').value.trim(); // Get the email value
 
-//   try {
-//     const response = await fetch('/subscribe', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({ email })
-//     });
+    if (!email) {
+      alert('Email cannot be empty'); // Simple validation
+      return;
+    }
 
-//     const result = await response.json();  // Parse the response as JSON
-//     document.getElementById('subscribeMessage').textContent = result.message;
+    try {
+      const response = await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' }, // Ensure it's JSON
+        body: JSON.stringify({ email }) // Send the email as JSON
+      });
 
-//     const modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
-//     modal.show();
-//   } catch (error) {
-//     document.getElementById('subscribeMessage').textContent = 'Subscription failed!';
-//     const modal = new bootstrap.Modal(document.getElementById('subscribeModal'));
-//     modal.show();
-//   }
-// });
+      if (email.match("@gmail.com")) {
+        successEmail.classList.remove("d-none");
+        subscribeForm.classList.add("d-none");
+      }
+
+    } catch (error) {
+      failEmail.classList.remove("d-none");
+      subscribeForm.classList.add("d-none");
+    }
+
+    // Reset the form input after submission
+    document.getElementById('subscriberName').value = ''; 
+  });
+
+  // Listen for dismiss event on success and fail alerts
+  document.querySelectorAll('.alert').forEach(alert => {
+    alert.addEventListener('close.bs.alert', function () {
+      subscribeForm.classList.remove("d-none"); // Show the form again when alert is dismissed
+    });
+  });
+});
+
+
+
 // JavaScript for the header search bar
 function headerSearchBar() {
   let hSearchInput = document.querySelector(".header-input");

@@ -17,6 +17,8 @@ app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+// Middleware to parse JSON request bodies
+app.use(express.json()); 
 app.set('view engine', 'ejs');
 
 // Define API URL and headers
@@ -57,21 +59,32 @@ mailchimp.setConfig({
   });
   
   // POST route for subscribing
-  app.post('/subscribe', async (req, res) => {
-    const { email } = req.body;  // Capture the email from the form
+
+// POST route for subscribing
+app.post('/subscribe', async (req, res) => {
+    const { email } = req.body;
+    console.log('Received email:', email); // Log the received email
+  
+    if (!email) {
+      return res.status(400).json({ message: 'Email address is required.' });
+    }
+  
     const data = {
       email_address: email,
       status: 'subscribed'
     };
-
+  
+    console.log('Sending data to Mailchimp:', data); // Log the data sent to Mailchimp
+  
     try {
       await mailchimp.lists.addListMember('2050a26d2c', data);
-      res.json({ message: 'Successfully subscribed! to Robert International Airport Newsletter' });  // Send success message as JSON
+      res.json({ message: 'Successfully subscribed!' });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Error subscribing user' });  // Send error message as JSON
+      console.error('Error subscribing:', error);
+      res.status(500).json({ message: 'Error subscribing user' });
     }
-});
+  });
+  
   
 // Route to handle dynamic content ends
 

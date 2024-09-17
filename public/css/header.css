@@ -28,6 +28,16 @@ html{
 overflow-x: hidden;
 }
 
+/* Apply blur to background only when modal is active */
+body.modal-open {
+    filter: blur(5px); /* or another effect */
+  }
+  
+  /* Make sure the blur is removed once the modal closes */
+  body:not(.modal-open) {
+    filter: none;
+  }
+
 /**************************************
         Media Query START
 For Desktop or large-size screen: 1024px -1200px
@@ -450,30 +460,6 @@ footer a:hover{
 }
 
 /* The home page styling ends here */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   text-decoration: none;
-   list-style: none;
-}
-
-a{
-    text-decoration: none;
-    font-size: 1rem;
-}
-:root {
-    --herobg: #0000008f;
-    --red: #D21312;
-    --blue: #070A52;
-    --white: #ffffff;
-    --black: #000000;
-    --gray:  rgb(247, 245, 245);
-    font-size: 16px;
-    --poppin: 'Poppins', sans-serif;
-    --grayfortext: #7b7b7bc0;
-    --roboto: "Roboto", sans-serif;
-}
 
 html{
     font: 16px;

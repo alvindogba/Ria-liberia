@@ -63,10 +63,11 @@
     padding: 10px;
     background-color: #f9f9f9;
     width: 600px;
-    height: 400px;
+    height: max-content;
+    min-height: 200px;
     border-radius: 5px;
     position: absolute;
-    top: 50px;
+    top: 270px;
     left: 50%;
     transform: translateX(-50%) scale(0.8); /* Start with a smaller scale */
     z-index: 9999;
@@ -91,7 +92,7 @@
 
 .result-item a {
     text-decoration: none;
-    color: #007bff;
+    color: #070A52;
     font-weight: bold;
 }
 
