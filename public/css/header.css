@@ -97,19 +97,16 @@ header{
    display: flex;
     justify-content: center;
     align-items: center;
-
     clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);  
 }
 .logo_div img{
     height: 10em;
     width: 15em;
-   
 }
 /*styling the search_bar container*/
 .white_header_container{
     height: 100%;
     width: 70%;
- 
 }
 
 .white_div_containerA{
@@ -118,7 +115,6 @@ header{
     display: flex;
     justify-content: right;
     align-items: center;
-    
 }
 
 .white_div_container_a1{
@@ -128,10 +124,10 @@ header{
     width: fit-content;
     padding-left: 30%;
     align-items: center;
-   
 }
 
 .flag_container{
+    padding-top: .7rem;
     display: flex;
     gap: 1.2rem;
 }
@@ -144,17 +140,15 @@ header{
 .search_bar_form{
     display: flex;
     align-items: center;
-
 }
 
 .search_bar_form input{
-    width: 12rem;
+    width: 14rem;
     height: 2rem;
     border: none;
     padding: 0.5rem;
     border-radius: 1.25rem;
     font-size: 1.25rem;
-
 }
 .search_bar_form input:focus {
     outline: none;
@@ -163,7 +157,7 @@ header{
     padding-right: 3rem;
 }
 
- .fa-magnifying-glass:hover{
+ .fa-magnifying-glass:active{
     color: var(--red);
  }
 
@@ -337,7 +331,6 @@ justify-content: center;
   opacity: 1;
   animation: slidUp_nav .5s ease ;
   visibility: visible;
-  
 }
 
 .dropdown li {
@@ -370,15 +363,11 @@ footer{
     grid-template-rows: 2.5fr 1fr;
     padding: 20px;
     transition: 0.5s ease;
-    overflow-x: hidden;
-    
-    
+    overflow-x: hidden;   
 }
 
 footer a{
     color: var(--white);
-    
-   
 }
 
 footer a:hover{
@@ -390,7 +379,6 @@ footer a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 /*The footer Feature Destination container  */
@@ -459,391 +447,65 @@ footer a:hover{
     display: none;
 }
 
-/* The home page styling ends here */
-
-html{
-    font: 16px;
-overflow-x: hidden;
-}
-
-/**************************************
-        Media Query START
-For Desktop or large-size screen: 1024px -1200px
-For Extra-large size device: 1200px and more
-***************************************/
-
-/*The scroll bar on the home page styling starts here*/
-/* width
-.scroll_bar::-webkit-scrollbar {
-    width: 10px;
-    
-  }
-   */
-  /* Track 
-  .scroll_bar::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   */
-  /* Handle 
-  .scroll_bar::-webkit-scrollbar-thumb {
-    background: var(--red);
-     border-radius: 2rem;
-  }
-  */
-  /* Handle on hover 
-  .scroll_bar::-webkit-scrollbar-thumb:hover {
-    background: var(--grayfortext); 
-  }
-*/
-/*The scroll bar on the home page styling ends here*/
-
-
-
-header{
-    height: 29vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 99;
-    
-}
-  
-.header_1st_section{
-    height: 9.375rem;
-    width: 100%;
-    display: flex;
-    background-color: var(--white);
-   
-}
-/*displaying the logo div and the search bar div container*/
-
-/*styling the logo div and search_bar_div_container*/
- 
-.logo_div{
-    height: 100%;
-    width: 30%;
-   background-color: var(--red);
-   display: flex;
-    justify-content: center;
-    align-items: center;
-
-    clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);  
-}
-.logo_div img{
-    height: 10em;
-    width: 15em;
-   
-}
-/*styling the search_bar container*/
-.white_header_container{
-    height: 100%;
-    width: 70%;
- 
-}
-
-.white_div_containerA{
-    width: 86%;
-    height: 40%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    
-}
-
-.white_div_container_a1{
-    display: flex;
-    height: 50%;
-    gap: 8rem;
-    width: fit-content;
-    padding-left: 30%;
-    align-items: center;
-   
-}
-
-.flag_container{
-    display: flex;
-    gap: 1.2rem;
-}
-
-.Liberia_flag_icon{
-    width: 3.125rem;
-    height: 1.875rem;
-}
-
-.search_bar_form{
-    display: flex;
-    align-items: center;
-
-}
-
-.search_bar_form input{
-    width: 12rem;
-    height: 2rem;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 1.25rem;
-    font-size: 1.25rem;
-
-}
-.search_bar_form input:focus {
-    outline: none;
-    border-bottom: 1px solid rgba(163, 155, 155, 0.511);
-    border-radius: 10px;
-    padding-right: 3rem;
-}
-
- .fa-magnifying-glass:hover{
-    color: var(--red);
- }
-
-.fa-magnifying-glass{
-    position: relative;
-    right: 40px;
-    font-size: 1.2rem;
-    color: gray;
-    transition: 0.5s ease;
-}
-
-
-.white_div_containerB{
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-    height: fit-content;
-}
-
-.call_icon_text_container{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    line-height: 1.2;
-}
-
-.icon_div{
-    padding: 10px;
-    border: 2px dotted var(--red);
-    border-radius: 50%;
-    color: var(--red);
-}
-
-
-.email_icon_text{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.handBurger_menu_dropdown{
-    animation: slidUP_nav 1.5s ease;
-    display:none;
- }
-/*styling the blue nav-bar that has the left side been transparent*/
-.navbar_container{
-    height: 100px;
-    width: 100vw;
-    display: flex;
-    
-}
-/*HAND BURGER MENU ***************************************************/
-.hand_burger_menu{
-    display: none;
-}
-
-.handBurger_menu_dropdown{
-    animation: slidup_burger 1s ease;
-    
-}
-
-
-@keyframes slidUp_burger{
-    from {transform: translateY(200px)}
-    to{transform: translateY(0px);}
-}
-
-
-.transparent_div{
-    width: 20%;
-    background: transparent;
-}
-
-/*Styling the blue navigation bar*/
-.blue_navbar_container{
-    background: var(--blue);
-    width: 80%;
-    height: 13vh;
-    /*clip-path: polygon(3% 0, 100% 0, 100% 48%, 100% 100%, 0 100%);*/
-    position: relative;
-    bottom: 22px;
-}
-
-.nav-bar {
-width: 75%;
-display: flex;
-height: 13vh;
-align-items: center;
-justify-content: center;
-}
-
-.nav-link{
-   display: flex;
-   width: 75%;
-   justify-content: space-between;
-}
-
-
-.nav-bar .nav-link li a{
-    color: var(--white);
-    cursor: pointer;
-}
-
-
-.line :hover{
-   border-bottom: 3px solid var(--white);
-    padding-bottom: 1.8rem;
-}
-
-.nav-bar .nav-link .dropdown li :hover{
-    border-bottom: 0px solid var(--white);
-    padding-bottom: 0rem;
-}
-
-.white_line_list{
-    background: var(--white);
-    width: .1rem;
-    height: 4vh;
-}
-
-.main_link_label{
- position: relative;
-
-}
-
-/*********************************************************/
-/*KEYFRAMES ANIMATION*/
-@keyframes slidUp_nav{
-    from {transform: translateY(20px)}
-    to{transform: translateY(0px);}
-}
-
-@keyframes slidRight {
-    from{transform: translateX(-500px);}
-    to{transform: translateX(0px)}
-}
-
-
-/*KEYFRAMES ANIMATION ENDS*********************************************/
-.dropdown{
-    position: absolute;
-    top: 3.1rem;
-    width: 11rem;
-    height: 17vh;
-    background: var(--blue) ;
-    display: none;
-    opacity: 0;
-    z-index: 1;
-    visibility: hidden;
-    padding-left: 1rem;
-    padding-top: 1rem;
-    border-bottom: none;
-}
-
-.subMenu01{
-    right: -3rem;
-}
-
-.subMenu02{
-    right: -1rem;
-    height: 20vh;
-}
-
-.dropdown:hover li {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.main_link_label:hover .dropdown{
-  display: block;
-  opacity: 1;
-  animation: slidUp_nav .5s ease ;
-  visibility: visible;
-  
-}
-
-.dropdown li {
-    width: 100%;
-    gap: 3rem;
-    line-height: 2.2rem;
-     opacity: .7;
-    }
-    .dropdown li:hover{
-         opacity: 1;
-    }
-     
-    .dropdown a{
-        color: var(--white);
-       font-family: var(--poppin);
-    }
-    
-
 /*Call to action page or home page*/
 
 
-/*Call to action page*/
-
-.Call_to_action_section{
-    height: 100vh;
-    width: 100vw;
+/* Call to action page */
+.Call_to_action_section {
+    height: 100vh; /* Full viewport height */
+    width: 100%;   /* Full width */
     padding: 0px;
-    
-    
 }
-.Call_to_action_text_container{
-height: 100%;
-width: 100vw;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 15rem;
-background-color: #0000008f;
 
-
+.Call_to_action_text_container {
+    height: 100%;  /* Full height of parent (Call_to_action_section) */
+    width: 100%;   /* 100% of the parent width (not 100vw to avoid overflow issues) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    background-color: #0000008f;
 }
-.landing_text{
+
+.landing_text {
     position: relative;
     top: 9em;
     line-height: 1.6;
     text-align: center;
 }
-.img_container{
+
+.img_container {
     position: absolute;
-    height: 100%;
-    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    width: 100%;   /* Full width of the viewport */
     z-index: -99;
-    image-resolution:var(--black);
-}
-.background_image{
-height: 100%;
-width: 100%;
-
+    overflow: hidden; /* Prevent overflow */
 }
 
-
-#hero_text{
-        font-size: 3rem;
-        color: var(--white);
-        
+.background_image {
+    height: 100%;  /* Fill the container */
+    width: 100%;   /* Fill the container */
+    object-fit: cover; /* Make sure the image covers the entire container without distortion */
 }
 
-#second_hero_text{
+#hero_text {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+#second_hero_text {
     font-size: 1.5rem;
     color: var(--white);
     font-family: monospace;
 }
 
-.find_flight_container{
+.find_flight_container {
     width: 300px;
     height: fit-content;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     background-color: var(--red);
     color: var(--white);
     display: flex;
@@ -851,19 +513,21 @@ width: 100%;
     font-size: 1.2rem;
 }
 
-.find_flight_raidio_container{
+.find_flight_raidio_container {
     display: flex;
     gap: 3rem;
     flex-direction: column;
     align-items: center;
+    
 }
 
-.radio_container{
+.radio_container {
     display: flex;
     gap: 2.8rem;
-    animation: fade .5s ease ;
+    animation: fade 0.5s ease;
 }
- .dot{
+
+.dot {
     height: 15px;
     width: 15px;
     background-color: #bbbbbb07;
@@ -871,22 +535,19 @@ width: 100%;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-    animation: fade .5s ease ;
- }
+    animation: fade 0.5s ease;
+}
+
 .active {
     background-color: var(--white);
-    animation: fade .5s ease ;
-  }
-  
-/*KeyFrames for animations*/
+    animation: fade 0.5s ease;
+}
 
-  @keyframes fade {
-    from {opacity: .89} 
-    to {opacity: 1}
-  }
-
-/*Find your flight container Drop Down*/
-
+/* KeyFrames for animations */
+@keyframes fade {
+    from { opacity: 0.89 }
+    to { opacity: 1 }
+}
 
 /*This is the starting of the uparrow on the home section style*/
 

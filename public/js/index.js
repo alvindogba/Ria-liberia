@@ -67,31 +67,35 @@ angleDown.on("click", function(){
 });
 
 //Creating Image slider to change the hero Image  after every three seconds
-var slideIndex=0; // This variable is declear to keep track of the current slide that is displayed
+var slideIndex = 0;
 showImg();
-function showImg(){
- //Getting all of the images and looping through them to set their display to none
- var images=$(".background_image");
- var circle=$(".dot");
- let i;
-  for(i = 0; i < images.length; i++){
+
+function showImg() {
+  var images = $(".background_image");
+  var circle = $(".dot");
   
-    images[i].style.display="none";    
- 
-  }
+  // Hide all images
+  images.each(function() {
+    $(this).css("display", "none");
+  });
 
+  // Increment slideIndex
   slideIndex++;
-  if (slideIndex > images.length){slideIndex=1}
- 
-  images[slideIndex - 1].style.display="block";
- 
-
-  // looping through the dotted to display inline with the image
-  for (i = 0; i < circle.length; i++){
-    circle[i].className = circle[i].className.replace(" active", "");
+  if (slideIndex > images.length) {
+    slideIndex = 1;
   }
- circle[slideIndex-1].className += " active";
-  setTimeout(showImg, 5000);
+
+  // Show current image
+  images.eq(slideIndex - 1).css("display", "block");
+
+  // Update dots
+  circle.each(function() {
+    $(this).removeClass("active");
+  });
+  circle.eq(slideIndex - 1).addClass("active");
+
+  // Change image every 3 seconds
+  setTimeout(showImg, 3000);
 }
 
 //This is a function that display the FAQS Question to bring out the Answer for Each of the question
