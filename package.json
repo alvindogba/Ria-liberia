@@ -11,8 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "axios": "^1.7.6",
+    "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0",
     "connect-flash": "^0.1.1",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
@@ -24,5 +25,8 @@
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.5"
   }
 }

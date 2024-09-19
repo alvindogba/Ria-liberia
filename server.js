@@ -3,6 +3,8 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import moment from 'moment-timezone';
 import mailchimp from '@mailchimp/mailchimp_marketing';
+//importing the news section on the home page
+import {scrapeGoogleNews} from './scraper.js'; // Adjust the path as needed
 
 
 
@@ -26,11 +28,40 @@ const aipNinjas_url = "https://api.apininjas.com/aviation/v1/flight/status";
 const avaitionStack_url = "https://api.aviationstack.com/v1/"
 const avaition_api_key= process.env.Avaition_stack_Api_key
 const airport_code = process.env.AIRPORT_CODE;
+const news_url=process.env.news_api_url;
+const news_api_key= process.env.news_api_key;
 
-// Define routes home routes
-app.get("/", (req, res)=>{
-    res.render("home");
-})
+
+
+
+
+app.get("/", async (req, res) => {
+    try {
+        const response = await axios.get("https://newsapi.org/v2/top-headlines", {
+            params: {
+                apiKey: process.env.news_api_key, // Make sure this is set correctly in your .env file
+                language: 'en', // Specify language as English
+                country: "US",// Country code for Nigeria
+                limit: 2
+            }
+        });
+
+        // Extract the articles from the response
+        const articles = response.data.articles;
+
+        // Check if there are articles and send them as JSON
+        if (articles.length > 0) {
+            console.log(articles.slice(0, 4))
+            res.render("home", {articles: articles.slice(0, 4)});
+        } else {
+            res.status(404).send("No articles found.");
+        }
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
 // Define routes
 app.get("/flight-status", async (req, res) => {
     try {
