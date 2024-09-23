@@ -1120,40 +1120,6 @@ border-bottom-left-radius: .2rem;
 
 /*The Fight Status page styling starts here*/
 
-/*BEGAINING of the flight status page hero Section styling*/
-.flight_status_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-image: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.flight_status_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--herobg);
-}
-
-#flight_status_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--poppin);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the flight status page hero Section styling*/
-
 .home_flight_status{
     height: 8vh;
     width: 100vw;
@@ -1355,40 +1321,6 @@ border-bottom-left-radius: .2rem;
 /*The Fight Status page styling ends here*/
 
 /*The Airline Information page styling starts here*/
-
-/*BEGAINING of the Airline Information page hero Section styling*/
-.Airline_Information_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.Airline_Information_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--herobg);
-}
-
-#Airline_Information_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--poppin);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the Airline_Information page hero Section styling*/
 
 .home_Airline_Information{
     height: 8vh;
