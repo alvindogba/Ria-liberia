@@ -1,0 +1,53 @@
+
+           <div class="news_slider">
+               <div class="latest_news_card latest_news_card1">
+                <a href="<%= articles[0].url %>">
+             <img src="<%= articles[0].urlToImage %>" alt="The first news" class="card_1_img">
+              <div class="card_text p-2">
+                <h3 class="h3_date">Feb.11, 2018</h3>
+                <h5 class="h3_news_heading"><%= articles[0].title%></h5>
+              </div>
+            </a>
+            </div>
+            <div class="latest_news_card latest_news_card2">
+              <a href="<%= articles[1].url %>">
+              <img src="<%= articles[1].urlToImage %>" alt="The second news" class="card_2_img">
+              <div class="card_text p-2">
+                <h3 class="h3_date">Feb.11, 2018</h3>
+                <h5 class="h3_news_heading"><%= articles[1].title%></h5>
+              </div>
+            </a>
+          </div>
+ </section>
+
+ <section class="all_latest_news">
+  <!--The secont News slider Container-->
+<!-- Card 1 -->
+
+  <div class="news_slider container-fluid">
+  <div class="latest_news_card latest_news_card1">
+  <a href="<%= articles[2].url %>" >
+  <img src="<%= articles[2].urlToImage %>" alt="The first news" class="card_1_img">
+   <div class="card_text p-2">
+     <h3 class="h3_date">Feb.11, 2018</h3>
+     <h5 class="h3_news_heading"><%= articles[2].title%></h5>
+   </div>
+  </a>
+ </div>
+
+
+ <!-- Card_2 -->
+ 
+  <div class="latest_news_card latest_news_card2">
+    <a href="<%= articles[3].url %>">
+    <img src="<%= articles[3].urlToImage %>" alt="The second news" class="card_2_img">
+    <div class="card_text p-2">
+      <h3 class="h3_date">Feb.11, 2018</h3>
+      <h5 class="h3_news_heading"><%= articles[3].title%></h5>
+    </div>
+  </a>
+ </div>
+
+</div>
+
+</section>
