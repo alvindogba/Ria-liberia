@@ -1085,15 +1085,8 @@ width: 100%;
     word-spacing: 0.4rem;
 }
 
-.subscribe_form {
 
-}
-.subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_form){
-    /* opacity: 1;
-    transform: skew(0deg);
-    transition: opacity 1.5s ease 1.5s, transform 1.5s ease 1.5s; */
-   
-}
+
 
 .subscribe_form > input{
 width: 250px;
