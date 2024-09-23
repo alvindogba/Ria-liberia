@@ -37,27 +37,28 @@ const news_api_key= process.env.news_api_key;
 
 app.get("/", async (req, res) => {
     try {
-        const response = await axios.get("https://newsapi.org/v2/top-headlines", {
-            params: {
-                language: 'en', // Specify language as English
-                country: "US",// Country code for Nigeria
-                limit: 2
-            },
-            headers:{
-                Authorization:  news_api_key
-            }
-        });
+        res.render("home"/*, {articles: articles.slice(0, 4)}*/);
+        // const response = await axios.get("https://newsapi.org/v2/top-headlines", {
+        //     params: {
+        //         language: 'en', // Specify language as English
+        //         country: "US",// Country code for Nigeria
+        //         limit: 2
+        //     },
+        //     headers:{
+        //         Authorization:  news_api_key
+        //     }
+        // });
 
         // Extract the articles from the response
-        const articles = response.data.articles;
+        // const articles = response.data.articles;
 
         // Check if there are articles and send them as JSON
-        if (articles.length > 0) {
-            console.log(articles.slice(0, 4))
-            res.render("home", {articles: articles.slice(0, 4)});
-        } else {
-            res.status(404).send("No articles found.");
-        }
+        // if (articles.length > 0) {
+        //     console.log(articles.slice(0, 4))
+        //     res.render("home", {articles: articles.slice(0, 4)});
+        // } else {
+        //     res.status(404).send("No articles found.");
+        // }
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");
