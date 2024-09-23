@@ -591,9 +591,15 @@ footer a:hover{
   font-weight: 800;
   font-size: 1.3rem;
   animation: fade .5s ease ;
+  width: 100%;
     
 }
 
+.find_ur_flight_drop_down li:hover{
+    width: 100%;
+    padding: 0px;
+    background-color: var(--grayfortext);
+}
 .find_ur_flight_drop_down a{
     color: var(--white);
 }
@@ -1047,9 +1053,9 @@ width: 100%;
     align-items: center;
     color: var(--white);
     overflow-x: hidden;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateX(-100px)
+   
+  
+
     
 }
 
@@ -1065,8 +1071,6 @@ width: 100%;
  line-height: 1.8;
  text-align: center;
  transform: translateY(50px);
- opacity: 0;
- visibility: hidden;
 }
 /*Animating the Subscribe to NewsLetter Children */
 .subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_to_newsletter_div){
@@ -1082,14 +1086,12 @@ width: 100%;
 }
 
 .subscribe_form {
-     opacity: 0;
-    transform: skew(50deg);
 
 }
 .subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_form){
-    opacity: 1;
+    /* opacity: 1;
     transform: skew(0deg);
-    transition: opacity 1.5s ease 1.5s, transform 1.5s ease 1.5s;
+    transition: opacity 1.5s ease 1.5s, transform 1.5s ease 1.5s; */
    
 }
 
@@ -1099,8 +1101,7 @@ height: fit-content;
 padding: 10px;
 border-top-left-radius: .2rem;
 border-bottom-left-radius: .2rem;
-border: none;
-outline: none;
+
 }
 
 .subscribe_form > button{
