@@ -14,7 +14,7 @@ dotenv.config();
 
 // Initialize app
 const app = express();
-const port = 3000;
+const port =process.env.PORT || 3000;
 app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
