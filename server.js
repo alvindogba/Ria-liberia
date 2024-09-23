@@ -14,7 +14,7 @@ dotenv.config();
 
 // Initialize app
 const app = express();
-const port =process.env.PORT || 3000;
+const port =process.env.PORT || 1000;
 app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -39,7 +39,7 @@ app.get("/", async (req, res) => {
     try {
         const response = await axios.get("https://newsapi.org/v2/top-headlines", {
             params: {
-                apiKey: process.env.news_api_key, // Make sure this is set correctly in your .env file
+                apiKey: news_api_key, // Make sure this is set correctly in your .env file
                 language: 'en', // Specify language as English
                 country: "US",// Country code for Nigeria
                 limit: 2
@@ -124,7 +124,7 @@ app.get("/flight_info", async (req, res)=>{
         const response = await axios.get(avaitionStack_url + 'flights', {
           params: {
             access_key: avaition_api_key,
-            dep_iata: airport_code // Flights departing from Liberia
+            dep_iata: 'ROB' // Flights departing from Liberia
           },
         });
     
