@@ -39,10 +39,12 @@ app.get("/", async (req, res) => {
     try {
         const response = await axios.get("https://newsapi.org/v2/top-headlines", {
             params: {
-                apiKey: news_api_key, // Make sure this is set correctly in your .env file
                 language: 'en', // Specify language as English
                 country: "US",// Country code for Nigeria
                 limit: 2
+            },
+            headers:{
+                Authorization:  news_api_key
             }
         });
 
