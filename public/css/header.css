@@ -513,9 +513,11 @@ footer a:hover{
     color: var(--white);
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+   
 }
-
+.find_flight_container a{
+     font-size: 5%;
+}
 .find_flight_raidio_container {
     display: flex;
     gap: 3rem;
@@ -585,21 +587,14 @@ footer a:hover{
   text-align: left;
   display: none;
   padding: 1.1rem;
-  width: 16rem;
+  width: 100%;
   position: relative;
   transition: 1s ease;
   font-weight: 800;
-  font-size: 1.3rem;
   animation: fade .5s ease ;
-  width: 100%;
     
 }
 
-.find_ur_flight_drop_down li:hover{
-    width: 100%;
-    padding: 0px;
-    background-color: var(--grayfortext);
-}
 .find_ur_flight_drop_down a{
     color: var(--white);
 }
@@ -1053,9 +1048,9 @@ width: 100%;
     align-items: center;
     color: var(--white);
     overflow-x: hidden;
-   
-  
-
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-100px)
     
 }
 
@@ -1071,6 +1066,8 @@ width: 100%;
  line-height: 1.8;
  text-align: center;
  transform: translateY(50px);
+ opacity: 0;
+ visibility: hidden;
 }
 /*Animating the Subscribe to NewsLetter Children */
 .subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_to_newsletter_div){
@@ -1085,8 +1082,17 @@ width: 100%;
     word-spacing: 0.4rem;
 }
 
+.subscribe_form {
+     opacity: 0;
+    transform: skew(50deg);
 
-
+}
+.subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_form){
+    opacity: 1;
+    transform: skew(0deg);
+    transition: opacity 1.5s ease 1.5s, transform 1.5s ease 1.5s;
+   
+}
 
 .subscribe_form > input{
 width: 250px;
@@ -1094,7 +1100,8 @@ height: fit-content;
 padding: 10px;
 border-top-left-radius: .2rem;
 border-bottom-left-radius: .2rem;
-
+border: none;
+outline: none;
 }
 
 .subscribe_form > button{
@@ -1112,6 +1119,40 @@ border-bottom-left-radius: .2rem;
 
 
 /*The Fight Status page styling starts here*/
+
+/*BEGAINING of the flight status page hero Section styling*/
+.flight_status_hero_section{
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-image: url(../Images/brussels.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flight_status_hero_div{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--herobg);
+}
+
+#flight_status_hero_text{
+    font-size: 4rem;
+    color: var(--white);
+    letter-spacing: .2rem;
+    word-spacing: .3rem;
+    font-family: var(--poppin);
+    font-weight: 700;
+    margin-top: 10rem;
+}
+
+/*ENDING of the flight status page hero Section styling*/
 
 .home_flight_status{
     height: 8vh;
@@ -1314,6 +1355,40 @@ border-bottom-left-radius: .2rem;
 /*The Fight Status page styling ends here*/
 
 /*The Airline Information page styling starts here*/
+
+/*BEGAINING of the Airline Information page hero Section styling*/
+.Airline_Information_hero_section{
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../Images/brussels.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Airline_Information_hero_div{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--herobg);
+}
+
+#Airline_Information_hero_text{
+    font-size: 4rem;
+    color: var(--white);
+    letter-spacing: .2rem;
+    word-spacing: .3rem;
+    font-family: var(--poppin);
+    font-weight: 700;
+    margin-top: 10rem;
+}
+
+/*ENDING of the Airline_Information page hero Section styling*/
 
 .home_Airline_Information{
     height: 8vh;
@@ -3796,13 +3871,7 @@ font-weight: 900;
 /* Media Query for Laptops and Desktops min-width: 1025px  max-width: 1280px)*******************************************************/
 @media (min-width: 1024px) and (max-width: 1280px){
 
-    a{ 
-        font-size: .9rem;
-    }
-    
-    html{
-        font: 15px;
-    }
+
 
     /*The styling for the header starts here*/
 
@@ -3895,7 +3964,7 @@ font-weight: 900;
 }
 
 #second_hero_text{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .find_flight_raidio_container{
@@ -3903,9 +3972,9 @@ font-weight: 900;
 }
 
 .find_ur_flight_drop_down{
-  line-height: 1.2rem;
+  line-height: 2rem;
   padding: 1rem;
-  width: 16rem;
+  
 }
 
 .dot{
@@ -3936,9 +4005,6 @@ font-weight: 900;
 
 /*Today flight styling starts here*/
 
- .flight_today_container{
-    width: 30%;
- }
 
  
  .flights_today_label{
@@ -4171,18 +4237,6 @@ footer{
 
 
 /*The static tabel on the Airline_Information page styling starts here*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*The static table on the Airline Information page styling ends here*/
@@ -4717,11 +4771,10 @@ line-height: 1.5;
     width: 300px;
     height: fit-content;
     padding: 10px 10px 10px 10px;
-    background-color: #ff5a3c;
     color: white;
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    
 }
 
 /*The Parking and Transit page*/
@@ -5608,9 +5661,7 @@ display: flex;
 
 /* Media Query for low resolution  Tablets, Ipads ************************************/
 @media (min-width: 481px) and (max-width: 580px) {
-        :root{
-            font-size: 13px;
-        }
+ 
             header{
                 max-height: 10rem;
                 width: 100%; 
@@ -5764,18 +5815,6 @@ display: flex;
                     transition: 1s ease;
                     position: relative;
                     top: 6rem;
-                }
-        
-                .find_ur_flight_drop_down{
-                  position: absolute;
-                  transition: 1s ease;
-                  width: 77%;
-                  text-align: center;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-                line-height: 1.7;
-                  animation: slidUp_nav 1s ease ;
-                    
                 }
         
                 /*New website Responsive *********************************/
@@ -6753,18 +6792,7 @@ position: relative;
             top: 6rem;
         }
 
-        .find_ur_flight_drop_down{
-          position: absolute;
-          transition: 1s ease;
-          width: 77%;
-          text-align: center;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        line-height: 1.7;
-          animation: slidUp_nav 1s ease ;
-            
-        }
-
+   
         /*New website Responsive *********************************/
         .new_website_container{
             height: 100vh;
@@ -8473,9 +8501,7 @@ flex-direction: column;
 /*********MEDIA QUERY FOR MAX-WIDTH 320PX************************************************************************************************************************************/
 
 @media(max-width: 320px){
-    :root {
-        font-size: 12px;
-    }
+   
     header{
         height: fit-content;
         width: 100%; 

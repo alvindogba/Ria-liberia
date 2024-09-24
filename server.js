@@ -3,8 +3,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import moment from 'moment-timezone';
 import mailchimp from '@mailchimp/mailchimp_marketing';
-//importing the news section on the home page
-import {scrapeGoogleNews} from './scraper.js'; // Adjust the path as needed
+import  pkg   from 'pg';
 
 
 
@@ -30,6 +29,27 @@ const avaition_api_key= process.env.Avaition_stack_Api_key
 const airport_code = process.env.AIRPORT_CODE;
 const news_url=process.env.news_api_url;
 const news_api_key= process.env.news_api_key;
+
+const {Client} = pkg;
+// Extablixshing database connection 
+const db = new Client({
+    user: process.env.user,
+    host: process.env.host,
+    database: process.env.database_name,
+    password: process.env.password,
+    port: process.env.port,
+    ssl: {
+        rejectUnauthorized: false, // Use this if you're connecting to a self-signed certificate
+    },
+});
+db.connect()
+    .then(() => {
+        console.log('Connected to the database');
+        // You can run your queries here
+    })
+    .catch(err => {
+        console.error('Connection error', err.stack);
+    });
 
 
 
@@ -169,8 +189,14 @@ app.get("/thingsto_know", (req, res)=>{
     res.render("thingsto_know");
 })
 
-app.get("/visit_monrovia", (req, res)=>{
-    res.render("visit_monrovia");
+app.get("/visit_monrovia", async(req, res)=>{
+    try {
+        const result = await db.query(`SELECT * FROM hotels`)
+            res.render("visit_monrovia", {hotels: result.rows});
+    } catch (error) {
+        console.error('Error fetching flight data:', error.message);
+    }
+
 })
 
 app.get("/advertisting", (req, res)=>{
@@ -205,6 +231,14 @@ app.get("/contact", (req, res)=>{
     res.render("contact");
 })
 
+
+// Shutdown handler
+process.on('SIGINT', async () => {
+    console.log('Closing database connection...');
+    await db.end(); // Close the database connection
+    console.log('Database connection closed.');
+    process.exit(0); // Exit the process
+});
 // Start the server on this port 
 app.listen(port, () => {
     console.log(`App is running on http://localhost:${port}`);
