@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Hotel Images</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #003366; /* Navy blue */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            color: #cc0000; /* Red for labels */
+        }
+        .btn-primary {
+            background-color: #003366;
+            border-color: #003366;
+        }
+        .btn-primary:hover {
+            background-color: #cc0000;
+            border-color: #cc0000;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Images for a Hotel</h1>
+
+        <!-- Form for adding URLs and selecting a hotel -->
+        <form action="/add-images" method="POST">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="large_url" class="form-label">Large Image URL:</label>
+                    <input type="text" class="form-control" id="large_url" name="large_url" placeholder="Enter large image URL" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="url_1" class="form-label">Image URL 1:</label>
+                    <input type="text" class="form-control" id="url_1" name="url_1" placeholder="Enter image URL 1" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="url_2" class="form-label">Image URL 2:</label>
+                    <input type="text" class="form-control" id="url_2" name="url_2" placeholder="Enter image URL 2" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="url_3" class="form-label">Image URL 3:</label>
+                    <input type="text" class="form-control" id="url_3" name="url_3" placeholder="Enter image URL 3" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="hotel_id" class="form-label">Select Hotel:</label>
+                <select id="hotel_id" class="form-select" name="hotel_id" required>
+                    <option value="0">Select Hotel</option>
+                    <!-- Loop through available hotels -->
+                    <% hotels.forEach(function(hotel) { %>
+                        <option value="<%= hotel.id %>"><%= hotel.hotel_name %></option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Liberia Hotels</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

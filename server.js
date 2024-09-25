@@ -13,7 +13,7 @@ dotenv.config();
 
 // Initialize app
 const app = express();
-const port =process.env.PORT || 1000;
+const port = 1000;
 app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -191,7 +191,8 @@ app.get("/thingsto_know", (req, res)=>{
 
 app.get("/visit_monrovia", async(req, res)=>{
     try {
-        const result = await db.query(`SELECT * FROM hotels`)
+        const result = await db.query(`SELECT hotel_name, description, location, website, large_url, url_1, url_2, url_3 FROM hotels
+            JOIN hotel_image ON hotels.id = hotel_image.hotel_id`)
             res.render("visit_monrovia", {hotels: result.rows});
     } catch (error) {
         console.error('Error fetching flight data:', error.message);
@@ -230,6 +231,41 @@ app.get("/destination", (req, res)=>{
 app.get("/contact", (req, res)=>{
     res.render("contact");
 })
+
+//////////////////////////////////////////////////////////////////////
+//Administrative Access Only 
+app.get("/add_hotel_image", async(req, res)=>{
+    try {
+        const result = await db.query(`SELECT * FROM hotels`)
+            res.render("add_hotel_image", {hotels: result.rows});
+    } catch (error) {
+        console.error('Error fetching flight data:', error.message);
+    }
+})
+
+// Handle form submission
+app.post('/add-images', async (req, res) => {
+    try {
+        // Extracting the data from the form
+        const { large_url, url_1, url_2, url_3, hotel_id } = req.body; 
+        // Inserting the data into the database using parameterized query
+        const query = `INSERT INTO hotel_image (large_url, url_1, url_2, url_3, hotel_id) 
+                       VALUES ($1, $2, $3, $4, $5)`;
+        // Parameterized values from the form
+        const values = [large_url, url_1, url_2, url_3, hotel_id];
+        // Execute the query
+        await db.query(query, values);
+        // Redirect or respond with a success message
+        res.redirect('/add_hotel_image');  // Redirect back to the form or another page
+
+    } catch (error) {
+        console.error('Error inserting image data:', error.message);
+        res.status(500).send('An error occurred while saving the images.');
+    }
+});
+
+
+////////////////////////////////////////////////////////////////////////
 
 
 // Shutdown handler

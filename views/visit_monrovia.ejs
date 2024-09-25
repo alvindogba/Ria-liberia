@@ -1,14 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Monrovia</title>
-</head>
-<body>
-    <h1>Meet All the latest Hotels around monrovia</h1>
-    <% hotels.forEach(hotel => {%>
-        <h2><%= hotel.hotel_name %></h2>
-  <%  }); %>
-</body>
-</html>
+<%- include("partials/header") %>
+
+        <section class="business_opportunity_hero_section">
+          <!--Call to action text-->
+              <article class="business_opportunity_hero_article">
+                <div class="business_opportunity_hero_div">
+                  <h1 id="business_opportunity_hero_text">Visit Monrovia</h1>
+                </div>
+              </article>
+          </section> 
+  <!--Home Parking------------------->
+  <div class="home_flight_status">
+    <div class="home_flight_status_inner"><h2><a href="/" class="home">Home</a></h2> <span class="home_flight_span">&#62;</span> <h2><a href="/visit_monrovia" class="flight-status">Parking & Transport</a></h2></div>
+  </div>
+
+     <!--A scroll to the arrow div starts here-->
+  <a href="/visit_monrovia" id="scroll_arrow">
+    <div class="up-arrow">
+    <span class="up-arrow-a" >&uparrow; </span>
+  </div>
+</a>
+  
+  <!--A scroll to the arrow div ends here-->
+
+  <!----------Hotels Near--------------->
+  <div class="hotels-near">
+    <div class="hotels_near_in_RIA">
+        <h2>Hotels Near in Roberts International Airport</h2>
+        <p>Roberts International Aiport is located near the town of Harbel,
+            the single runway airport about 35 miles of monronvia.
+        </p>
+    </div>
+    <div class="container mt-5">
+        <% hotels.forEach(hotel => { %>
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <!-- Left Side: Image -->
+                    <div class="col-md-4">
+                        <img src="<%= hotel.large_url %>" class="img-fluid rounded-start" alt="Hotel Image">
+                    </div>
+                    <!-- Right Side: Content -->
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h2 class="card-title"><%= hotel.hotel_name %></h2>
+                            <p class="card-text"><%= hotel.description %></p>
+                            <p class="card-text"><small class="text-muted"><%= hotel.location %></small></p>
+                            <a href="<%= hotel.website %>" class="btn btn-primary">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    
+   
+
+    
+
+  <%- include('partials/footer') %>
+ 
