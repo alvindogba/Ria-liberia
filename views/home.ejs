@@ -99,4 +99,27 @@
 <!--------END OF New website section--------------------------------------------------------------------------------------------------------------------------------------->
 
 
+<!--This is the subscribe to the newsletter section-->
+<section class="subscribe_to_newsletter_container" id="subscribe_to_newsletter_container">
+  <div class="subscribe_to_newsletter_div">
+      <h2 class="subscribe_label">SUBSCRIBE TO OUR NEWSLETTER</h2>
+      <p class="subscribe_paragraph">The quick brown fox jumps over the lazy dog, and that line is the only line that contains all the alphabet letters.</p>
+  </div>
+
+  <form id="subscribeForm" class="subscribe_form">
+      <input type="email" name="email" id="subscriberName" placeholder="EMAIL ADDRESS" required />
+      <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+  </form>
+
+ <div class="alert alert-primary alert-dismissible fade show d-none">
+    <strong>Subscribed!</strong>  Your email has been sent successfully.
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+
+<div class="alert alert-danger alert-dismissible fade show d-none">
+  <strong>Error!</strong> A problem has been occurred while submitting your data.
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+</section>
+
 <%- include("partials/footer") %>
