@@ -1,3 +1,4 @@
+@import 'hover.css/css/hover-min.css'; /* Import Hover.css */
 /* flight status page  */
 
 .flight_status_hero_section{
@@ -110,3 +111,45 @@
     border-radius: 4px;
 }
 
+
+/* Style for the visit liberia page **************************************************************** */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Make sure the video is behind other content */
+  }
+
+  /* Styling for the content that overlays the video */
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+  
+  }
+
+  .content h1{
+    font-size: 5rem;
+  }
+
+  /* Optional: For styling full-height div */
+  .visit_monrovia_master {
+    position: relative;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent overlay */
+  }
+
+  .hotel_large_image{
+    height: 40%;
+  }
+
+ 
+
+/******************************************************************************************************/

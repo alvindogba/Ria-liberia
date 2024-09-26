@@ -1,10 +1,13 @@
 <%- include("partials/header") %>
 
-        <section class="business_opportunity_hero_section">
+        <section class="mt-5 visit_monrovia_master">
+          <video autoplay muted loop class="video-background">
+            <source src="https://videocdn.cdnpk.net/videos/0d5f7cc0-5ca8-4066-bded-e046fc841159/horizontal/previews/watermarked/large.mp4" type="video/mp4">
+          </video>
           <!--Call to action text-->
-              <article class="business_opportunity_hero_article">
-                <div class="business_opportunity_hero_div">
-                  <h1 id="business_opportunity_hero_text">Visit Monrovia</h1>
+              <article class="content">
+                <div class="">
+                  <h1 id="">Visit Monrovia</h1>
                 </div>
               </article>
           </section> 
@@ -31,30 +34,46 @@
         </p>
     </div>
     <div class="container mt-5">
-        <% hotels.forEach(hotel => { %>
-            <div class="card mb-3">
-                <div class="row g-0">
-                    <!-- Left Side: Image -->
-                    <div class="col-md-4">
-                        <img src="<%= hotel.large_url %>" class="img-fluid rounded-start" alt="Hotel Image">
-                    </div>
-                    <!-- Right Side: Content -->
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h2 class="card-title"><%= hotel.hotel_name %></h2>
-                            <p class="card-text"><%= hotel.description %></p>
-                            <p class="card-text"><small class="text-muted"><%= hotel.location %></small></p>
-                            <a href="<%= hotel.website %>" class="btn btn-primary">Visit Website</a>
+      <div class="row">
+          <% hotels.forEach(hotel => { %>
+              <div class="col-md-6 mb-5">
+                  <div class="card h-100 shadow-sm hvr-overline-from-left">
+                      <!-- Hotel Image -->
+                      <img src="<%= hotel.large_url %>" class="card-img-top hotel_large_image hvr-shrink" alt="Image of <%= hotel.hotel_name %>">
+  
+                      <div class="card-body">
+                          <!-- Hotel Name -->
+                          <h5 class="card-title text-primary"><%= hotel.hotel_name %></h5>
+  
+                          <!-- Location -->
+                          <p class="card-text"><small class="text-muted">Location: <%= hotel.location %></small></p>
+  
+                          <!-- Thumbnail Images -->
+                          <div class="d-flex justify-content-between pt-2 hvr-overline-from-left">
+                              <% if (hotel.url_1) { %>
+                                <img src="<%= hotel.url_1 %>" alt="Thumbnail 1" class="img-thumbnail hvr-grow" style="width: 32%; height: 10rem;">
+                              <% } %>
+                              <% if (hotel.url_2) { %>
+                                <img src="<%= hotel.url_2 %>" alt="Thumbnail 2" class="img-thumbnail hvr-grow" style="width: 32%; height: 10rem">
+                              <% } %>
+                              <% if (hotel.url_3) { %>
+                                <img src="<%= hotel.url_3 %>" alt="Thumbnail 3" class="img-thumbnail hvr-grow" style="width: 32%; height: 10rem">
+                              <% } %>
+                          </div>
+                      </div>
+  
+                      <!-- Hotel Website Button -->
+                      <% if (hotel.website) { %>
+                        <div class="card-footer text-center ">
+                          <a href="<%= hotel.website %>" class="btn hvr-bounce-to-right" style="width: 100%;">Visit Website</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        <% }); %>
-    </div>
-    
-   
-
-    
+                      <% } %>
+                  </div>
+              </div>
+          <% }); %>
+      </div>
+  </div>
+  
 
   <%- include('partials/footer') %>
  

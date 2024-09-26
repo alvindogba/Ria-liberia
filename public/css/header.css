@@ -41,49 +41,18 @@ body.modal-open {
     filter: none;
   }
 
-/**************************************
-        Media Query START
-For Desktop or large-size screen: 1024px -1200px
-For Extra-large size device: 1200px and more
-***************************************/
-
-/*The scroll bar on the home page styling starts here*/
-/* width
-.scroll_bar::-webkit-scrollbar {
-    width: 10px;
-    
-  }
-   */
-  /* Track 
-  .scroll_bar::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   */
-  /* Handle 
-  .scroll_bar::-webkit-scrollbar-thumb {
-    background: var(--red);
-     border-radius: 2rem;
-  }
-  */
-  /* Handle on hover 
-  .scroll_bar::-webkit-scrollbar-thumb:hover {
-    background: var(--grayfortext); 
-  }
-*/
-/*The scroll bar on the home page styling ends here*/
-
-/* The home page styling starts here */
 
 header{
     height: max-content;
     width: 100vw;
     position: fixed;
+    top: 0;
     z-index: 99;
     
 }
   
 .header_1st_section{
-    height: 9rem;
+    height: max-content;
     width: 100%;
     display: flex;
     background-color: var(--white);
