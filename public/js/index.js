@@ -37,12 +37,7 @@ flightDropDown();
 
 faqsDropDown();
 function showNavDropDown(){
-    
-$(".fa-bars").on("click", function(){
-  //Displaying the handburger drop down
-    $(this).toggleClass("fa-x");
-    $(".handBurger_menu_dropdown").toggleClass("show_hand_burger");
-});
+
 //Displaying the FLIGHT AND TERMINAL INFORMATION DROP DOWN
 $(".flight_btn").on("click", function(){
   $(".flight_drop_down1").toggleClass("show_flight_cont");

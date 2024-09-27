@@ -14,6 +14,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" />
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .offcanvas-body a{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
+      color: #08083b;
+      font-size: 1.4rem;
+      
+    }
+
+    .offcanvas-body li{
+      margin-top: 1rem;
+    }
+   
+
+  </style>
 </head>
 <body class="scroll_bar">
 
@@ -42,25 +58,26 @@
                   <P>Liberia</P>
                   <img src="./Images/liberia-flag-icon.png" class="Liberia_flag_icon" alt="Liberia Flag Icon">
                 </div>
-
-                <div class="hand_burger_menu"><i class="fa-solid  fa-bars"></i>
-                  <ul class="handBurger_menu_dropdown">
-                    <li class="flight_btn"><h3>Flights</h3>
-                      <ol class="flight_drop_down1">
+                <!-- the offcanvas navigation -->
+                <div class="hand_burger_menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid  fa-bars"></i>
+          
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasTopLabel"></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <ul>
                         <li><a href="/flight-status">Flight Status</a></li>
-                         <li><a href="/flight_info">Flight Information</a></li>
-                      </ol>
-                    </li>
-                    <li class="terminal_info_btn"><a href="#"><h3>Terminal Information</h3></a>
-                      <ol class="terminal_drop_down1">
+                        <li><a href="/flight_info">Flight Information</a></li>
                         <li><a href="/faqs">FAQs</a></li>
                         <li><a href="/about">About Us</a></li>
                         <li><a href="/newsroom">Newsroom</a></li>
-                      </ol>
-                    </li>
-                    <li><a href="/parking_transport"><h3>Parking and Transport</h3></a></li>
-                    <li><a href="/visit_monrovia"><h3>Visit Monrovia</h3> </a></li>
-                  </ul>
+                        <li><a href="/parking_transport">Parking and Transport</a></li>
+                        <li><a href="/visit_monrovia">Visit Monrovia</a></li>
+                      </ul>
+                    </div>
+                  </div>
                   
                 </div>
               </div>
