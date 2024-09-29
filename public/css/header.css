@@ -5624,6 +5624,11 @@ display: flex;
 }
 
 /*Footer section Ends Here*********************************************/
+/* ********************************************************************************************* */
+.pravicy_cookies_content_container{
+    margin-top: 25%;
+  }
+  /* ************************************************************************************************8 */
 
 }
 
@@ -6598,7 +6603,11 @@ font-size: 0.8rem;
 display: flex;
 position: relative;
 }
-
+/* ********************************************************************************************* */
+.pravicy_cookies_content_container{
+    margin-top: 26%;
+  }
+  
      }
     
 
@@ -8382,6 +8391,12 @@ flex-direction: column;
     height: 60%;
 }
 /* Destination Page Ends Here*/
+
+/* ********************************************************************************************* */
+.pravicy_cookies_content_container{
+   position: relative;
+   top: 4rem;
+  }
     }   
 
      /*END OF LANDING PAGE Media QUERY*/
