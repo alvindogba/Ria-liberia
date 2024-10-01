@@ -1,1 +1,214 @@
-<h1>No content to display</h1>
+<%- include("partials/header") %>
+<style>
+    #faq_margin{
+       
+     padding: 2rem;
+     margin-top: 20%;
+
+    }
+</style>
+<main id="faq_margin">
+
+    <div class="pagetitle">
+      <h1>Frequently Asked Questions</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Frequently Asked Questions</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section faq">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card basic">
+            <div class="card-body">
+              <h5 class="card-title">General Information</h5>
+
+              <div>
+                <h6>1. What time should I arrive at the airport before my flight?</h6>
+                <p>We recommend arriving at least 2 hours before a domestic flight and 3 hours before an international flight to allow enough time for check-in, security, and boarding.</p>
+              </div>
+
+              <div class="pt-2">
+                <h6>2. Where can I park my car, and what are the rates?</h6>
+                <p>Our airport offers both short-term and long-term parking options. Rates start at $5 per hour for short-term and $15 per day for long-term parking. Visit our <a href="/parking">Parking Information</a> page for more details.</p>
+              </div>
+
+              <div class="pt-2">
+                <h6>3. How can I find out if my flight is delayed?</h6>
+                <p>You can check real-time flight status updates on our website’s <a href="/flight-status">Flight Status</a> page or through the airline’s mobile app. Notifications are also available at the airport via information screens.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- F.A.Q Group 1 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Baggage and Security</h5>
+
+              <div class="accordion accordion-flush" id="faq-group-1">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-1" type="button" data-bs-toggle="collapse">
+                      What are the baggage allowance rules?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      Baggage allowances vary by airline and ticket type. Generally, most airlines allow one carry-on bag and one personal item for free. Checked luggage policies depend on the airline. We recommend checking with your airline for specific rules.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-2" type="button" data-bs-toggle="collapse">
+                      What items are prohibited in carry-on luggage?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      Liquids over 100ml, sharp objects, firearms, and flammable materials are prohibited in carry-on luggage. Please review the full list of prohibited items on our <a href="/security-guidelines">Security Guidelines</a> page for more details.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsOne-3" type="button" data-bs-toggle="collapse">
+                      How long does it take to go through security?
+                    </button>
+                  </h2>
+                  <div id="faqsOne-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-1">
+                    <div class="accordion-body">
+                      Security screening times vary depending on the time of day and number of travelers. During peak hours, it can take up to 30 minutes. We recommend arriving early to allow sufficient time for security checks.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div><!-- End F.A.Q Group 1 -->
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <!-- F.A.Q Group 2 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Services and Amenities</h5>
+
+              <div class="accordion accordion-flush" id="faq-group-2">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsTwo-1" type="button" data-bs-toggle="collapse">
+                      Is there free Wi-Fi available at the airport?
+                    </button>
+                  </h2>
+                  <div id="faqsTwo-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-2">
+                    <div class="accordion-body">
+                      Yes, free Wi-Fi is available throughout the airport. Simply connect to the "Airport Free Wi-Fi" network and follow the on-screen instructions to get online.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsTwo-2" type="button" data-bs-toggle="collapse">
+                      Are there any restaurants or cafes in the terminal?
+                    </button>
+                  </h2>
+                  <div id="faqsTwo-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-2">
+                    <div class="accordion-body">
+                      Yes, we have a variety of dining options, including cafes, fast food, and sit-down restaurants. You can explore our <a href="/dining-options">Dining Guide</a> for a full list of available eateries and their locations.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsTwo-3" type="button" data-bs-toggle="collapse">
+                      Where can I charge my electronic devices?
+                    </button>
+                  </h2>
+                  <div id="faqsTwo-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-2">
+                    <div class="accordion-body">
+                      Charging stations are located throughout the terminal, near seating areas and boarding gates. You can easily spot them by looking for the charging symbols.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div><!-- End F.A.Q Group 2 -->
+
+          <!-- F.A.Q Group 3 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Lost and Found</h5>
+
+              <div class="accordion accordion-flush" id="faq-group-3">
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsThree-1" type="button" data-bs-toggle="collapse">
+                      I lost an item at the airport. What should I do?
+                    </button>
+                  </h2>
+                  <div id="faqsThree-1" class="accordion-collapse collapse" data-bs-parent="#faq-group-3">
+                    <div class="accordion-body">
+                      If you’ve lost an item, please contact our Lost and Found office located near the baggage claim area or visit our <a href="/lost-and-found">Lost and Found</a> page to report a missing item. Our team will assist you in locating your lost belongings.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsThree-2" type="button" data-bs-toggle="collapse">
+                      How long are lost items kept at the airport?
+                    </button>
+                  </h2>
+                  <div id="faqsThree-2" class="accordion-collapse collapse" data-bs-parent="#faq-group-3">
+                    <div class="accordion-body">
+                      Lost items are kept for up to 90 days. After this period, unclaimed items are either donated or disposed of according to airport policy. We encourage you to report your lost item as soon as possible.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" data-bs-target="#faqsThree-3" type="button" data-bs-toggle="collapse">
+                      Can I recover items lost on the plane?
+                    </button>
+                  </h2>
+                  <div id="faqsThree-3" class="accordion-collapse collapse" data-bs-parent="#faq-group-3">
+                    <div class="accordion-body">
+                      If you’ve lost an item on the plane, please contact your airline’s customer service. Airlines have separate lost and found services for items left onboard.
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div><!-- End F.A.Q Group 3 -->
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+<%- include("partials/footer") %>
