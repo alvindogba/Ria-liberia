@@ -1017,51 +1017,18 @@ width: 100%;
     align-items: center;
     color: var(--white);
     overflow-x: hidden;
-    /* visibility: hidden;
-    opacity: 0;
-    transform: translateX(-100px) */
     
-}
-
-.subscribe_to_newsletter_container.animateSubscribe {
-    /* visibility: visible;
-    opacity: 1;
-    transition: transform 1s, opacity 1s;
-    transform: translateX(0px); */
 }
 
 
 .subscribe_to_newsletter_div{
- line-height: 1.8;
- text-align: center;
- /* transform: translateY(50px);
- opacity: 0;
- visibility: hidden; */
-}
-/*Animating the Subscribe to NewsLetter Children */
-.subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_to_newsletter_div){
-    /* transform: translateY(0px);
-    opacity: 1;
-    visibility: visible;
-    transition: transform 1s ease 0.5s, opacity 1s ease 0.5s; */
-}
-/* End of the Animation on  the Subscribe to NewsLetter Children */
-.subscribe_label{
-    font-weight: 500;
-    word-spacing: 0.4rem;
-}
+    line-height: 1.2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+   }
 
-.subscribe_form {
-     /* opacity: 0;
-    transform: skew(50deg); */
-
-}
-.subscribe_to_newsletter_container.animateSubscribe :is(.subscribe_form){
-    /* opacity: 1;
-    transform: skew(0deg);
-    transition: opacity 1.5s ease 1.5s, transform 1.5s ease 1.5s; */
-   
-}
 
 .subscribe_form > input{
 width: 250px;
@@ -1082,10 +1049,21 @@ outline: none;
  border-top-right-radius: .2rem;
  border-bottom-right-radius: .2rem;
  position: relative;
- right: 5px;
-
+ right: 4px;
+ bottom: 1px;
+ border-top-left-radius: 0;
+ border-bottom-left-radius: 0;
 }
 
+.subscribe_form > button:hover{
+    background: var(--white);
+    color: var(--blue);
+   }
+
+   .subscribe_form > button:active{
+    background: var(--white);
+    color: var(--blue);
+   }
 
 /*The Fight Status page styling starts here*/
 
@@ -2196,7 +2174,7 @@ flex-direction: column;
 /*The airport section styling starts here*/
 
 .airport_contact_sec_one{
-    width: 100vw;
+    width: 100%;
     height: 96vh;
     display: flex;
     align-items: center;
@@ -2208,7 +2186,7 @@ flex-direction: column;
 
 .airport_contact_form_contaner1{
     width: 50vw;
-    height: 76vh;
+    height: max-content;
     display: flex;
     
     align-items: center;
@@ -2218,7 +2196,7 @@ flex-direction: column;
 
 .airport_contact_form_contaner2{
     width: 50vw;
-    height: 76vh;
+    height: max-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2835,78 +2813,7 @@ flex-direction: column;
 /*The cards section of the business opportunity page ends here*/
 
 /*The Business Opportunity page styling ends here*/
- 
-/*BEGAINING of the terms_of_use page hero Section styling*/
-.terms_of_use_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-image: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.terms_of_use_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--herobg);
-}
-
-#terms_of_use_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--roboto);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the terms_of_use page hero Section styling*/
-
-/*The red div after the hero section styling starts here*/
-.home_terms_of_use{
-    height: 8vh;
-    width: 100vw;
-    background: var(--red);
-}
-
-.home_terms_of_use_inner{
-    display: flex;
-    height: 8vh;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 6rem;
-}
-
-.home_terms_of_use_inner > h2 .home{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_terms_of_use_inner > h2 .home:hover{
-    color: var(--blue);
-    transition: all 1s ease-in-out;
-}
-
-.home_terms_of_use_span{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.terms_of_use{
-    color: var(--blue);
-    font-size: 1.2rem;
-}
-/*The red div after the hero section styling ends here*/
 /*The starting of the terms_of_use_body_menu link section*/
 
 .terms_of_use_body_menu{
@@ -2972,7 +2879,8 @@ flex-direction: column;
     justify-content: center;
 }
 
-.terms_of_use_body1  .terms_of_use_body1_label_h2{
+.terms_of_use_body1  
+.terms_of_use_body1_label_h2{
     font-size: 3rem;
     color: var(--grayfortext);
     font-family: var(--roboto);
@@ -3025,7 +2933,8 @@ flex-direction: column;
     list-style: disc;
 }
 
-.terms_of_use_document_pdf_link1, .terms_of_use_document_pdf_link2{
+.terms_of_use_document_pdf_link1, 
+.terms_of_use_document_pdf_link2{
     color: var(--blue);
     font-size: 1.2rem;
     font-family: var(--roboto);
@@ -3094,7 +3003,9 @@ flex-direction: column;
     letter-spacing: 1px;
 }
 
-.terms_of_use_body2_menu_items_para, .terms_of_use_body2_menu_items_para1, .terms_of_use_body2_menu_items_para2{
+.terms_of_use_body2_menu_items_para, 
+.terms_of_use_body2_menu_items_para1, 
+.terms_of_use_body2_menu_items_para2{
     font-family: var(--roboto);
     word-spacing: 1px;
     font-size: 17px;
@@ -3106,7 +3017,7 @@ flex-direction: column;
 /*The style for third section ends here*/
 
 .terms_of_use_body3_menu_dos_donts_section{
-    width: 100vw;
+    width: 100%;
     height: max-content;
 }
 
@@ -3135,13 +3046,24 @@ flex-direction: column;
     height: max-content;   
 }
 
-.terms_of_use_dos_container, .terms_of_use_donts_container{
+.terms_of_use_body2_menu_items_para a{
+    color: var(--blue);
+    transition: all .3s ease;
+}
+
+.terms_of_use_body2_menu_items_para a:hover{
+    color: var(--red);
+}
+
+.terms_of_use_dos_container, 
+.terms_of_use_donts_container{
     display: flex;
    flex-direction: column;
    gap: .8rem;
 }
 
-.terms_of_use_label_donts, .terms_of_use_label_dos{
+.terms_of_use_label_donts, 
+.terms_of_use_label_dos{
     font-size: 1.5rem;
     font-family: var(--roboto);
     color: var(--blue);
@@ -3149,7 +3071,8 @@ flex-direction: column;
     letter-spacing: 1px;
 }
 
-.terms_of_use_para1, .terms_of_use_para2{
+.terms_of_use_para1, 
+.terms_of_use_para2{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -4677,11 +4600,11 @@ padding: 0.2rem;
     
     }
     .body_sec p{
-        font-size: 1.7rem;
+        font-size: 1.1rem;
     }
     
     .body_sec h2{
-        font-size: 2.2rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
     }
     

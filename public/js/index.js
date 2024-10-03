@@ -229,7 +229,6 @@ function airLine(entries){
 }
 }
 
-// Js for the box model on the newsletter
 document.addEventListener("DOMContentLoaded", function () {
   const subscribeForm = document.getElementById('subscribeForm');
   const successEmail = document.querySelector('.alert-primary');
