@@ -54,9 +54,7 @@ header{
 .header_1st_section{
     height: max-content;
     width: 100%;
-    display: flex;
-    background-color: var(--white);
-   
+    display: flex;  
 }
 /*displaying the logo div and the search bar div container*/
 
@@ -65,7 +63,6 @@ header{
 .logo_div{
     height: 100%;
     width: 30%;
-   background-color: var(--red);
    display: flex;
     justify-content: center;
     align-items: center;
@@ -163,7 +160,6 @@ header{
     color: var(--red);
 }
 
-
 .email_icon_text{
     display: flex;
     gap: 1rem;
@@ -173,14 +169,15 @@ header{
 .handBurger_menu_dropdown{
     animation: slidUP_nav 1.5s ease;
     display:none;
- }
+}
+
 /*styling the blue nav-bar that has the left side been transparent*/
 .navbar_container{
     height: 100px;
     width: 100vw;
-    display: flex;
-    
+    display: flex;   
 }
+
 /*HAND BURGER MENU ***************************************************/
 .hand_burger_menu{
     display: none;
@@ -188,24 +185,19 @@ header{
 
 .handBurger_menu_dropdown{
     animation: slidup_burger 1s ease;
-    
 }
-
 
 @keyframes slidUp_burger{
     from {transform: translateY(200px)}
     to{transform: translateY(0px);}
 }
 
-
 .transparent_div{
     width: 20%;
-    background: transparent;
 }
 
 /*Styling the blue navigation bar*/
 .blue_navbar_container{
-    background: var(--blue);
     width: 80%;
     height: 13vh;
     /*clip-path: polygon(3% 0, 100% 0, 100% 48%, 100% 100%, 0 100%);*/
@@ -245,14 +237,12 @@ justify-content: center;
 }
 
 .white_line_list{
-    background: var(--white);
     width: .1rem;
     height: 4vh;
 }
 
 .main_link_label{
  position: relative;
-
 }
 
 /*********************************************************/
@@ -267,14 +257,12 @@ justify-content: center;
     to{transform: translateX(0px)}
 }
 
-
 /*KEYFRAMES ANIMATION ENDS*********************************************/
 .dropdown{
     position: absolute;
     top: 3.1rem;
     width: 11rem;
     height: 17vh;
-    background: var(--blue) ;
     display: none;
     opacity: 0;
     z-index: 1;
@@ -317,7 +305,6 @@ justify-content: center;
      
     .dropdown a{
         color: var(--white);
-       font-family: var(--poppin);
     }
     
 
@@ -328,7 +315,6 @@ footer{
     color: var(--white);
     height: 65vh;
     width: 100vw;
-    background: var(--blue);
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
@@ -374,7 +360,6 @@ footer a:hover{
     justify-content: center;
     align-items: left;
     gap: 15px;
-    
 }
 
 .the_airport_link_container{
@@ -437,7 +422,6 @@ footer a:hover{
     justify-content: center;
     align-items: center;
     gap: 15rem;
-    background-color: #0000008f;
 }
 
 .landing_text {
@@ -471,22 +455,21 @@ footer a:hover{
 #second_hero_text {
     font-size: 1.5rem;
     color: var(--white);
-    font-family: monospace;
 }
 
 .find_flight_container {
     width: 300px;
     height: fit-content;
     padding: 10px;
-    background-color: var(--red);
     color: var(--white);
     display: flex;
-    justify-content: space-between;
-   
+    justify-content: space-between; 
 }
+
 .find_flight_container a{
-     font-size: 5%;
+    font-size: 5%;
 }
+
 .find_flight_raidio_container {
     display: flex;
     gap: 3rem;
@@ -504,7 +487,6 @@ footer a:hover{
 .dot {
     height: 15px;
     width: 15px;
-    background-color: #bbbbbb07;
     border: 2px dotted white;
     border-radius: 50%;
     display: inline-block;
@@ -513,7 +495,6 @@ footer a:hover{
 }
 
 .active {
-    background-color: var(--white);
     animation: fade 0.5s ease;
 }
 
@@ -523,35 +504,8 @@ footer a:hover{
     to { opacity: 1 }
 }
 
-/*This is the starting of the uparrow on the home section style*/
-
-.up-arrow{
-    
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: var(--red);
-    z-index: 1;
-    position: fixed;
-    top: 550px; 
-    left: 1450px; 
-    border: 2px dotted #070A52;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.up-arrow-a{
-    font-size: 1.8rem;
-    color: var(--white);
-    font-weight: 900;
-}
-/*This is the ending of the uparrow on the home section style*/
-
 .find_ur_flight_drop_down{
-    color: var(--white);
-    background-color: rgba(0, 0, 0, 0.57);
+  color: var(--white);
   line-height: 2rem;
   text-align: left;
   display: none;
@@ -592,13 +546,12 @@ transform: rotate(180deg);
 .new_website_container{
     height: 100vh;
     width: 100vw;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-    
+    padding-top: 2rem;
 }
 
 .new_web_site_text{
@@ -608,6 +561,7 @@ transform: rotate(180deg);
 
 .new_web_site_text > h2{
     color: var(--red);
+    padding-top: 2rem;
 }
 
 /*New web site grid style*/
@@ -634,7 +588,6 @@ transform: rotate(180deg);
     
     font-size: 1.5em;
     font-weight: 800;
-    font-family: monospace;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -666,7 +619,6 @@ transform: rotate(180deg);
  .lates_news_in_monrovia_master_container{
     height: max-content;
     width: 100vw;
-    background-color: var(--gray);
     display: flex;
     gap: 2rem;
     padding: 15px;
@@ -680,7 +632,6 @@ transform: rotate(180deg);
     width: 40%;
     height: max-content;
     color: var(--white);
-    background-color: var(--red);
     text-align: center;
     transform: translateY(100px);
     transition: transform 0.5s, opacity 0.5s;
@@ -753,7 +704,6 @@ transform: rotate(180deg);
  }
 
  .flight_today_h3{
-     font-family: var(--poppin);
      font-size: 2rem;
      font-weight: 800;
  }
@@ -764,7 +714,6 @@ transform: rotate(180deg);
 .latest_news_in_monrovia_container{
     width: 65%;
     height: max-content;
-    background: var(--gray);
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -830,7 +779,6 @@ transform: rotate(180deg);
 }
 
 .right_angle_div:hover{
-    background: var(--blue);
     color: var(--red);
     border: 2px solid #ffffff;
     transition: all .3s ease-in;
@@ -838,7 +786,6 @@ transform: rotate(180deg);
 }
 
 .left_angle_div:hover{
-    background: var(--blue);
     color: var(--red);
     border: 2px solid #ffffff;
     transition: all .3s ease-in;
@@ -911,7 +858,6 @@ width: 100%;
 
 }
 .readmore_btn{
-    background-color: var(--blue);
     padding: 5px 1.2rem;
     position: relative;
     top: -2rem;
@@ -998,18 +944,11 @@ width: 100%;
     width:100%;
 }
 
-
-
-
 /*The subscribe to the newsletter section*/
 
 .subscribe_to_newsletter_container{
-    background: linear-gradient(180deg, rgba(21,86,186,1) 0%, rgba(9, 12, 10, 0.284) 36%, rgba(255,29,0,0.8492647058823529) 100%), url(../Images/subscribe-plane.jpg);
     width: 100vw;
     height: 50vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -1020,7 +959,6 @@ width: 100%;
     
 }
 
-
 .subscribe_to_newsletter_div{
     line-height: 1.2;
     text-align: center;
@@ -1028,7 +966,6 @@ width: 100%;
     flex-direction: column;
     gap: 2rem;
    }
-
 
 .subscribe_form > input{
 width: 250px;
@@ -1043,7 +980,6 @@ outline: none;
 .subscribe_form > button{
  padding: 10px;
  border: none;
- background: var(--blue);
  color: var(--white);
  font-weight: 600;
  border-top-right-radius: .2rem;
@@ -1056,55 +992,18 @@ outline: none;
 }
 
 .subscribe_form > button:hover{
-    background: var(--white);
     color: var(--blue);
    }
 
    .subscribe_form > button:active{
-    background: var(--white);
     color: var(--blue);
    }
 
 /*The Fight Status page styling starts here*/
 
-/*BEGAINING of the flight status page hero Section styling*/
-.flight_status_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-image: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.flight_status_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--herobg);
-}
-
-#flight_status_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--poppin);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the flight status page hero Section styling*/
-
 .home_flight_status{
     height: 8vh;
-    width: 100vw;
-    background: var(--red);
+    width: 100%;
 }
 
 .home_flight_status_inner{
@@ -1140,7 +1039,6 @@ outline: none;
 
 .flight_search_label{
     color: var(--red);
-    font-family: var(--poppin);
     font-weight: 900;
     font-size: 1.8rem;
     white-space: .4rem;
@@ -1148,7 +1046,6 @@ outline: none;
 
 .flight_search_text{
     color: #7b7b7bc0;
-    font-family: var(--poppin);
     white-space: .4rem;
 }
 /*The portion of the search flight on the flight status page styling ends here*/
@@ -1214,7 +1111,6 @@ outline: none;
     width: 80%;
     align-items: center;
     justify-content: center;
-    background: var(--gray);
     height: 8vh;
     border-radius: 2rem;
 }
@@ -1223,7 +1119,6 @@ outline: none;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: var(--gray);
     border-radius: 2rem;
 }
 
@@ -1235,7 +1130,6 @@ outline: none;
     border-radius: 2rem;
     align-items: center;
     color: var(--white);
-    background: var(--blue);
 }
 
 .departure{
@@ -1257,7 +1151,6 @@ outline: none;
 }
 
 .table {
-    font-family: sans-serif;
     border-collapse: collapse;
     font-size: .8rem;
     width: 100%;
@@ -1303,86 +1196,11 @@ outline: none;
 
 /*The Airline Information page styling starts here*/
 
-/*BEGAINING of the Airline Information page hero Section styling*/
-.Airline_Information_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.Airline_Information_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--herobg);
-}
-
-#Airline_Information_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--poppin);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the Airline_Information page hero Section styling*/
-
-.home_Airline_Information{
-    height: 8vh;
-    width: 100vw;
-    background: var(--red);
-}
-
-.home_Airline_Information_inner{
-    display: flex;
-    height: 8vh;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 6rem;
-}
-
-.home_Airline_Information_inner > h2 a{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_Airline_Information_span{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_Airline_Information_inner > h2  a:hover{
-    color: var(--blue);
-    transition: all 1s ease-in-out;
-}
-
-.home_Airline_Information_inner > h2 .Airline_Information{
-    color: var(--blue);
-    font-size: 1.2rem;
-}
-
-
 /*The static tabel on the Airline_Information page styling starts here*/
 
 .airline_information_serve_table{
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.911) 99%), url(../Images/bgfrotable.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .airline_information_serve{
@@ -1392,20 +1210,17 @@ outline: none;
     flex-direction: column;
     gap: .6rem;
     justify-content: center;
-    background: transparent;
     margin-left: 20rem;
 }
 
 .airline_information_label{
     color: var(--red);
     font-size: 1.7rem;
-    font-family: var(--poppin);
 }
 
 .airline_information_text{
     color: var(--grayfortext);
-    font-size: 1.1rem;
-    font-family: var(--poppin);  
+    font-size: 1.1rem;  
     line-height: 1.6rem;
 }
 
@@ -1418,7 +1233,6 @@ outline: none;
 .airline_information_table_container{
     width: 60%;
     height: 62vh;
-    background: var(--white); 
     box-shadow: 2px 2px 16px 0px rgba(184, 158, 184, 1);
     border-radius: .6rem;
     
@@ -1460,74 +1274,6 @@ outline: none;
     margin-left: 3rem;
     gap: 0px;
 }
-
-.white{
-    background: white;
-     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid #cdcdcd;
-    border-top: 2px solid #cdcdcd;
-    margin-bottom: 1rem;
-}
-
-.black{
-    background: var(--white);
-     height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    border-bottom: 2px solid #cdcdcd;
-    border-top: 2px solid #cdcdcd;
-    margin-bottom: 1rem;
-}
-
-.table_head{
-    font-size: 1.2rem;
-}
-
-.text-size{
- font-size: 1rem;
-}
-
-.gray{
-    background: #f4f3f3; 
-    height: 40px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.data_white{
-    background: white; 
-    height: 70px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.table-airline-logo-static{
-    width: 110px; 
-}
-
-.one-large{
-    width: 80px;
-}
-
-.website_link_width{
-    width: 370px;
-}
-
-.code_width {
-    width: 121px; 
-}
-
-.img_div_size{
-   width: 253px;
-}
-
-
 
 /*The static table on the Airline Information page styling ends here*/
 
@@ -1583,10 +1329,6 @@ outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .FAQ__hero_article{
@@ -1595,7 +1337,6 @@ outline: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--herobg);
 }
 
 .FAQ_text_container{
@@ -1603,24 +1344,19 @@ outline: none;
     color: var(--white);
     letter-spacing: .2rem;
     word-spacing: .3rem;
-    font-family: var(--poppin);
     font-weight: 700;
     margin-top: 10rem;
 }
-
 
 .FAQ_main_container{
     height: max-content;
     width: 100%;
     padding: 50px;
-    background-color: rgb(251, 251, 251);
     display: flex;
     gap: 2.5rem;
     flex-direction: column;
     justify-content: space-evenly;
     transition: 0.5s ease;
-
-    
 }
 
 .faq_section1{
@@ -1658,10 +1394,6 @@ flex-direction: column;
 justify-content: center;
 gap: 150px;
 align-items: center;
-background-image: url(../Images/brussels.jpg);
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
 text-align: center;
 line-height: 1.5;
 
@@ -1676,14 +1408,12 @@ line-height: 1.5;
 #second_hero_text{
     font-size: 1.5rem;
     color: var(--white);
-    font-family: monospace;
 }
 
 .find_flight_container{
     width: 300px;
     height: fit-content;
     padding: 10px 10px 10px 10px;
-    background-color: #ff5a3c;
     color: var(--white);
     display: flex;
     justify-content: space-between;
@@ -1694,7 +1424,6 @@ line-height: 1.5;
 /*Home parking*/
 
 .home_parking{
-    background-color: var(--red);
     color: var(--white);
     height: 8vh;
     display: flex;
@@ -1742,7 +1471,6 @@ font-size: 1.9rem;
 /*BUTTON*/
 
 .btm button{
-    background-color: #D21312;
     border-color: #D21312;
     color: #fff;
     width: 10%;
@@ -1804,7 +1532,6 @@ font-size: 1.9rem;
 
 
 .faq_text_and_search_container h2{
-    font-family: var(--poppin);
     color: var(--red);
 }
 .faq_input{
@@ -1857,7 +1584,6 @@ font-size: 1.9rem;
 .answer{
     height: 3.5rem;
     width: 45%;
-    background-color: var(--white);
     overflow: hidden;
     display: none;
     transition: 1s ease;
@@ -1996,18 +1722,12 @@ font-size: 1.9rem;
 }
 
 .liberia_content > .btm{
-    background: #070A52;
     border: none;
-  margin: 20px;
-  padding: 10px;
+    margin: 20px;
+    padding: 10px;
 }
-.liberia_content > .btm:hover{
-    background: rgb(164, 163, 163);
-}
-
 
 /* Show More Section Ending *****************************************/
-
 
 /* OTHERS BEACHES NEAR RIA ****************************************88/
 
@@ -2065,7 +1785,6 @@ flex-direction: column;
 /*BUTTON*/
 
 .btm button{
-    background-color: #D21312;
     border-color: #D21312;
     color: #fff;
     width: 10%;
@@ -2077,7 +1796,6 @@ flex-direction: column;
 }
 
 .btm button:hover{
-    background: grey;
     border-color: grey;
 }
 
@@ -2098,79 +1816,6 @@ flex-direction: column;
 
 /*The Contact page styling starts here*/
 
-
-
-/*BEGAINING of the contact page hero Section styling*/
-.contact_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    background-image: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.contact_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--herobg);
-}
-
-#contact_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--poppin);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the Contact page hero Section styling*/
-
-.home_contact{
-    height: 8vh;
-    width: 100vw;
-    background: var(--red);
-}
-
-.home_contact_inner{
-    display: flex;
-    height: 8vh;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 6rem;
-}
-
-.home_contact_inner > h2 .home{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_contact_inner > h2 .home:hover{
-    color: var(--blue);
-    transition: all 1s ease-in-out;
-}
-
-.home_contact_span{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.contact{
-    color: var(--blue);
-    font-size: 1.2rem;
-}
-
-
 /*The airport section styling starts here*/
 
 .airport_contact_sec_one{
@@ -2178,10 +1823,6 @@ flex-direction: column;
     height: 96vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.826) 0%, rgba(255, 255, 255, 0.977) 50%, rgb(255, 255, 255) 99%), url(../Images/bg1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .airport_contact_form_contaner1{
@@ -2316,7 +1957,6 @@ flex-direction: column;
 .name_input, .email_input, .subject_input {
     width: 20rem;
     height: 2.6rem;
-    background: #F5F5F5;
     outline: none;
     border: none;
     border-radius: .2rem;
@@ -2330,7 +1970,6 @@ flex-direction: column;
 
 .textarea_input{
     width: 20rem;
-    background: #F5F5F5;
     outline: none;
     border: none;
     border-radius: .2rem;
@@ -2352,13 +1991,11 @@ flex-direction: column;
     font-size: 1.2rem;
     font-weight: 800;
     cursor: pointer;
-    background: var(--blue);
     color: var(--white);
 }
 
 .contact_page_submit_btn:hover{
     transition: all .5s ease;
-    background: var(--red);
     color: var(--black);
 }
 
@@ -2391,12 +2028,11 @@ flex-direction: column;
 .newsroom_master_container{
     height: fit-content;
     width: 100%;
-    background-color: rgb(237, 235, 218);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
     padding: 30px;
 }
 
@@ -2404,16 +2040,17 @@ flex-direction: column;
    height: 30rem;
    width: 100%;
 }
+
 .newsroom_section1{
     height: max-content;
     width: 95%;
-    background-color: var(--white);
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
 }
+
 .newsroom_sect1_parent_article_container{
  display: flex;
  width: 100%;
@@ -2424,33 +2061,26 @@ flex-direction: column;
 .newsroom_section1_content{
     font-size: 1.5rem;
     line-height: 1.5;
-
-    
 }
-
 
 /*section 2*/
 
 .newsroom_section2{
     height: max-content;
     width: 95%;
-    background-color: white;
     padding: 24px;
 }
 
 .article_container{
     width: 100%;
     display: flex;
-    gap: 2rem;
-
-    
+    gap: 2rem;    
 }
 
 .card_container{
     width: 60%;
     display: flex;
     justify-content: space-between;
-    
 }
 
 #releases_img{
@@ -2481,7 +2111,6 @@ flex-direction: column;
 .releases_btn{
     padding: 0.5em 1.2em;
     width: max-content;
-    background-color: var(--red);
     color: var(--white)
 }
 
@@ -2489,10 +2118,7 @@ flex-direction: column;
 .article2_more_stories_grid_container{
     height: 100%;
     width: 40%;
-    background-color: rgb(237, 235, 218);
     margin-top: 2rem;
-    
-
 }
 
 /* Coloring the News room page*/
@@ -2520,7 +2146,6 @@ flex-direction: column;
     height: max-content;
     width: 100%;
     padding: 0px;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -2536,7 +2161,6 @@ flex-direction: column;
 .services_hero_container h1{
     margin-top: 17rem;
     font-size: 2.5rem;
-    font-family: var(--poppin);
     color: var(--blue);
 }
 
@@ -2581,7 +2205,6 @@ flex-direction: column;
 
 .services_content_container h2{
     font-weight: 900;
-    font-family: var(--poppin);
     color: var(--blue);
     text-decoration: underline;
 }
@@ -2598,7 +2221,6 @@ flex-direction: column;
 .services_list a{
     font-size: 1.15rem;
     font-weight: 850;
-    font-family: var(--poppin);
     color: var(--blue);
     transition: 0.2s ease-in-out;
 
@@ -2639,10 +2261,6 @@ flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center; 
-    background-image: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .business_opportunity_hero_div{
@@ -2651,15 +2269,13 @@ flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--herobg);
 }
 
 #business_opportunity_hero_text{
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--white);
     letter-spacing: .2rem;
     word-spacing: .3rem;
-    font-family: var(--poppin);
     font-weight: 700;
     margin-top: 10rem;
 }
@@ -2667,31 +2283,6 @@ flex-direction: column;
 /*ENDING of the Contact page hero Section styling*/
 
 /*The red div after the hero section styling starts here*/
-.home_business_opportunity{
-    height: 8vh;
-    width: 100vw;
-    background: var(--red);
-}
-
-.home_business_opportunity_inner{
-    display: flex;
-    height: 8vh;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 6rem;
-}
-
-.home_business_opportunity_inner > h2 .home{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_business_opportunity_inner > h2 .home:hover{
-    color: var(--blue);
-    transition: all 1s ease-in-out;
-}
-
 .home_business_opportunity_span{
     color: var(--white);
     font-size: 1.2rem;
@@ -2707,7 +2298,6 @@ flex-direction: column;
 /*The cards section of the business opportunity page starts here*/
 
 .busOppor_label_text_cards_container{
-    background: var(--white);
     height: 152vh;
     width: 100vw;
     display: flex;
@@ -2719,14 +2309,13 @@ flex-direction: column;
     color: var(--red);
     font-weight: 600;
     font-size: 1.2rem;
-    font-family: var(--roboto);
 }
 
 .busOppor_text_div > h2{
      color: var(--grayfortext);
      font-weight: 400;
      font-size: 2rem;
-     font-family: var(--roboto);
+
 }
 
 .busOppor_label_text_inner_cont1{
@@ -2756,7 +2345,6 @@ flex-direction: column;
     width: 0%;
     height: 2px;
     border-radius: 2rem;
-    background-color: var(--red);
     transition: all .3s ease-in-out;
 }
 
@@ -2786,7 +2374,6 @@ flex-direction: column;
 
 .busOppor_card_h3{
     color: var(--red);
-    font-family: var(--roboto);
     font-size: 1.6rem;
     font-weight: 400;
 }
@@ -2794,7 +2381,6 @@ flex-direction: column;
 
 .busOppor_card_1st_para{
     color: var(--grayfortext);
-    font-family: var(--roboto);
     font-size: 1.1rem;
     line-height: 1.5rem; 
     font-weight: 500;
@@ -2802,7 +2388,6 @@ flex-direction: column;
 
 .busOppor_card_2nd_para{
     color: var(--grayfortext);
-    font-family: var(--poppin);
     font-size: 1.1rem;
     font-weight: 500;
     margin-top: 1rem;
@@ -2819,7 +2404,6 @@ flex-direction: column;
 .terms_of_use_body_menu{
     width: 100vw;
     height: 14vh;
-    background-color: var(--gray);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2838,7 +2422,6 @@ flex-direction: column;
     color: var(--blue);
     font-size: 1.3rem;
     font-weight: 900;
-    font-family: var(--roboto);
     opacity: .3;
 }
 
@@ -2883,7 +2466,6 @@ flex-direction: column;
 .terms_of_use_body1_label_h2{
     font-size: 3rem;
     color: var(--grayfortext);
-    font-family: var(--roboto);
     opacity: .5;
     word-spacing: 5px;
 }
@@ -2902,7 +2484,6 @@ flex-direction: column;
 
 .term_of_use_services_filicity_h3{
     font-size: 1.5rem;
-    font-family: var(--roboto);
     color: var(--grayfortext);
     opacity: .5;
     word-spacing: 3px;
@@ -2937,7 +2518,6 @@ flex-direction: column;
 .terms_of_use_document_pdf_link2{
     color: var(--blue);
     font-size: 1.2rem;
-    font-family: var(--roboto);
     font-weight: 600;
     transition: all ease-out .3s;
 }
@@ -2972,7 +2552,6 @@ flex-direction: column;
 .terms_of_access_label{
     font-size: 3rem;
     color: var(--grayfortext);
-    font-family: var(--roboto);
     opacity: .5;
     word-spacing: 5px;
 }
@@ -2997,7 +2576,6 @@ flex-direction: column;
 
 .terms_of_use_body2_menu_items_h3{
     font-size: 1.5rem;
-    font-family: var(--roboto);
     color: var(--blue);
     word-spacing: 3px;
     letter-spacing: 1px;
@@ -3006,7 +2584,6 @@ flex-direction: column;
 .terms_of_use_body2_menu_items_para, 
 .terms_of_use_body2_menu_items_para1, 
 .terms_of_use_body2_menu_items_para2{
-    font-family: var(--roboto);
     word-spacing: 1px;
     font-size: 17px;
 }
@@ -3032,7 +2609,6 @@ flex-direction: column;
 .dos_nons_label_h2{
     font-size: 3rem;
     color: var(--grayfortext);
-    font-family: var(--roboto);
     opacity: .5;
     word-spacing: 5px; 
 }
@@ -3065,7 +2641,6 @@ flex-direction: column;
 .terms_of_use_label_donts, 
 .terms_of_use_label_dos{
     font-size: 1.5rem;
-    font-family: var(--roboto);
     color: var(--blue);
     word-spacing: 3px;
     letter-spacing: 1px;
@@ -3094,7 +2669,6 @@ footer{
     color: var(--white);
     height: 80vh;
     width: 100vw;
-    background: var(--blue);
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
@@ -3203,8 +2777,8 @@ footer a:hover{
 /*Begaining of the Things To Know page *************************************************************/
 #carouselExample{
 position: relative;
-
 }
+
 .country_visa{
 height: 100%;
 width: 100%;
@@ -3213,17 +2787,14 @@ display: flex;
 justify-content: center;
 align-items: center;
 color: white;
-background-color: #00000073;
 font-size: 3rem;
 font-weight: 900;
-
 }
 
 /*List of the things user should know*/
 .things_to_know_master_section{
     height: max-content;
     width: 100%;
-    background-color: whitesmoke;
     display: block;
     text-align: center;
     padding: 30px;
@@ -3244,7 +2815,6 @@ font-weight: 900;
     border: none;
     outline:none;
     border-radius: 20px;
-    background-color: white;
 }
 
 
@@ -3253,7 +2823,6 @@ font-weight: 900;
     display: flex;
     gap: 15px;
     grid-column: span 2;
-    background-color: white;
 }
 .things_image_container1{
     width: 60%;
@@ -3277,13 +2846,13 @@ font-weight: 900;
 /*The second things card Starts Here****************************************************/
 .things_card2{
     display: block;
-    background-color: white;
-
 }
+
 .things_image_container2{
     width: 100%;
     height: 45%;
 }
+
 .things_image_container2 img{
     width: 100%;
     height: 100%;
@@ -3299,20 +2868,18 @@ font-weight: 900;
     align-items: center;
     text-align: left;
     padding: 15px;
-    
-
 }
+
 .things_btn2{
     width: fit-content;
 }
-/*The Second things card Ends Here****************************************************/
 
+/*The Second things card Ends Here****************************************************/
 
 /*The Third things card Starts Here****************************************************/
 
 .things_card3{ 
     display: block;
-    background-color: white;
 }
 .things_image_container3{
     width: 100%;
@@ -3348,8 +2915,8 @@ font-weight: 900;
 
 .things_card4{ 
     display: block;
-    background-color: white;
 }
+
 .things_image_container4{
     width: 100%;
     height: 45%;
@@ -3381,24 +2948,20 @@ font-weight: 900;
 /*The fifth things CARDS Starts here***********************/
 .things_card5{
      grid-row: span 2;
-     background-color: white;
      display: flex;
      flex-direction: column;
      gap: 20px;
-
-     
     }
 
     .things_image_container5{
         width: 100%;
         height: 40%;
-       
     }
+
     .things_image_container5 img{
         width: 100%;
         height: 100%;
         border-radius: 10px;
-    
     }
     
     .things_content_container5{
@@ -3411,6 +2974,7 @@ font-weight: 900;
         padding: 0px 15px;
     
     }
+
     .things_btn5{
         width: fit-content;
     }
@@ -3419,12 +2983,13 @@ font-weight: 900;
 /*The Sixth things CARDS Starts here***********************/
 .things_card6{ 
     display: block;
-    background-color: white;
 }
+
 .things_image_container6{
     width: 100%;
     height: 45%;
 }
+
 .things_image_container6 img{
     width: 100%;
     height: 100%;
@@ -3440,9 +3005,8 @@ font-weight: 900;
     align-items: center;
     text-align: left;
     padding: 15px;
-    
-
 }
+
 .things_btn6{
     width: fit-content;
 }
@@ -3455,12 +3019,13 @@ font-weight: 900;
 
 .things_card7{ 
     display: block;
-    background-color: white;
 }
+
 .things_image_container7{
     width: 100%;
     height: 45%;
 }
+
 .things_image_container7 img{
     width: 100%;
     height: 100%;
@@ -3476,9 +3041,8 @@ font-weight: 900;
     align-items: center;
     text-align: left;
     padding: 15px;
-    
-
 }
+
 .things_btn7{
     width: fit-content;
 }
@@ -3491,8 +3055,6 @@ font-weight: 900;
 #destination_main_container{
     height: max-content;
     width: 100%;
-    background-color: whitesmoke;
-    
 }
 
 .destination_hero_section_text_container{
@@ -3508,11 +3070,6 @@ font-weight: 900;
 #insperation{
     color: var(--blue);
     font-weight: 700;
-    font-family: var(--poppin);
-}
-
-#insp{
-    color: orangered;
 }
 
 .destination_hero_section{
@@ -3546,19 +3103,17 @@ font-weight: 900;
 #our_trending_destination_container{
     height: max-content;
     width: 100%;
-    background-color: var(--white);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.8fr 0.8fr;
     gap: 20px;
     padding: 24px;
-    
- 
 }
 
 .card-img-top{
     height: 60%;
 }
+
 /* Destination Page Ends Here*/
 
 /*The advertising page styling starts here*/
@@ -3576,10 +3131,8 @@ font-weight: 900;
     justify-content: center;
     align-items: center;
     gap: 15rem;
-    background-color: #0000008f;
-    
-    
-    }
+}
+
     .advertise_CTA_section_text{
         position: relative;
         top: 9em;
@@ -3592,24 +3145,22 @@ font-weight: 900;
         z-index: -99;
         image-resolution:var(--black);
     }
+
     .background_image{
       height: 100%;
       width: 100%;
-    
     }
     
     
     #advertise_CTA_section_text{
         font-size: 3rem;
         color: var(--white);
-        text-align: center;
-        
+        text-align: center; 
     }
     
     #second_hero_text{
         font-size: 1.5rem;
         color: var(--white);
-        font-family: monospace;
     }
 /*The CTA section styling starts here*/
 
@@ -3634,7 +3185,6 @@ font-weight: 900;
 }
 
 .advertise_article_main_label{
-    font-family: var(--roboto);
     font-size: 1.8rem;
     color: var(--grayfortext);
 }
@@ -3645,7 +3195,6 @@ font-weight: 900;
 
 .advertise_article_sub_label{
     font-size: 1.3rem;
-    font-family: var(--roboto);
     color: var(--blue);
     word-spacing: 3px;
     letter-spacing: 1px;  
@@ -3659,13 +3208,11 @@ font-weight: 900;
 
 .advertise_article_sub_label_unlist li{
     list-style: disc;
-    font-family: var(--roboto);
     word-spacing: 1px;
     font-size: 17px;
 }
 
 .advertise_article_para p{
-    font-family: var(--roboto);
     word-spacing: 1px;
     font-size: 17px;
     line-height: 2rem;
@@ -3674,7 +3221,6 @@ font-weight: 900;
 .advertise_article_6_para_link{
     text-decoration: underline;
     font-size: 1.2rem;
-    font-family: var(--roboto);
     color: #D21312;
     font-weight: 600;
 }
@@ -3692,13 +3238,11 @@ font-weight: 900;
     height: 44vh;
     width: 90%;
     border-radius: .5rem;
-    background: var(--blue);
     color: var(--white);
     display: flex;
     gap: 2.5rem;
     justify-content: center;
     flex-direction: column;
-    font-family: var(--roboto);
 }
 
 .advertise_div_to_get_in_touch{
@@ -3725,9 +3269,7 @@ font-weight: 900;
 
 .advertise_call_btn_link{
     padding: 18px 40px;
-    background: var(--white);
     font-size: 1.5rem;
-    font-family: var(--roboto);
     font-weight: 600;
     word-spacing: 4px;
     border-radius: 2rem;
@@ -3737,14 +3279,11 @@ font-weight: 900;
 
 .advertise_call_btn_link:hover{
     color: var(--white);
-    background: var(--red);
 }
 
 .advertise_email_btn_link{
     padding: 18px 40px;
-    background: var(--red);
     font-size: 1.5rem;
-    font-family: var(--roboto);
     font-weight: 600;
     word-spacing: 4px;
     border-radius: 2rem;
@@ -3754,9 +3293,7 @@ font-weight: 900;
 
 .advertise_email_btn_link:hover{
     color: var(--blue);
-    background: var(--white);
 }
-
 
 /*The advertising page styling ends here*/
 
@@ -3823,7 +3360,6 @@ font-weight: 900;
     
     .transparent_div{
         width: 22%;
-        background: transparent;
     }
     
     /*Styling the blue navigation bar*/
@@ -4048,90 +3584,9 @@ footer{
 
 /*The styling for the footer ends here*/
 
-
-/* ***************************  The Flight Status Page starts here  */
-
-/* ***************************  The Flight Status Page ends here  */
-
-/* ***************************  The Flight information Page starts here  */
+/* *******  The Flight information Page starts here  */
 
 /*The Airline Information page styling starts here*/
-
-/*BEGAINING of the Airline Information page hero Section styling*/
-.Airline_Information_hero_section{
-    width: 100vw;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(../Images/brussels.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.Airline_Information_hero_div{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--herobg);
-}
-
-#Airline_Information_hero_text{
-    font-size: 4rem;
-    color: var(--white);
-    letter-spacing: .2rem;
-    word-spacing: .3rem;
-    font-family: var(--poppin);
-    font-weight: 700;
-    margin-top: 10rem;
-}
-
-/*ENDING of the Airline_Information page hero Section styling*/
-
-.home_Airline_Information{
-    height: 8vh;
-    width: 100vw;
-    background: var(--red);
-}
-
-.home_Airline_Information_inner{
-    display: flex;
-    height: 8vh;
-    align-items: center;
-    gap: 1rem;
-    margin-left: 6rem;
-}
-
-.home_Airline_Information_inner > h2 a{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_Airline_Information_span{
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: bolder;
-}
-
-.home_Airline_Information_inner > h2  a:hover{
-    color: var(--blue);
-    transition: all 1s ease-in-out;
-}
-
-.home_Airline_Information_inner > h2 .Airline_Information{
-    color: var(--blue);
-    font-size: 1.2rem;
-}
-
-
-/*The static tabel on the Airline_Information page styling starts here*/
-
-
-/*The static table on the Airline Information page styling ends here*/
 
 .destination_serve{
     width: 100vw;
@@ -4177,23 +3632,6 @@ footer{
 }
 
 /*The Airline Information page styling ends here*/
-
-/* ***************************  The Flight information Page Ends here  */
-
-/* ***************************  The Frequently Ask Question Page starts here  */
-/* ***************************  The Frequently Ask Question Page Ends here  */
-
-/* ***************************  The About Us Page starts here  */
-/* ***************************  The About Us Page Ends here */
-
-/* ***************************  The News Room Page starts here  */
-/* ***************************  The News Room Page Ends here  */
-
-/* ***************************  The Parking and Transport starts here  */
-/* ***************************  The Parking and Transport Ends here  */
-
-/* ***************************  The Visit Monrovia starts here  */
-/* ***************************  The Visit Monrovia Ends here  */
 }
 
 
@@ -4254,7 +3692,6 @@ footer{
     gap: 4rem;
     text-align: center;
     font-size: 1.8rem;
-    background-color: #070952cb;
     color: var(--white);
     padding: 24px;
     position: absolute;
@@ -4291,10 +3728,9 @@ footer{
 
 
 .flight_drop_down1 a, .show_ter_info a{
-    color: var(--white);
-    font-family: var(--poppin);
-    
+    color: var(--white);    
 }
+
 .flight_btn{
     line-height: 1.5;
 }
@@ -4322,9 +3758,7 @@ footer{
 .flight_today_container{
     width: 100%;
     height: max-content;
-    background-color: var(--red);
     color: var(--white);
-    
 }
 
 .latest_news_in_monrovia_container{
@@ -4376,7 +3810,7 @@ padding: 0.2rem;
 }
 
 .flight_search_section_container{
-    height: 78vh;
+
     gap: 1rem;
 }
 
@@ -4397,7 +3831,6 @@ padding: 0.2rem;
 
 .flight_search_label{
     color: var(--red);
-    font-family: var(--poppin);
     font-weight: 900;
     font-size: 1.8rem;
     white-space: .4rem;
@@ -4405,7 +3838,6 @@ padding: 0.2rem;
 
 .flight_search_text{
     color: #7b7b7bc0;
-    font-family: var(--poppin);
     white-space: .4rem;
     font-size: 1.4rem;
 }
@@ -4447,7 +3879,6 @@ padding: 0.2rem;
 }
 
 .table {
-    font-family: sans-serif;
     border-collapse: collapse;
     font-size: 1rem;
     width: 100%;
@@ -4638,10 +4069,6 @@ flex-direction: column;
 justify-content: center;
 gap: 150px;
 align-items: center;
-background-image: url(../Images/brussels.jpg);
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
 text-align: center;
 line-height: 1.5;
 
@@ -4656,7 +4083,6 @@ line-height: 1.5;
 #second_hero_text{
     font-size: 1.5rem;
     color: white;
-    font-family: monospace;
 }
 
 .find_flight_container{
@@ -4671,29 +4097,6 @@ line-height: 1.5;
 
 /*The Parking and Transit page*/
 /*Home parking*/
-
-.home_parking{
-    background-color: #D21312;
-    color: #ffffff;
-    height: 8vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-.home_inner_div{
-    width: 100vh;
-    height: 8vh;
-    margin: 90px;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-.home_inner_div a{
-color: #fff;
-}
-
 
 .faq_text_and_search_container{
     display: flex;
@@ -4755,7 +4158,6 @@ width: 95%;
 /*BUTTON*/
 
 .btm button{
-    background-color: #D21312;
     border-color: #D21312;
     color: #fff;
     width: 20%;
@@ -4862,13 +4264,9 @@ font-size: 1.9rem;
 }
 
 .liberia_content > .btm{
-    background: #070A52;
     border: none;
-  margin: 20px;
-  padding: 10px;
-}
-.liberia_content > .btm:hover{
-    background: rgb(164, 163, 163);
+    margin: 20px;
+    padding: 10px;
 }
 
 /* Show More Section Ending ****************************************/
@@ -4959,9 +4357,6 @@ font-size: 1.1rem;
     align-items: center;
     flex-direction: column;
     background: linear-gradient(170deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.991) 50%, rgb(255, 255, 255) 99%), url(../Images/bg1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .airport_contact_form_contaner1{
@@ -5117,7 +4512,6 @@ font-size: 1.1rem;
     }
     
     #second_hero_text{
-        font-family: var(--roboto);
         word-spacing: 6px;
     }
 /*The CTA section styling starts here*/
@@ -5193,7 +4587,6 @@ font-size: 1.1rem;
 .FAQ_text_container{
     font-size: 2.7rem;
     color: var(--white);
-    font-family: var(--poppin);
     font-weight: 700;
     padding: 24px;
 }
@@ -5278,20 +4671,15 @@ font-size: 1.1rem;
 .article2_more_stories_grid_container{
     height: 100%;
     width: 100%;
-    background-color: rgb(237, 235, 218);
     margin-top: 2rem;
-    
-
 }
 
 .more_stories_text{
     position: relative;
     top: 3rem;
 }
+
 /*THE NEWS ROOM BY ALVIN ENDS HERE************************************/
-
-
-
 
  /********************The Things to know by Alvin Starts here*******************************/
   /*List of the things user should know*/
@@ -5340,25 +4728,22 @@ flex-direction: column;
     height: max-content;
     width: 100%;
     padding: 30px;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
     gap: 2rem;
-   
 }
+
 .services_hero_container{
     width: 100%;
     display: flex;
     justify-content:center ;
-    
-  
 }
+
 .services_hero_container h1{
     margin-top: 13rem;
     line-height: 1.3;
     font-weight: 700;
 }
-
 
 /**/
 .services_gif_and_content_container{
@@ -5367,16 +4752,12 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    padding: 0px;  
-    
-
-   
-  
+    padding: 0px;   
 }
-  .looping_image_container{
-    width: 35%;
 
-  }
+.looping_image_container{
+    width: 35%;
+}
 
   .services_content_container{
     width: 100%;
@@ -5396,7 +4777,6 @@ flex-direction: column;
 
 .services_content_container h2{
     font-weight: 900;
-    font-family: var(--poppin);
     color: var(--blue);
     text-decoration: underline;
 }
@@ -5410,7 +4790,6 @@ flex-direction: column;
 .services_list a, i{
     font-size: 1.15rem;
     font-weight: 600;
-    font-family: var(--poppin);
     color: var(--blue);
     transition: 0.2s ease-in-out;
     
@@ -5463,7 +4842,6 @@ width: 50%;
 #our_trending_destination_container{
     height: max-content;
     width: 100%;
-    background-color: var(--white);
     display: grid;
     grid-template-columns: 1fr 1fr ;
     grid-template-rows: 0.8fr 0.8fr;
@@ -5559,31 +4937,28 @@ display: flex;
 /* Media Query for low resolution  Tablets, Ipads ************************************/
 @media (min-width: 481px) and (max-width: 580px) {
  
-            header{
-                max-height: 10rem;
-                width: 100%; 
-                transition: 1s ease;
-            }
+header {
+    max-height: 10rem;
+    width: 100%; 
+    transition: 1s ease;
+}
         
-            .header_1st_section{
-                height: fit-content;
-            
-            }
-            .logo_div{
-                height: 100%;
-                width: 45%;
-               background-color: var(--red);
-               display: flex;
-                justify-content: center;
-                align-items: center;
-                clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);
-                
-            }
+.header_1st_section{
+    height: fit-content;
+}
+
+.logo_div {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);
+}
             
             .logo_div img{
                 height: 8rem;
                 width: 13rem;
-               
             }
         
             .header_1st_section{
@@ -5614,7 +4989,6 @@ display: flex;
         }
         .flag_container p{
             font-size: 1.4rem;
-            font-family: var(--poppin);
             color: var(--blue)
         }
         .search_bar_form{
@@ -5639,7 +5013,6 @@ display: flex;
             justify-content: space-evenly;
             text-align: center;
             font-size: 1.8rem;
-            background-color: #070952cb;
             color: var(--white);
             position: absolute;
             top: 8rem;
@@ -5678,76 +5051,67 @@ display: flex;
 
 .flight_drop_down1 a, .show_ter_info a{
     color: var(--white);
-    font-family: var(--poppin);
-    
 }
+
 .flight_btn{
     line-height: 1.5;
 }
         
+/*HAND BURGER MENU ENDS******************************************************/
         
+ /*Landing Page Media Query*/
+   .Call_to_action_text_container{
+     gap: 7rem;   
+    }
+
+    .landing_text{
+        position: relative;
+        top: 1em;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    #hero_text{
+        font-size: 2.5rem;
+    }
+            
+    .radio_container{
+        transition: 1s ease;
+        position: relative;
+        top: 6rem;
+    }
         
-    
-        
-        /*HAND BURGER MENU ENDS******************************************************/
-        
-            /*Landing Page Media Query*/
-            .Call_to_action_text_container{
-              gap: 7rem;
-               
-                }
-                .landing_text{
-                    position: relative;
-                    top: 1em;
-                    line-height: 1.4;
-                    text-align: center;
-                }
-                #hero_text{
-                        font-size: 2.5rem;
-                }
-        
-               
-        
-                .radio_container{
-                    transition: 1s ease;
-                    position: relative;
-                    top: 6rem;
-                }
-        
-                /*New website Responsive *********************************/
-                .new_website_container{
-                    height: 100vh;
-                    width: 100vw;
-                    background-color: var(--white);
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    text-align: center;
-                }
+   /*New website Responsive *********************************/
+    .new_website_container{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+    }
                 
-                .new_website_grid_container{
-            height: 70%;
-            width: 95%;
-            box-shadow: 2px 2px 16px 0px rgba(184, 158, 184, 1);
-            display: grid;
-            grid-template-columns:1fr 1fr  ;
-            grid-template-rows:1fr 1fr ;
-            
-        }
-        .grid{
-            
-            font-size: 1.5em;
-            font-weight: 800;
-            font-family: monospace;
-            display: flex;
-            flex-direction:column;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            transition: 1s ease;
-            color: rgba(0, 0, 0, 0.336);
-         }
+    .new_website_grid_container{
+        height: 70%;
+        width: 95%;
+        box-shadow: 2px 2px 16px 0px rgba(184, 158, 184, 1);
+        display: grid;
+        grid-template-columns:1fr 1fr  ;
+        grid-template-rows:1fr 1fr ;    
+    }
+
+    .grid{
+        font-size: 1.5em;
+        font-weight: 800;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: 1s ease;
+        color: rgba(0, 0, 0, 0.336);
+    }
         
          .g5, .g6{
             padding: 8px;
@@ -5818,7 +5182,6 @@ padding: 0.2rem;
             width: 100%;
             height: fit-content;
             color: var(--white);
-            background: var(--red);
             text-align: center;
          }
          
@@ -5831,7 +5194,6 @@ padding: 0.2rem;
             width: 100%;
             height: 100%;
             color: var(--red);
-            background: var(--gray);
             padding-bottom: 10px;
             flex-direction: column;
             gap: 2rem;
@@ -5998,7 +5360,6 @@ flex-direction: column;
 /*BUTTON*/
 
 .btm button{
-    background-color: #D21312;
     border-color: #D21312;
     color: #fff;
     width: 10%;
@@ -6010,7 +5371,6 @@ flex-direction: column;
 }
 
 .btm button:hover{
-    background: grey;
     border-color: grey;
 }
 
@@ -6175,7 +5535,6 @@ flex-direction: column;
 .FAQ_text_container{
     font-size: 2.7rem;
     color: var(--white);
-    font-family: var(--poppin);
     font-weight: 700;
     padding: 24px;
 }
@@ -6256,10 +5615,7 @@ flex-direction: column;
 .article2_more_stories_grid_container{
     height: 100%;
     width: 100%;
-    background-color: rgb(237, 235, 218);
     margin-top: 2rem;
-    
-
 }
 
 .more_stories_text{
@@ -6273,7 +5629,6 @@ flex-direction: column;
     height: max-content;
     width: 100%;
     padding: 30px;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -6327,7 +5682,6 @@ flex-direction: column;
 
 .services_content_container h2{
     font-weight: 900;
-    font-family: var(--poppin);
     color: var(--blue);
     text-decoration: underline;
 }
@@ -6341,7 +5695,6 @@ text-align: justify;
 .services_list a, i{
     font-size: 1.15rem;
     font-weight: 600;
-    font-family: var(--poppin);
     color: var(--blue);
     transition: 0.2s ease-in-out;
     
@@ -6439,7 +5792,6 @@ width: 50%;
 #our_trending_destination_container{
     height: max-content;
     width: 100%;
-    background-color: var(--white);
     display: grid;
     grid-template-columns: 1fr 1fr ;
     grid-template-rows: 0.8fr 0.8fr;
@@ -6554,28 +5906,26 @@ position: relative;
 
     .header_1st_section{
         height: max-content;
-    
     }
+
     .logo_div{
         height: 100%;
         width: 45%;
-       background-color: var(--red);
-       display: flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);
-        
     }
     
     .logo_div img{
         height: 8rem;
         width: 13rem;
-       
     }
 
     .header_1st_section{
         align-items: center;
     }
+
  .white_div_containerB, .navbar_container{
     display: none;
 }
@@ -6584,7 +5934,7 @@ position: relative;
     width: 100%;
     align-items: center;
     justify-content: center;
-   gap: 2px;
+    gap: 2px;
 }
 
 .white_div_container_a1{
@@ -6598,15 +5948,15 @@ position: relative;
     gap: 1.2rem;
     align-items: center;
 }
+
 .flag_container p{
     font-size: 1.4rem;
-    font-family: var(--poppin);
     color: var(--blue)
 }
+
 .search_bar_form{
     display: none;
 }
-
 
 /*Hand burger menu */
 .hand_burger_menu, .hand_burger_menu i{
@@ -6625,7 +5975,6 @@ position: relative;
     justify-content: space-evenly;
     text-align: center;
     font-size: 1.8rem;
-    background-color: #070952cb;
     color: var(--white);
     position: absolute;
     top: 8rem;
@@ -6649,18 +5998,13 @@ position: relative;
    
    
    .flight_drop_down1 a, .show_ter_info a{
-       color: var(--white);
-       font-family: var(--poppin);
-       
-   }
-   .flight_btn{
-       line-height: 1.5;
-   }
+       color: var(--white);    
+    }
+
+.flight_btn{
+    line-height: 1.5;
+}
    
-
-
-
-
 .show_hand_burger{
     display: flex;
 
@@ -6698,7 +6042,6 @@ position: relative;
         .new_website_container{
             height: 100vh;
             width: 100vw;
-            background-color: var(--white);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -6706,7 +6049,7 @@ position: relative;
             text-align: center;
         }
         
-        .new_website_grid_container{
+.new_website_grid_container{
     height: 70%;
     width: 95%;
     box-shadow: 2px 2px 16px 0px rgba(184, 158, 184, 1);
@@ -6715,11 +6058,10 @@ position: relative;
     grid-template-rows:1fr 1fr ;
     
 }
+
 .grid{
-    
     font-size: 1.5em;
     font-weight: 800;
-    font-family: monospace;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -6727,15 +6069,15 @@ position: relative;
     gap: 30px;
     transition: 1s ease;
     color: rgba(0, 0, 0, 0.336);
- }
+}
 
  .g5, .g6{
     padding: 8px;
  }
+
 .grid i{
     font-size: 4rem;
  }
-
 
 /*END OF New website Section styling ends here*********/
 
@@ -6756,7 +6098,6 @@ position: relative;
     width: 100%;
     height: fit-content;
     color: var(--white);
-    background: var(--red);
     text-align: center;
  }
  
@@ -6765,9 +6106,6 @@ position: relative;
  
 /*The latset news in monrovia styling starts here*/
 
-.lates_news_in_monrovia_master_container{
-background-color: var(--white);
-}
 .latest_news_in_monrovia_container{
     width: 100%;
     height: max-content;
@@ -6775,11 +6113,7 @@ background-color: var(--white);
     justify-content: center;
     gap: 2rem;
     padding-bottom: 0rem;
-    background-color: rgb(252, 248, 248);
-
-   
 }
-
 
 .latest_news_label_angle{
     width: 100%;
@@ -6787,7 +6121,6 @@ background-color: var(--white);
     flex-direction: column;
     gap: 1.1rem;
     margin-left: 0;
-
 }
 
 .all_latest_news{
@@ -6795,15 +6128,12 @@ width: 100%;
 display: flex;
 justify-content: space-evenly;
 padding-left: 0;
-    
 }
-
 
 .news_slider{
 padding: 0.2rem;
 gap: 1.5rem;
 flex-direction: column;
-
 }
 
 .card_2_img, .card_1_img{
@@ -6824,16 +6154,13 @@ width: 100%;
 .h3_date{
 margin-top: 1rem;
 }
+
 .read_more_stories{
     position: relative;
     right: 0rem;
     bottom: 5rem;
     font-size: 1.2rem;
-    }
-
-
-
-
+}
 
 /*Our Airlines style*/
 .Our_Airlines{
@@ -6841,7 +6168,7 @@ margin-top: 1rem;
     width: 100vw;
     display:flex;
     flex-direction: column;
-gap: 1.5rem;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
@@ -6866,10 +6193,7 @@ gap: 1.5rem;
 
 /*The subscribe to the newsletter section*/
 
-.subscribe_to_newsletter_container{
-    background: var(--blue);
-background: linear-gradient(180deg, rgba(21,86,186,1) 0%, rgba(9, 12, 10, 0.284) 36%, rgba(255,29,0,0.8492647058823529) 100%), url(../Images/subscribe-plane.jpg);
-  
+.subscribe_to_newsletter_container {
     height: 60vh;
     gap: 2rem;
     justify-content: center;
@@ -6949,7 +6273,6 @@ outline: none;
         
         .flight_search_label{
             color: var(--red);
-            font-family: var(--poppin);
             font-weight: 900;
             font-size: 1.8rem;
             white-space: .4rem;
@@ -6957,7 +6280,6 @@ outline: none;
         
         .flight_search_text{
             color: #7b7b7bc0;
-            font-family: var(--poppin);
             white-space: .4rem;
             font-size: 1.4rem;
         }
@@ -7001,7 +6323,6 @@ outline: none;
         }
         
         .table {
-            font-family: sans-serif;
             border-collapse: collapse;
             font-size: .9rem;
             width: 100%;
@@ -7184,14 +6505,12 @@ outline: none;
 #second_hero_text{
     font-size: 1.5rem;
     color: white;
-    font-family: monospace;
 }
 
 .find_flight_container{
     width: 300px;
     height: fit-content;
     padding: 10px 10px 10px 10px;
-    background-color: #ff5a3c;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -7199,27 +6518,6 @@ outline: none;
 }
 
 /*The Parking and Transit page*/
-/*Home parking*/
-
-.home_parking{
-    background-color: #D21312;
-    color: #ffffff;
-    height: 8vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-.home_inner_div{
-    width: 70%;
-    height: 8vh;
-    margin: 60px;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
 
 .faq_text_and_search_container{
     display: flex;
@@ -7405,23 +6703,14 @@ font-size: 1.9rem;
         margin-left: 40px;
     }
     .liberia_content_img  > img{
-        width: 60%;
-       
+        width: 60%;       
     }
 
-    
     .liberia_content > .btm{
-        background: #070A52;
         border: none;
       margin: 20px;
       padding: 10px;
     }
-    .liberia_content > .btm:hover{
-        background: rgb(164, 163, 163);
-    }
-
-    
-
 
 /* OTHERS BEACHES NEAR RIA ****************************************88/
 
@@ -7446,8 +6735,7 @@ flex-direction: column;
 
 .box2 img {
     display: flex;
-    width: 100%;
-    
+    width: 100%; 
 }
 
 .grey_line2_container{
@@ -7456,12 +6744,10 @@ flex-direction: column;
     justify-content: space-evenly;
 }
 
-
 .box{
    margin: 100px;
     width: 80%;
     display: flex;
-    
 }
 
 /*BUTTON*/
@@ -7509,9 +6795,6 @@ flex-direction: column;
     align-items: center;
     flex-direction: column;
     background: linear-gradient(170deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.991) 50%, rgb(255, 255, 255) 99%), url(../Images/bg1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .airport_contact_form_contaner1{
@@ -7871,7 +7154,6 @@ flex-direction: column;
     
     #second_hero_text{
         font-size: 1.3rem;
-        font-family: var(--roboto);
         text-align: center;
     }
 /*The CTA section styling starts here*/
@@ -8116,7 +7398,6 @@ text-align: center;
 .article2_more_stories_grid_container{
     height: 100%;
     width: 100%;
-    background-color: rgb(237, 235, 218);
     margin-top: 0.01rem;
 }
 
@@ -8181,7 +7462,6 @@ flex-direction: column;
     height: max-content;
     width: 100%;
     padding: 15px;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -8239,7 +7519,6 @@ flex-direction: column;
 
 .services_content_container h2{
     font-weight: 900;
-    font-family: var(--poppin);
     color: var(--blue);
     text-decoration: underline;
 }
@@ -8252,7 +7531,6 @@ flex-direction: column;
 .services_list a, i{
     font-size: 1.15rem;
     font-weight: 600;
-    font-family: var(--poppin);
     color: var(--blue);
     transition: 0.2s ease-in-out;    
 }
@@ -8302,7 +7580,6 @@ flex-direction: column;
 #our_trending_destination_container{
     height: max-content;
     width: 100%;
-    background-color: var(--white);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.8fr auto;
@@ -8477,7 +7754,6 @@ flex-direction: column;
     }
     
     .table {
-        font-family: sans-serif;
         border-collapse: collapse;
         font-size: .8rem;
         width: 100%;
@@ -8610,17 +7886,17 @@ flex-direction: column;
 
      .logo_div img{
         height: 6rem;
-        width: 9rem;
-       
+        width: 9rem;  
     }
+
     .flag_container{
         gap: 1.2rem;
         align-items: center;
         display: flex;
     }
+
     .hand_burger_menu{
         display: flex;
-    
     }
 
     .handBurger_menu_dropdown{
@@ -8636,12 +7912,11 @@ flex-direction: column;
     flex-direction: column;
     gap: 0.4rem;
     margin: 20px;
-    
     }
+
     .body_sec p{
         font-size: 1.5rem;
         width: 130%;
-    
     }
     
     .body_sec h2{
@@ -8669,7 +7944,6 @@ font-family: monospace;
 width: 300px;
 height: fit-content;
 padding: 10px 10px 10px 10px;
-background-color: #ff5a3c;
 color: white;
 display: flex;
 justify-content: space-between;
@@ -8679,42 +7953,21 @@ font-size: 1.2rem;
 /*The Parking and Transit page*/
 /*Home parking*/
 
-.home_parking{
-background-color: #D21312;
-color: #ffffff;
-height: 8vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-width: 100%;
-}
-
-.home_inner_div{
-width: 80%;
-height: 8vh;
-margin: 40px;
-display: flex;
-gap: 1rem;
-align-items: center;
-}
-
-
 .faq_text_and_search_container{
-display: flex;
-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 /*Hotels Near*/
 .hotels_near_in_RIA{
-margin: 35px;
-margin-bottom: 0px;
+    margin: 35px;
+    margin-bottom: 0px;
 }
 
 .hotels_near_in_RIA > h2{
-color: #D21312;
-font-size: 1.9rem;
-width: 110%;
+    color: #D21312;
+    font-size: 1.9rem;
+    width: 110%;
 }
-
 
 .hotels_near_in_RIA > p{
 font-size: 1.5rem;
@@ -8722,9 +7975,6 @@ width: 100%;
 }
 
 /*Box Section**********************************************************************/
-
-
-
 
 /*cards SECTION************************************************************************/
 
@@ -8734,19 +7984,15 @@ width: 100%;
     margin-bottom: 10px;
     margin-top: 10px;
     border: 2px solid rgb(180, 179, 179);
-     height: fit-content;
-    width: 80%;
-    
+    height: fit-content;
+    width: 80%;    
 }
-
 
 .all_box_image  > img{
     width: 220px;
     height: 130px;
     margin: 15px;
 }
-
-
 
 .all_box_content h2{
     width: 110%;
@@ -8764,25 +8010,13 @@ width: 100%;
     margin-bottom: 50px;
     margin-top: 25px;
     margin: 90px;
-    }
-    
-    
+}
 
+/*Cards section end ************************/
 
-/*Cards section end ****************************************************************************/
+/*The Visit Monronvia  Responsiveness ends here****/
 
-
-
-
-
-
-/*The Visit Monronvia  Responsiveness ends here************************************8/
-
-
-
-
-
-/* OTHERS BEACHES NEAR RIA ****************************************88/
+/* OTHERS BEACHES NEAR RIA **************/
 
 /*Box Section2*/
 
@@ -8876,9 +8110,6 @@ flex-direction: column;
     align-items: center;
     flex-direction: column;
     background: linear-gradient(170deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.991) 50%, rgb(255, 255, 255) 99%), url(../Images/bg1.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .airport_contact_form_contaner1{
@@ -8943,10 +8174,6 @@ flex-direction: column;
 
 
 /*The airport section styling ends here*/
-
-/*The Contact page styling ends here*/
-
-/*The Contact page styling starts here*/
 
 /*BEGAINING of the contact page hero Section styling*/
 
@@ -9111,20 +8338,17 @@ flex-direction: column;
     flex-direction: column;
     width: 100%;
     gap: 0rem;
-    
    }
 
    .newsroom_sect1_article1_text_container{
     line-height: 1.1;
    }
 
-
    /*section 2*/
 
 .newsroom_section2{
     width: 100%;
     padding: 15px;
-
 }
 
 .article_container{
@@ -9149,19 +8373,13 @@ flex-direction: column;
 .article2_more_stories_grid_container{
     height: 100%;
     width: 100%;
-    background-color: rgb(237, 235, 218);
     margin-top: 0.01rem;
-   
-    
-
 }
 
 .more_stories_text{
     position: relative;
     top: 0.5rem;
 }
-
-
 
 .news_room_stories{
     flex-direction: column;
@@ -9200,8 +8418,7 @@ flex-direction: column;
 }
 .things_image_container1{
     width: 100%;
-    height: 40%;
-    
+    height: 40%; 
 }
 
 .things_content_container1{
@@ -9211,8 +8428,8 @@ flex-direction: column;
     flex-direction: column;
     overflow-y: scroll;
 }
-/*The first things card Ends Here****************************************************/
 
+/*The first things card Ends Here****************************************************/
 
 /*The advertising page styling starts here*/
 /*The CTA section styling starts here*/
@@ -9221,15 +8438,12 @@ flex-direction: column;
     gap: 2rem;
     }
     
-    
-    
     #advertise_CTA_section_text{
         margin-bottom: 2rem;
     }
     
     #second_hero_text{
         font-size: 1.3rem;
-        font-family: var(--roboto);
         text-align: center;
     }
 /*The CTA section styling starts here*/
@@ -9369,59 +8583,49 @@ flex-direction: column;
     margin-bottom: 10px;
     }
     
-    .liberia_content_img{
-        display: block;
-        margin-left: 40px;
-        gap: 30px;
-    }
-    .liberia_content_img  > img{
-        width: 60%;
-       
-    }
+.liberia_content_img{
+    display: block;
+    margin-left: 40px;
+    gap: 30px;
+}
 
+.liberia_content_img  > img{
+    width: 60%;       
+}
     
-    .liberia_content > .btm{
-        background: #070A52;
-        border: none;
-      margin: 20px;
-      padding: 10px;
-    }
-    .liberia_content > .btm:hover{
-        background: rgb(164, 163, 163);
-    }
-    
-    
-    /* Show More Section Ending *****************************************/
-    
+.liberia_content > .btm{
+    border: none;
+    margin: 20px;
+    padding: 10px;
+}
 
-/*THE NEWS ROOM BY ALVIN ENDS HERE************************************/
+/* Show More Section Ending *******************/
     
-/* The Services page in the footer  starts here By Alvin***********************************************************************/
+/*THE NEWS ROOM BY ALVIN ENDS HERE****************/
+    
+/* The Services page in the footer starts here By Alvin*/
 
 .services_master_container{
     height: max-content;
     width: 100%;
     padding: 15px;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-   
+    gap: 2rem;   
 }
+
 .services_hero_container{
     width: 100%;
     display: flex;
-    justify-content:center ;
-    
-  
+    justify-content:center ;  
 }
+
 .services_hero_container h1{
     margin-top: 7rem;
     line-height: 1.25;
     font-weight: 600;
     font-size: 1.8rem;
 }
-
 
 /**/
 .services_gif_and_content_container{
@@ -9431,26 +8635,22 @@ flex-direction: column;
     flex-direction: column;
     justify-content: center; 
     padding: 0px;  
-
-   
-  
 }
-  .looping_image_container{
+
+.looping_image_container{
     width: 100%;
    
-  }
+}
 
-  .looping_image_container img{
-        width: 100%;
-  }
+.looping_image_container img{
+    width: 100%;
+}
 
   .services_content_container{
     width: 100%;
     flex-direction: column;
-
     gap: 20px;
-
-  }
+}
   
   .services_content_list{
     width: 100%;
@@ -9459,34 +8659,29 @@ flex-direction: column;
     grid-template-columns: 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr  auto ;
     gap: 1rem;
-  }
+}
 
 .services_content_container h2{
     font-weight: 900;
-    font-family: var(--poppin);
     color: var(--blue);
     text-decoration: underline;
 }
 
-
-
-
 .services_list a, i{
     font-size: 1.1rem;
     font-weight: 600;
-    font-family: var(--poppin);
     color: var(--blue);
-    transition: 0.2s ease-in-out;
-    
+    transition: 0.2s ease-in-out;    
 }
+
 .services_list a:hover{
     border-bottom: none;
     color: var(--red);
 }
+
 .services_list  i{
     color: var(--red);
 }
-
 
 /*The Begaining of the Destination Page*/
 
@@ -9509,36 +8704,28 @@ flex-direction: column;
     padding: 15px;
 }
 
-
-
-
 .image_container{
       margin-top: 0px;
       width: 90%;
 }
+
 .image_container img{
     height: 20em;
     width: 100%;
-   border-radius: 20px;
-   
-   position: relative;
-   top: 0px;
-
-    
+    border-radius: 20px;
+    position: relative;
+    top: 0px;
 }
 
 /*Section II*/
 #our_trending_destination_container{
     height: max-content;
     width: 100%;
-    background-color: var(--white);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.8fr auto;
     gap: 20px;
-    padding: 15px;
-    
- 
+    padding: 15px; 
 }
 
 .card-img-top{
@@ -9546,12 +8733,9 @@ flex-direction: column;
 }
 /* Destination Page Ends Here*/
 
-
 }
 
-
-/*SCRIPT CLASS START****************************************************/
-
+/*SCRIPT CLASS START******/
 
 @keyframes slideDown{
     from{transform: translateY(-50px)}
