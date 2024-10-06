@@ -291,24 +291,37 @@ footer{
 
 /*This is the starting of the uparrow on the home section style*/
 
-.up-arrow{  
-  width: 55px;
-  height: 55px;
+.up-arrow {
+  width: 3vw; /* Dynamically adjust based on viewport width */
+  height: 3vw;
   border-radius: 50%;
   background: var(--red);
   z-index: 1;
   position: fixed;
-  top: 550px; 
-  left: 1450px; 
+  top: 50vh; /* Percentage of viewport height for responsiveness */
+  left: 75vw; /* Percentage of viewport width */
   border: 2px dotted #070A52;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.up-arrow-a{
-  font-size: 1.8rem;
+.up-arrow-a {
+  font-size: 2vw; /* Font size is responsive to viewport width */
   color: var(--white);
   font-weight: 900;
 }
 /*This is the ending of the uparrow on the home section style*/
+
+
+@media (max-width: 768px) {
+  .up-arrow {
+    width: 8vw;
+    height: 8vw;
+    top: 60vh;
+    left: 65vw;
+  }
+  .up-arrow-a {
+    font-size: 3vw; /* Adjust font size for smaller screens */
+  }
+}

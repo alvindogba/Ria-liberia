@@ -370,6 +370,7 @@ footer a:hover{
 
 /*The footer quick link container*/
 .the_quick_link_container{
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -978,7 +979,7 @@ outline: none;
 }
 
 .subscribe_form > button{
- padding: 10px;
+ padding: 11px 12px;
  border: none;
  color: var(--white);
  font-weight: 600;
@@ -1422,29 +1423,6 @@ line-height: 1.5;
 
 /*The Parking and Transit page*/
 /*Home parking*/
-
-.home_parking{
-    color: var(--white);
-    height: 8vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-}
-
-.home_inner_div{
-    width: 60%;
-    height: 8vh;
-    margin: 90px;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-.home_inner_div a{
-color: var(--white);
-}
-
-
 
 .faq_text_and_search_container{
     display: flex;
@@ -2731,6 +2709,7 @@ footer a:hover{
 
 /*The footer quick link container*/
 .the_quick_link_container{
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4921,7 +4900,6 @@ font-size: 0.8rem;
 
 .small_logo{
 display: flex;
-
 }
 
 /*Footer section Ends Here*********************************************/
@@ -5254,59 +5232,59 @@ padding: 0.2rem;
             align-items: center;
         }
          
-        .Our_Airlines img{
-           width:80%;
-           height:8rem; 
-        }
+.Our_Airlines img{
+    width:80%;
+    height:8rem; 
+}
+        
+    /*The subscribe to the newsletter section*/
+        
+.subscribe_to_newsletter_container{
+    height: 60vh;
+    gap: 2rem;
+    overflow-y: hidden;
+    font-size: 0.1rem; 
+}
         
         
+.subscribe_to_newsletter_div{
+    line-height: 1.2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.subscribe_label{
+    font-weight: 900;
+    word-spacing: 0.2rem;
+    font-size: 1.294rem;
+    flex-wrap: nowrap;
+}
+
+.subscribe_form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscribe_form > input{
+    width: 250px;
+    height: 3rem;
+    padding: 10px;
+    font-size: 1rem;
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem;
+    border: none;
+    outline: none;
+}
         
-        /*The subscribe to the newsletter section*/
-        
-        .subscribe_to_newsletter_container{
-            height: 60vh;
-            gap: 2rem;
-            overflow-y: hidden;
-            font-size: 0.1rem;
-            
-        }
-        
-        
-        .subscribe_to_newsletter_div{
-         line-height: 1.2;
-         text-align: center;
-         display: flex;
-         flex-direction: column;
-         gap: 2rem;
-        }
-        .subscribe_label{
-            font-weight: 900;
-            word-spacing: 0.2rem;
-            font-size: 1.294rem;
-            flex-wrap: nowrap;
-        }
-            .subscribe_form{
-            width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        
-            .subscribe_form > input{
-        width: 200px;
-        height: fit-content;
-        padding: 10px;
-        border-top-left-radius: .2rem;
-        border-bottom-left-radius: .2rem;
-        border: none;
-        outline: none;
-        }
-        
-                .subscribe_to_newsletter_div{
-                    flex-wrap: wrap;
-                    padding: 24px;
-                    font-size: medium;
-                }
+.subscribe_to_newsletter_div{
+    flex-wrap: wrap;
+    padding: 24px;
+    font-size: medium;
+}
 
 
 
@@ -6224,18 +6202,21 @@ margin-top: 1rem;
         justify-content: center;
     }
 
-    .subscribe_form > input{
-width: 200px;
-height: fit-content;
-padding: 10px;
-border-top-left-radius: .2rem;
-border-bottom-left-radius: .2rem;
-border: none;
-outline: none;
+.subscribe_form > input{
+    width: 60vw;
+    height: 2.8rem;
+    padding: 10px;
+    font-size: 1rem;
+    border-top-left-radius: .2rem;
+    border-bottom-left-radius: .2rem;
 }
 
-
-
+.subscribe_form > button{
+    padding: 11px 12px;
+    position: relative;
+    right: 4px;
+    bottom: 1px;
+}
 
 
         .subscribe_to_newsletter_div{
@@ -6478,13 +6459,13 @@ outline: none;
     
     }
     .body_sec p{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         width: 130%;
     
     }
     
     .body_sec h2{
-        font-size: 2.0rem;
+        font-size: 1.5rem;
         margin-bottom: 0;
     }
     
@@ -7915,12 +7896,12 @@ flex-direction: column;
     }
 
     .body_sec p{
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         width: 130%;
     }
     
     .body_sec h2{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-bottom: 0;
     }
         
