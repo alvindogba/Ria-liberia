@@ -47,8 +47,7 @@ header{
     width: 100vw;
     position: fixed;
     top: 0;
-    z-index: 99;
-    
+    z-index: 99;  
 }
   
 .header_1st_section{
@@ -63,15 +62,17 @@ header{
 .logo_div{
     height: 100%;
     width: 30%;
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);  
 }
+
 .logo_div img{
     height: 10em;
     width: 15em;
 }
+
 /*styling the search_bar container*/
 .white_header_container{
     height: 100%;
@@ -119,6 +120,7 @@ header{
     border-radius: 1.25rem;
     font-size: 1.25rem;
 }
+
 .search_bar_form input:focus {
     outline: none;
     border-bottom: 1px solid rgba(163, 155, 155, 0.511);
@@ -126,7 +128,7 @@ header{
     padding-right: 3rem;
 }
 
- .fa-magnifying-glass:active{
+.fa-magnifying-glass:active{
     color: var(--red);
  }
 
@@ -137,7 +139,6 @@ header{
     color: gray;
     transition: 0.5s ease;
 }
-
 
 .white_div_containerB{
     display: flex;
@@ -1593,38 +1594,35 @@ width: 70%;
 
 /*The about section***************************************************/
 
-.flight-status{
-    color: #070A52;
-}
-.Our_history_container{
+.about_container{
     width: 100vw;
-    height: 100vh;
-     
- }
-
-.our_history_1{
-    padding-top: 4rem;
-    width: 80%;
-    height: 42vh;
-    display: flex;
-    gap: 20rem;
-    margin-left: 6rem;
+    height: max-content; 
+    padding: 4rem 0;
 }
 
-.our_histiory_content{
+.about_history{
+    margin:  4rem 0 0 4rem;
+    max-width: 90%;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    gap: 18vw;
+}
+
+.about_history_content{
     width: 50%;
     display:flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.our_history_label{
+.about_history_label{
     color: var(--red);
     font-weight: 800;
     font-size: 1.6rem;
 }
 
-.our_history_text{
+.about_history_para{
     font-size: 1.1rem;
     line-height: 1.3rem;
     word-spacing: .2rem;
@@ -1639,37 +1637,38 @@ width: 70%;
     cursor: pointer;
 }
 
- .Our_history_image > img{
-     box-shadow: 25px 28px 5px 2px rgb(217, 216, 216);
+ .about_history_image > img{
+     box-shadow: 20px 23px 5px 1px rgb(217, 216, 216);
  }
 
-  .MAP_RIA{
+  .about_map{
     padding-top: 8rem;
+    max-width: 90%;
     width: 80%;
-    height: 46vh;
+    height: max-content;
     display: flex;
-    gap: 16rem;
+    gap: 18vw;
     margin-left: 6rem;
 }
 
-.map_image > img{
+.about_map_image > img{
     width: 25rem;
 }
 
-.map_of_RIA_label_text{
+.about_map_label_container{
     width: 36%;
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
 }
 
-.map_of_RIA_label{
+.about_map_label{
     color: var(--red);
     font-weight: 800;
     font-size: 1.6rem; 
 }
 
-.map_of_RIA_text{
+.about_map_para{
     font-size: 1.1rem;
     line-height: 1.4rem;
     word-spacing: .2rem; 
@@ -3611,6 +3610,68 @@ footer{
 }
 
 /*The Airline Information page styling ends here*/
+
+/*The about section***************************************************/
+
+.about_container{
+    width: 100vw;
+    padding: 3rem 0;
+}
+
+.about_history{
+    margin:  4rem 0 0 4rem;
+    max-width: 90%;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    gap: 18vw;
+}
+
+.about_history_content{
+    width: 60%;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about_history_label, .about_map_label{
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.about_history_para, .about_map_para{
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    word-spacing: .1rem;
+}
+
+.show_more_link{
+    font-weight: 700;
+}
+
+ .about_history_image > img{
+     width: 20rem;
+ }
+
+  .about_map{
+    padding-top: 6rem;
+    max-width: 90%;
+    width: 80%;
+    gap: 18vw;
+    margin-left: 5rem;
+}
+
+.about_map_image > img{
+    width: 20rem;
+}
+
+.about_map_label_container{
+    width: 36%;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+/* The end of the About Us section**************************************/
+
 }
 
 
@@ -4158,66 +4219,59 @@ width: 95%;
     color: #fff;
 }
 
-/*The Visit Monronvia ends here**********************************/
+/*The Visit Monronvia ends here*********/
 
 
-/*The about section**********************************************/
+/*The about section************/
 
-.our_history_1{
-    width: 90%;
-    height: 46vh;
-    flex-direction: row;
-    gap: 6rem;
-    margin-left: 2.5rem;
-    align-items: center;
+.about_container{
+    padding: 2rem 0;
 }
 
-.our_histiory_content{
-    padding-top: 4rem;
+.about_history{
+    margin:  4rem 0 0 4rem;
+    flex-direction: column;
+    gap: 4vw;
+}
+
+.about_history_content{
     width: 100%;
-    gap: 2rem;
+    gap: 1rem;
 }
 
-.our_history_label{
-   letter-spacing: .1rem;
-}
-
-.our_history_text{
+.about_history_label, .about_map_label{
+    font-weight: 600;
     font-size: 1.3rem;
-    line-height: 1.3rem;
+}
+
+.about_history_para, .about_map_para{
+    font-size: 1rem;
     word-spacing: .2rem;
 }
 
- .Our_history_image > img{
-     width: 18rem;
+.show_more_link{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+ .about_history_image > img{
+     width: 80vw;
  }
 
-.MAP_RIA{
-    width: 90%;
-    height: 46vh;
-    flex-direction: row;
-    gap: 3rem;
-    margin-left: 2.5rem;
-    align-items: center;
+  .about_map{
+    padding-top: 6rem;
+    flex-direction: column-reverse;
+    gap: 4vw;
+    margin-left: 5rem;
 }
 
-.map_image > img{
-    width: 16rem;
+.about_map_image > img{
+    width: 80vw;
 }
 
-.map_of_RIA_label_text{
-    width: 50%;
-    gap: 1.4rem;
-}
-
-.map_of_RIA_label{
-    font-size: 1.3rem; 
-    word-spacing: .2rem;
-}
-
-.map_of_RIA_text{
-    font-size: 1.3rem;
-    line-height: 1.5rem;
+.about_map_label_container{
+    width: 100%;
+    gap: 1rem;
 }
 
 /* The end of the About Us section**************************************/
@@ -4933,74 +4987,73 @@ header {
     align-items: center;
     clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);
 }
-            
-            .logo_div img{
-                height: 8rem;
-                width: 13rem;
-            }
-        
-            .header_1st_section{
-                align-items: center;
-            }
-         .white_div_containerB, .navbar_container{
-            display: none;
-        }
-        
-        .white_div_containerA{ 
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-           gap: 2px;
-        }
-        
-        .white_div_container_a1{
-            gap: 0px;
-            padding-left: 0px;
-            width: 90%;
-            gap: 4rem;
-        }
-        
-        .flag_container{
-            gap: 1.2rem;
-            align-items: center;
 
-        }
-        .flag_container p{
-            font-size: 1.4rem;
-            color: var(--blue)
-        }
-        .search_bar_form{
-            display: none;
-        }
+.logo_div img{
+    height: 8rem;
+    width: 13rem;
+}
+
+.header_1st_section{
+    align-items: center;
+}
+
+.white_div_containerB,
+.navbar_container{
+display: none;
+}
+
+.white_div_containerA{ 
+width: 100%;
+align-items: center;
+justify-content: center;
+gap: 2px;
+}
+        
+.white_div_container_a1{
+    gap: 0px;
+    padding-left: 0px;
+    width: 90%;
+    gap: 4rem;
+}
+
+.flag_container{
+    gap: 1.2rem;
+    align-items: center;
+
+}
+.flag_container p{
+    font-size: 1.4rem;
+    color: var(--blue)
+}
+.search_bar_form{
+    display: none;
+}
         
         
-        /*Hand burger menu */
-        .hand_burger_menu, .hand_burger_menu i{
-            font-size: 1.9rem;
-            color: var(--blue);
-        }
+/*Hand burger menu */
+.hand_burger_menu, .hand_burger_menu i{
+    font-size: 1.9rem;
+    color: var(--blue);
+}
+
+.hand_burger_menu{
+    display: flex;
+}
         
-        .hand_burger_menu{
-            display: flex;
-        
-        }
-        
-        .handBurger_menu_dropdown{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            text-align: center;
-            font-size: 1.8rem;
-            color: var(--white);
-            position: absolute;
-            top: 8rem;
-            right: 0.1rem;
-            width: 100%;
-            height: 35vh;
-            display: none;
-        
-        }
-        
+.handBurger_menu_dropdown{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--white);
+    position: absolute;
+    top: 8rem;
+    right: 0.1rem;
+    width: 100%;
+    height: 35vh;
+    display: none;
+}      
         
 .handBurger_menu_dropdown a{
     color: var(--white);
@@ -5016,8 +5069,6 @@ header {
     display: flex;
 }
 
-
-
 .flight_drop_down1 , .terminal_drop_down1  {
  display: none;
 }
@@ -5025,7 +5076,6 @@ header {
 .flight_drop_down1 li a, .terminal_drop_down1 li a{
     font-size: 1.6rem;
 }
-
 
 .flight_drop_down1 a, .show_ter_info a{
     color: var(--white);
@@ -5037,200 +5087,190 @@ header {
         
 /*HAND BURGER MENU ENDS******************************************************/
         
- /*Landing Page Media Query*/
-   .Call_to_action_text_container{
-     gap: 7rem;   
-    }
+/*Landing Page Media Query*/
+.Call_to_action_text_container{
+    gap: 7rem;   
+}
 
-    .landing_text{
-        position: relative;
-        top: 1em;
-        line-height: 1.4;
-        text-align: center;
-    }
+.landing_text{
+    position: relative;
+    top: 1em;
+    line-height: 1.4;
+    text-align: center;
+}
 
-    #hero_text{
-        font-size: 2.5rem;
-    }
+#hero_text{
+    font-size: 2.5rem;
+}
             
-    .radio_container{
-        transition: 1s ease;
-        position: relative;
-        top: 6rem;
-    }
-        
-   /*New website Responsive *********************************/
-    .new_website_container{
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        text-align: center;
-    }
-                
-    .new_website_grid_container{
-        height: 70%;
-        width: 95%;
-        box-shadow: 2px 2px 16px 0px rgba(184, 158, 184, 1);
-        display: grid;
-        grid-template-columns:1fr 1fr  ;
-        grid-template-rows:1fr 1fr ;    
-    }
-
-    .grid{
-        font-size: 1.5em;
-        font-weight: 800;
-        display: flex;
-        flex-direction:column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transition: 1s ease;
-        color: rgba(0, 0, 0, 0.336);
-    }
-        
-         .g5, .g6{
-            padding: 8px;
-         }
-        .grid i{
-            font-size: 4rem;
-         }
-        
-        
-        /*END OF New website Section styling ends here*********/
-        
-         /*Latest News in Monorovia Section styling starts here*/
-        
-         .lates_news_in_monrovia_master_container{
-            height:fit-content;
-            flex-direction: column; 
-           
+.radio_container{
+    transition: 1s ease;
+    position: relative;
+    top: 6rem;
+}
+    
+/*New website Responsive *********************************/
+.new_website_container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
             
-         }
+.new_website_grid_container{
+    height: 70%;
+    width: 95%;
+    box-shadow: 2px 2px 16px 0px rgba(184, 158, 184, 1);
+    display: grid;
+    grid-template-columns:1fr 1fr  ;
+    grid-template-rows:1fr 1fr ;    
+}
 
-         .latest_news_in_monrovia_container{
+.grid{
+    font-size: 1.5em;
+    font-weight: 800;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: 1s ease;
+    color: rgba(0, 0, 0, 0.336);
+}
+        
+.g5, .g6{
+    padding: 8px;
+}
+.grid i{
+    font-size: 4rem;
+}
+        
+        
+/*END OF New website Section styling ends here*********/
+
+/*Latest News in Monorovia Section styling starts here*/
+        
+.lates_news_in_monrovia_master_container{
+    height:fit-content;
+    flex-direction: column; 
+}
+
+.latest_news_in_monrovia_container{
     width: 100%;
     height: max-content;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     padding-bottom: 0rem;
-   
 }
-
 
 .latest_news_label_angle{
     width: 100%;
     justify-content: space-evenly;
     margin-left: 0;
-
 }
 
 .all_latest_news{
-width: 100%;
-display: flex;
-justify-content: space-evenly;
-padding-left: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 2rem;
     
 }
 
-
 .news_slider{
-padding: 0.2rem;
+    padding: 0.2rem;
 }
 
 .card_2_img, .card_1_img{
     width: 20rem;
     height: 15rem;
 }
+
 .read_more_stories{
     position: relative;
     right: 13rem;
     font-size: 1.2rem;
-    }
+}
 
+/*Today flight styling starts here*/
+
+.flight_today_container{
+    width: 100%;
+    height: fit-content;
+    color: var(--white);
+    text-align: center;
+}
+
+/*I will come back later to complete this style*/
+
+    
+/*The latset news in monrovia styling starts here*/
         
-         
+.latest_news_in_monrovia_container{
+    width: 100%;
+    height: 100%;
+    color: var(--red);
+    padding-bottom: 10px;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
         
-         /*Today flight styling starts here*/
-        
-         .flight_today_container{
-            width: 100%;
-            height: fit-content;
-            color: var(--white);
-            text-align: center;
-         }
-         
-         /*I will come back later to complete this style*/
-        
-         
-        /*The latset news in monrovia styling starts here*/
-        
-        .latest_news_in_monrovia_container{
-            width: 100%;
-            height: 100%;
-            color: var(--red);
-            padding-bottom: 10px;
-            flex-direction: column;
-            gap: 2rem;
-            justify-content: center;
-            align-items: center;
-            
-        }
-        
-        .latest_news_label_angle{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            width: 100%;
-            height: 30%;
-            padding-top: 10px;
-            
-        }
-        
-        
-        .latest_news_angle{
-            margin-right: 5rem;
-        }
+.latest_news_label_angle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    height: 30%;
+    padding-top: 10px;   
+}
+
+
+.latest_news_angle{
+    margin-right: 5rem;
+}
         
         
         
-        .cards_container{
-            width: 100vw;
-            justify-content: center;
-            margin-left: 2rem;
-            margin-top: 0px;
-            }
-            
-            .card_2_img, .card_1_img{
-                width: 10rem;
-                height: 6rem;
-            }
-        /*Our Airlines style*/
-        .Our_Airlines{
-            height:fit-content;
-            width: 100vw;
-            display:flex;
-            flex-direction: column;
-        gap: 1.5rem;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-            padding-bottom: 2rem;
-        }
+.cards_container{
+    width: 100vw;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-top: 0px;
+    }
+    
+    .card_2_img, .card_1_img{
+        width: 10rem;
+        height: 6rem;
+    }
+/*Our Airlines style*/
+.Our_Airlines{
+    height:fit-content;
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding-bottom: 2rem;
+}
         
-        .Our_Airlines_logo_1, .Our_Airlines_logo_2{
-            width:70%;
-            height: fit-content;
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+.Our_Airlines_logo_1, .Our_Airlines_logo_2{
+    width:70%;
+    height: fit-content;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
          
 .Our_Airlines img{
     width:80%;
@@ -5245,8 +5285,7 @@ padding: 0.2rem;
     overflow-y: hidden;
     font-size: 0.1rem; 
 }
-        
-        
+             
 .subscribe_to_newsletter_div{
     line-height: 1.2;
     text-align: center;
@@ -5286,8 +5325,6 @@ padding: 0.2rem;
     font-size: medium;
 }
 
-
-
 /* OTHERS BEACHES NEAR RIA ****************************************88/
 
 /*Box Section***********************************************/
@@ -5315,7 +5352,6 @@ flex-direction: column;
 .box2 img {
     display: flex;
     width: 100%;
-    
 }
 
 .grey_line2_container{
@@ -5329,10 +5365,9 @@ flex-direction: column;
 }
 
 .box{
-   margin: 100px;
+    margin: 100px;
     width: 80%;
     display: flex;
-    
 }
 
 /*BUTTON*/
@@ -5367,22 +5402,61 @@ flex-direction: column;
 /*The others beaches ends here*/
 
 
-/*BEGAINING of the terms_of_use page hero Section styling*/
+/*The about section************/
 
-#terms_of_use_hero_text{
-    font-size: 3rem;
+.about_container{
+    padding: 2rem 0;
 }
 
-/*The red div after the hero section styling starts here*/
-.home_terms_of_use_inner{
-    margin-left: 2rem;
+.about_history{
+    margin:  4rem 0 0 3rem;
+    flex-direction: column;
+    gap: 4vw;
 }
 
-.home_terms_of_use_inner > h2 .home, .home_terms_of_use_span, .terms_of_use{
+.about_history_content{
+    width: 100%;
+    gap: 1rem;
+}
+
+.about_history_label, .about_map_label{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.about_history_para, .about_map_para{
     font-size: 1rem;
+    word-spacing: .2rem;
 }
 
-/*The red div after the hero section styling ends here*/
+.show_more_link{
+    font-weight: 600;
+    font-size: 1.5;
+}
+
+ .about_history_image > img{
+     width: 80vw;
+ }
+
+  .about_map{
+    padding-top: 6rem;
+    flex-direction: column-reverse;
+    gap: 4vw;
+    margin-left: 3rem;
+}
+
+.about_map_image > img{
+    width: 80vw;
+}
+
+.about_map_label_container{
+    width: 100%;
+    gap: 1rem;
+}
+
+/* The end of the About Us section**************************************/
+
+
 /*The starting of the terms_of_use_body_menu link section*/
 
 .link_for_section{
@@ -6455,7 +6529,7 @@ margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1.1rem;
-    margin: 20px;
+    margin: 25px;
     
     }
     .body_sec p{
@@ -6565,106 +6639,73 @@ font-size: 1.9rem;
     height: 5vh;
     margin-bottom: 50px;
     margin-top: 25px;
-
 }
 
 .btm{
     display: flex;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;    
 }
-
 
 .btm a{
     color: #fff;
 }
 
-
 /*The Visit Monronvia  Responsiveness ends here************************************/
 
-/*The about section***************************************************/
+/*The about section************/
 
-
-.Our_history_container{
-    width: 100vw;
-    height: max-content;
-     display: flex;
-     flex-direction: column;
-     gap: 4rem;
- }
-
-.our_history_1{
-    padding-top: 4rem;
-    width: 80%;
-    flex-direction: column;
-    gap: 2.4rem;
-    margin-left: 2rem;
+.about_container{
+    padding: 2rem 0;
 }
 
-.our_histiory_content{
-    width: 100%;
+.about_history{
+    margin:  3rem 0 0 3rem;
     flex-direction: column;
+    gap: 4vw;
+}
+
+.about_history_content{
+    width: 100%;
     gap: 1rem;
 }
 
-.our_history_label{
-    font-weight: 800;
-    font-size: 1.6rem;
+.about_history_label, .about_map_label{
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
-.our_history_text{
-    font-size: 1.1rem;
-    line-height: 1.3rem;
+.about_history_para, .about_map_para{
+    font-size: 1rem;
     word-spacing: .2rem;
 }
 
+.show_more_link{
+    font-weight: 600;
+    font-size: 1rem;
+}
 
- .Our_history_image > img{
-     width: 24rem;
-     box-shadow: 17px 18px 5px 2px rgb(217, 216, 216);
+ .about_history_image > img{
+     width: 80vw;
  }
 
-.MAP_RIA{
-    margin-top: 8rem;
+  .about_map{
+    padding-top: 5rem;
+    flex-direction: column-reverse;
+    gap: 4vw;
+    margin-left: 3rem;
+}
+
+.about_map_image > img{
+    width: 80vw;
+}
+
+.about_map_label_container{
     width: 100%;
-    height: 66vh;
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
-    margin-left: 2rem;
 }
-
-.map_image > img{
-    width: 25rem;
-}
-
-.map_of_RIA_label_text{
-    width: 86%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.3rem;
-}
-
-.map_of_RIA_label{
-   
-    font-size: 1.4rem; 
-    padding-top: 2rem;
-}
-
-.map_of_RIA_text{
-    font-size: 1.1rem;
-    line-height: 1.4rem;
-    word-spacing: .2rem; 
-}
-
-/* The end of the About Us section**************************************/
-
-
              
 /* Show More Section ************************************************/
-
-
 
 .liberia_p_content{
     width: 80%;
@@ -8472,75 +8513,49 @@ flex-direction: column;
 
 /*The about section***************************************************/
 
-.Our_history_container{
-    width: 100vw;
-    height: 165vh;
+.about_container{
+    
  }
 
-.our_history_1{
-    padding-top: 2rem;
-    width: 90%;
-    height: 42vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-left: 2rem;
+.about_history{
+  
 }
 
-.our_histiory_content{
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    gap: 1rem;
+.about_history_content{
+    
 }
 
-.our_history_label{
-    font-weight: 800;
-    font-size: 1.6rem;
+.about_history_label{
+ 
 }
 
-.our_history_text{
-    font-size: 1.1rem;
-    line-height: 1.3rem;
-    word-spacing: .2rem;
+.about_history_para{
+    
 }
 
-
-
- .Our_history_image > img{
-     width: 22rem;
- }
-
-.MAP_RIA{
-    padding-top: 12rem;
-    width: 90%;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-left: 2rem;
+.about_history_image > img{
+    
 }
 
-.map_image > img{
-    width: 22rem;
+.about_map{
+   
+  
 }
 
-.map_of_RIA_label_text{
-    width: 86%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.about_map_image > img{
+  
 }
 
-.map_of_RIA_label{
-    font-weight: 800;
-    font-size: 1.6rem; 
+.about_map_label_container{
+    
 }
 
-.map_of_RIA_text{
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    word-spacing: .2rem; 
+.about_map_label{
+   
+}
+
+.about_map_para{
+    
 }
 
 /* The end of the About Us section**************************************/
