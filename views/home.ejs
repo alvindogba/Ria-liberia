@@ -19,22 +19,43 @@
 
     <!-- Find your flight box -->
     <div class="find_flight_raidio_container">
-      <form>
-        <div class="find_flight_flex_container">
-          <span style="height: 100%;"> Find your Flight</span>
-          <i class="fa-solid fa-angle-down"></i>
+      <div class="find-flight ">
+        <button id="findFlightBtn" class="find_flight_flex_container"><span style="height: 100%;">Find Your Flight </span>   <i class="fa-solid fa-angle-down text-white"></i></button>
+        <div id="dropdown" class="dropdown-content" style="display:none;">
+            <div class="search-option">
+                <h3>Search by Flight Number</h3>
+                <input type="text" placeholder="e.g., AA1234" id="flightNumber">
+                <button onclick="searchByFlightNumber()">Search</button>
+            </div>
+            <div class="search-option">
+                <h3>Search by Route</h3>
+                <input type="text" placeholder="From" id="fromRoute">
+                <input type="text" placeholder="To" id="toRoute">
+                <input type="date" id="routeDate">
+                <button onclick="searchByRoute()">Search</button>
+            </div>
+            <div class="search-option">
+                <h3>Search by Date</h3>
+                <input type="date" id="dateSearch">
+                <select id="timeOfDay">
+                    <option value="">Choose Departure Time</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                </select>
+                <button onclick="searchByDate()">Search</button>
+            </div>
+            <div class="recent-searches">
+                <h4>Recent Searches</h4>
+                <ul id="recentSearchList">
+                    <li><a href="#">AA1234</a></li>
+                    <li><a href="#">DL5678</a></li>
+                    <li><a href="#">UA9101</a></li>
+                </ul>
+            </div>
+            <a href="#" class="help-link">Need help? Contact us.</a>
         </div>
-        
-        <ul class="find_ur_flight_drop_down">
-          <li><a href="https://www.brusselsairlines.com/de/de/homepage">Brussels</a></li>
-          <li><a href="https://www.kenya-airways.com/en/?gad_source=1&gclid=CjwKCAiAuNGuBhAkEiwAGId4alHWBN-6X7LsAJSu-wiA2bQRO91pyou2S_x_S5N6IwPjpXmzEuWQ4RoCZSEQAvD_BwE">Kenya</a></li>
-          <li><a href="https://www.schiphol.nl/en">Amaterdam Schiphol</a></li>
-          <li><a href="https://www.aircotedivoire.com/en/home/">Abidjan</a></li>
-          <li><a href="https://www.gacl.com.gh/">Kotoka</a></li>
-          <li><a href="https://www.slaa.sl/">Lungi, Sierra Leone</a></li>
-          <li><a href="https://aeroportcasablancamaroc.com/en/">Mohammad Nouaceur, morocco</a></li>
-        </ul>
-      </form>
+    </div>
 
       <!-- Radio button section -->
       <form action="" class="radio_container">
@@ -122,4 +143,99 @@
 </div>
 </section>
 
+
+<script>
+  document.getElementById('findFlightBtn').addEventListener('click', function() {
+      const dropdown = document.getElementById('dropdown');
+      dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  function searchByFlightNumber() {
+      const flightNumber = document.getElementById('flightNumber').value;
+      // Implement search logic here
+      alert('Searching for flight: ' + flightNumber);
+  }
+
+  function searchByRoute() {
+      const from = document.getElementById('fromRoute').value;
+      const to = document.getElementById('toRoute').value;
+      const date = document.getElementById('routeDate').value;
+      // Implement search logic here
+      alert(`Searching from ${from} to ${to} on ${date}`);
+  }
+
+  function searchByDate() {
+      const date = document.getElementById('dateSearch').value;
+      const time = document.getElementById('timeOfDay').value;
+      // Implement search logic here
+      alert(`Searching for flights on ${date} during ${time}`);
+  }
+
+
+  // THE AXIOS REQUEST 
+ 
+    async function searchByFlightNumber() {
+        const flightNumber = document.getElementById('flightNumber').value;
+        try {
+            const response = await axios.post('/api/search/flight-number', { flightNumber });
+            alert('Flight found: ' + JSON.stringify(response.data));
+        } catch (error) {
+            alert('Error fetching flight data: ' + error.response.data.error);
+        }
+    }
+
+    async function searchByRoute() {
+        const from = document.getElementById('fromRoute').value;
+        const to = document.getElementById('toRoute').value;
+        const date = document.getElementById('routeDate').value;
+        try {
+            const response = await axios.post('/api/search/route', { from, to, date });
+            alert('Flights found: ' + JSON.stringify(response.data));
+        } catch (error) {
+            alert('Error fetching flight data: ' + error.response.data.error);
+        }
+    }
+
+    async function searchByDate() {
+        const date = document.getElementById('dateSearch').value;
+        const time = document.getElementById('timeOfDay').value;
+        try {
+            const response = await axios.post('/api/search/date', { date, time });
+            alert('Flights found: ' + JSON.stringify(response.data));
+        } catch (error) {
+            alert('Error fetching flight data: ' + error.response.data.error);
+        }
+    }
+</script>
+
+
+<style>
+
+  .find-flight {
+      position: relative;
+      display: block;
+  }
+  #dropdown {
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      z-index: 1;
+  }
+  .search-option {
+      margin-bottom: 15px;
+  }
+  .recent-searches {
+      margin-top: 10px;
+  }
+  .recent-searches ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  .help-link {
+      display: block;
+      margin-top: 10px;
+      color: blue;
+  }
+</style>
 <%- include("partials/footer") %>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Home Page</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Airport</h1>
+        <div class="find-flight">
+            <button id="findFlightBtn">Find Your Flight</button>
+            <div id="dropdown" class="dropdown-content" style="display:none;">
+                <div class="search-option">
+                    <h3>Search by Flight Number</h3>
+                    <input type="text" placeholder="e.g., AA1234" id="flightNumber">
+                    <button onclick="searchByFlightNumber()">Search</button>
+                </div>
+                <div class="search-option">
+                    <h3>Search by Route</h3>
+                    <input type="text" placeholder="From" id="fromRoute">
+                    <input type="text" placeholder="To" id="toRoute">
+                    <input type="date" id="routeDate">
+                    <button onclick="searchByRoute()">Search</button>
+                </div>
+                <div class="search-option">
+                    <h3>Search by Date</h3>
+                    <input type="date" id="dateSearch">
+                    <select id="timeOfDay">
+                        <option value="">Choose Departure Time</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                    </select>
+                    <button onclick="searchByDate()">Search</button>
+                </div>
+                <div class="recent-searches">
+                    <h4>Recent Searches</h4>
+                    <ul id="recentSearchList">
+                        <li><a href="#">AA1234</a></li>
+                        <li><a href="#">DL5678</a></li>
+                        <li><a href="#">UA9101</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="help-link">Need help? Contact us.</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        document.getElementById('findFlightBtn').addEventListener('click', function() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        });
+
+        function searchByFlightNumber() {
+            const flightNumber = document.getElementById('flightNumber').value;
+            // Implement search logic here
+            alert('Searching for flight: ' + flightNumber);
+        }
+
+        function searchByRoute() {
+            const from = document.getElementById('fromRoute').value;
+            const to = document.getElementById('toRoute').value;
+            const date = document.getElementById('routeDate').value;
+            // Implement search logic here
+            alert(`Searching from ${from} to ${to} on ${date}`);
+        }
+
+        function searchByDate() {
+            const date = document.getElementById('dateSearch').value;
+            const time = document.getElementById('timeOfDay').value;
+            // Implement search logic here
+            alert(`Searching for flights on ${date} during ${time}`);
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .find-flight {
+            position: relative;
+            display: inline-block;
+        }
+        #dropdown {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            z-index: 1;
+        }
+        .search-option {
+            margin-bottom: 15px;
+        }
+        .recent-searches {
+            margin-top: 10px;
+        }
+        .recent-searches ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .help-link {
+            display: block;
+            margin-top: 10px;
+            color: blue;
+        }
+    </style>
+</body>
+</html>

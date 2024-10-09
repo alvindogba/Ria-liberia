@@ -85,6 +85,67 @@ app.get("/", async (req, res) => {
     }
 });
 
+//=============== ROUTES FOR THE FLIGHT SEARCH ON THE HOME PAGE ===============================================
+
+
+
+// Endpoint for searching by flight number
+app.post('/api/search/flight-number', async (req, res) => {
+    const { flightNumber } = req.body;
+
+    // Define the base API URL and access key
+    const apiUrl = `${avaitionStack_url}flights`;
+    
+    try {
+        const response = await axios.get(apiUrl, {
+            params: {
+                access_key: avaition_api_key,
+                flight_iata: flightNumber, // Use the correct parameter for flight number
+                limit: 100,
+            },
+        });
+
+        // Send the response data back to the client
+        res.json(response.data);
+    } catch (error) {
+        console.error(error); // Log the error for debugging
+        res.status(500).json({ error: 'Error fetching flight data' });
+    }
+});
+
+
+//========================================= Endpoint for searching by route and date
+app.post('/api/search/route', async (req, res) => {
+    const { from, to, date } = req.body;
+    // Replace with your actual API endpoint
+    const apiUrl = `https://api.example.com/flights?from=${from}&to=${to}&date=${date}`;
+
+    try {
+        const response = await axios.get(apiUrl);
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching flight data' });
+    }
+});
+
+// Endpoint========================================== for searching by date and time
+app.post('/api/search/date', async (req, res) => {
+    const { date, time } = req.body;
+    // Replace with your actual API endpoint
+    const apiUrl = `https://api.example.com/flights?date=${date}&time=${time}`;
+
+    try {
+        const response = await axios.get(apiUrl);
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'Error fetching flight data' });
+    }
+});
+
+
+
+
+
 // Define routes
 app.get("/flight-status", async (req, res) => {
     try {
@@ -263,6 +324,7 @@ app.post('/add-images', async (req, res) => {
         res.status(500).send('An error occurred while saving the images.');
     }
 });
+
 
 
 ////////////////////////////////////////////////////////////////////////
