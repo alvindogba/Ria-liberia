@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert International Airport Website</title>
+      <% if(!locals.title){%>
+<title> Robert International Airport Website  </title>
+      <%} else{%>
+        <title> <%= title  %> </title>
+     <% } %>
+    
     <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -80,7 +85,7 @@
                 </form>
                 <div class="flag_container">
                   <P>Liberia</P>
-                  <img src="./Images/liberia-flag-icon.png" class="Liberia_flag_icon" alt="Liberia Flag Icon">
+                  <img src="./Images/liberia-flag-icon.png" class="Liberia_flag_icon image-fluid" alt="Liberia Flag Icon" >
                 </div>
                 <!-- the offcanvas navigation -->
                 <div class="hand_burger_menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid  fa-bars"></i>

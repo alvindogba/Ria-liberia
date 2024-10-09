@@ -62,15 +62,18 @@ header{
 .logo_div{
     height: 100%;
     width: 30%;
-    display: flex;
+   background-color: var(--red);
+   display: flex;
     justify-content: center;
     align-items: center;
     clip-path: polygon(0 0, 0 100%, 0 800%, 100% 0);  
 }
 
 .logo_div img{
-    height: 10em;
-    width: 15em;
+    max-height: 18rem;
+    max-width: 14em;
+    height: 100%;
+    width: 100%;
 }
 
 /*styling the search_bar container*/
@@ -95,7 +98,9 @@ header{
     padding-left: 30%;
     align-items: center;
 }
-
+/* ==============================================
+FLAGE CONTAINER TO DISPLAY ON LARGER SCREEEN
+================================================= */
 .flag_container{
     padding-top: .7rem;
     display: flex;
@@ -107,7 +112,10 @@ header{
     height: 1.875rem;
 }
 
-.search_bar_form{
+/* ==============================================
+SEARCH BAR
+================================================= */
+.search_bar_form{ 
     display: flex;
     align-items: center;
 }
@@ -3732,6 +3740,7 @@ footer{
     gap: 4rem;
     text-align: center;
     font-size: 1.8rem;
+    background-color: #070952cb;
     color: var(--white);
     padding: 24px;
     position: absolute;
