@@ -229,7 +229,7 @@ app.get("/destination", (req, res)=>{
 })
 
 app.get("/contact", (req, res)=>{
-    res.render("contact");
+    res.render("contact", {title: "Contact | Ria6666"});
 })
 
 //////////////////////////////////////////////////////////////////////
@@ -266,7 +266,10 @@ app.post('/add-images', async (req, res) => {
 
 
 ////////////////////////////////////////////////////////////////////////
-
+// Administrator
+app.get('/admin', (req, res)=>{
+    res.render('admin/admin-views/admin')
+})
 
 // Shutdown handler
 process.on('SIGINT', async () => {
