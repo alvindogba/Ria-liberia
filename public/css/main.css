@@ -393,19 +393,21 @@ footer a:hover{
     animation: fade 0.5s ease;
 }
 
-.dot {
+ .dot{
     height: 15px;
     width: 15px;
+    background-color: #bbbbbb07;
     border: 2px dotted white;
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
-    animation: fade 0.5s ease;
-}
-
-.active {
-    animation: fade 0.5s ease;
-}
+    animation: fade .5s ease ;
+ }
+.active { 
+    background-color: var(--white);
+    animation: fade .5s ease ;
+  }
+  
 
 /* KeyFrames for animations */
 @keyframes fade {
@@ -8592,8 +8594,6 @@ flex-direction: column;
     
 }
 
-.active{
-    display: block
-}
+
 
 /*SCRIPT CLASS ENDS******************************************************/

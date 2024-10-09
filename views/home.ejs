@@ -5,10 +5,10 @@
 <!-- BEGINNING OF Call to Action Section -->
 <section class="Call_to_action_section ">
   <div class="img_container">
-    <img src="Images/bg1.jpg" alt="Background Image" class="background_image image-fluid">
-    <img src="Images/bg2.jpg" alt="Background Image" class="background_image image-fluid">
-    <img src="Images/img4.jpg" alt="Background Image" class="background_image image-fluid">
-    <img src="Images/bg680_n_18757875.webp" alt="Background Image" class="background_image image-fluid">
+    <img src="Images/tourist-carrying-luggage.jpg" alt="Background Image" class="background_image ">
+    <img src="Images/bg2.jpg" alt="Background Image" class="background_image">
+    <img src="Images/img4.jpg" alt="Background Image" class="background_image ">
+    <img src="Images/bg680_n_18757875.webp" alt="Background Image" class="background_image ">
   </div>
 
   <article class="Call_to_action_text_container pb-5">
@@ -241,4 +241,38 @@
       color: blue;
   }
 </style>
+
+<script>
+var slideIndex = 0;
+var timeout; // To hold the timeout reference
+showImg();
+
+function showImg() {
+  var images = $(".background_image");
+  var circle = $(".dot");
+
+  // Check if images and dots exist
+  if (images.length === 0 || circle.length === 0) return;
+
+  // Hide all images
+  images.css("display", "none");
+
+  // Increment slideIndex
+  slideIndex++;
+  if (slideIndex > images.length) {
+    slideIndex = 1;
+  }
+
+  // Show current image with fade effect
+  images.eq(slideIndex - 1).fadeIn(500);
+
+  // Update dots
+  circle.removeClass("active").eq(slideIndex - 1).addClass("active");
+
+  // Clear the previous timeout and set a new one
+  clearTimeout(timeout);
+  timeout = setTimeout(showImg, 3000);
+}
+</script>
+
 <%- include("partials/footer") %>

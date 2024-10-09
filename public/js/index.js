@@ -61,37 +61,6 @@ angleDown.on("click", function(){
   $(this).toggleClass("rotate_angle");
 });
 
-//Creating Image slider to change the hero Image  after every three seconds
-var slideIndex = 0;
-showImg();
-
-function showImg() {
-var images = $(".background_image");
-var circle = $(".dot");
-
-// Hide all images
-images.each(function() {
-  $(this).css("display", "none");
-});
-
-// Increment slideIndex
-slideIndex++;
-if (slideIndex > images.length) {
-  slideIndex = 1;
-}
-
-// Show current image
-images.eq(slideIndex - 1).css("display", "block");
-
-// Update dots
-circle.each(function() {
-  $(this).removeClass("active");
-});
-circle.eq(slideIndex - 1).addClass("active");
-
-// Change image every 3 seconds
-setTimeout(showImg, 3000);
-}
 
 
 
