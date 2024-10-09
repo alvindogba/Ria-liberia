@@ -89,7 +89,7 @@ app.get("/", async (req, res) => {
 
 
 
-// Endpoint for searching by flight number
+//============================================== Endpoint for searching by flight number
 app.post('/api/search/flight-number', async (req, res) => {
     const { flightNumber } = req.body;
 
@@ -117,25 +117,51 @@ app.post('/api/search/flight-number', async (req, res) => {
 //========================================= Endpoint for searching by route and date
 app.post('/api/search/route', async (req, res) => {
     const { from, to, date } = req.body;
+    console.log(from, to, date)
     // Replace with your actual API endpoint
-    const apiUrl = `https://api.example.com/flights?from=${from}&to=${to}&date=${date}`;
+    const apiUrl = `${avaitionStack_url}routes`;
 
     try {
-        const response = await axios.get(apiUrl);
+        const response = await axios.get(apiUrl, {
+            params: {
+                access_key: avaition_api_key,
+                dep_iata: from, // IATA code for departure airport
+                arr_iata: to,   // IATA code for arrival airport
+                flight_date: date, // Optional: specify the date
+                limit: 100,
+            },
+        });
         res.json(response.data);
     } catch (error) {
-        res.status(500).json({ error: 'Error fetching flight data' });
-    }
+        console.error('Error fetching flight data:', error.response ? error.response.data : error.message);
+
+        // Check if the error has a response from the external API
+        if (error.response) {
+            // Send the error message from the external API
+            res.status(error.response.status).json({
+                error: error.response.data.error.message || 'Error fetching flight data',
+                details: error.response.data.message,
+            });
+        } else {
+            // If there's no response, send a generic error message
+            res.status(500).json({ error: 'Error fetching flight data' });
+        }}
 });
 
 // Endpoint========================================== for searching by date and time
 app.post('/api/search/date', async (req, res) => {
     const { date, time } = req.body;
     // Replace with your actual API endpoint
-    const apiUrl = `https://api.example.com/flights?date=${date}&time=${time}`;
+    const apiUrl = `${avaitionStack_url}flights?date=${date}&time=${time}`;
 
     try {
-        const response = await axios.get(apiUrl);
+        const response = await axios.get(apiUrl, {
+            params: {
+                access_key: avaition_api_key,
+                flight_iata: flightNumber, // Use the correct parameter for flight number
+                limit: 100,
+            },
+        });
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching flight data' });

@@ -19,42 +19,43 @@
 
     <!-- Find your flight box -->
     <div class="find_flight_raidio_container">
-      <div class="find-flight ">
-        <button id="findFlightBtn" class="find_flight_flex_container"><span style="height: 100%;">Find Your Flight </span>   <i class="fa-solid fa-angle-down text-white"></i></button>
-        <div id="dropdown" class="dropdown-content" style="display:none;">
-            <div class="search-option">
-                <h3>Search by Flight Number</h3>
-                <input type="text" placeholder="e.g., AA1234" id="flightNumber">
-                <button onclick="searchByFlightNumber()">Search</button>
+      <div class="find-flight position-relative">
+        <button class="btn btn-danger find_flight_flex_container" id="findFlightBtn" onclick="toggleDropdown()">Find Your Flight</button>
+        <div id="dropdown" class="dropdown-content p-4 shadow" style="display:none;">
+            <div class="search-option mb-4">
+                <h5>Search by Flight Number</h5>
+                <input type="text" class="form-control mb-2" placeholder="e.g., AA1234" id="flightNumber">
+                <button class="btn btn-success" onclick="searchByFlightNumber()">Search</button>
             </div>
-            <div class="search-option">
-                <h3>Search by Route</h3>
-                <input type="text" placeholder="From" id="fromRoute">
-                <input type="text" placeholder="To" id="toRoute">
-                <input type="date" id="routeDate">
-                <button onclick="searchByRoute()">Search</button>
+            <div class="search-option mb-4">
+                <h5>Search by Route</h5>
+                <input type="text" class="form-control mb-2" placeholder="From" id="fromRoute">
+                <input type="text" class="form-control mb-2" placeholder="To" id="toRoute">
+                <input type="date" class="form-control mb-2" id="routeDate">
+                <button class="btn btn-success" onclick="searchByRoute()">Search</button>
             </div>
-            <div class="search-option">
-                <h3>Search by Date</h3>
-                <input type="date" id="dateSearch">
-                <select id="timeOfDay">
+            <div class="search-option mb-4">
+                <h5>Search by Date</h5>
+                <input type="date" class="form-control mb-2" id="dateSearch">
+                <select class="form-select mb-2" id="timeOfDay">
                     <option value="">Choose Departure Time</option>
                     <option value="morning">Morning</option>
                     <option value="afternoon">Afternoon</option>
                     <option value="evening">Evening</option>
                 </select>
-                <button onclick="searchByDate()">Search</button>
+                <button class="btn btn-success" onclick="searchByDate()">Search</button>
             </div>
             <div class="recent-searches">
-                <h4>Recent Searches</h4>
-                <ul id="recentSearchList">
+                <h6>Recent Searches</h6>
+                <ul class="list-unstyled" id="recentSearchList">
                     <li><a href="#">AA1234</a></li>
                     <li><a href="#">DL5678</a></li>
                     <li><a href="#">UA9101</a></li>
                 </ul>
             </div>
-            <a href="#" class="help-link">Need help? Contact us.</a>
+            <a href="/contact" class="d-block text-primary mt-2 help-link">Need help? Contact us.</a>
         </div>
+    </div>
     </div>
 
       <!-- Radio button section -->
@@ -188,6 +189,7 @@
         const from = document.getElementById('fromRoute').value;
         const to = document.getElementById('toRoute').value;
         const date = document.getElementById('routeDate').value;
+
         try {
             const response = await axios.post('/api/search/route', { from, to, date });
             alert('Flights found: ' + JSON.stringify(response.data));
@@ -221,6 +223,7 @@
       border: 1px solid #ccc;
       padding: 15px;
       z-index: 1;
+      width: 100%;
   }
   .search-option {
       margin-bottom: 15px;
