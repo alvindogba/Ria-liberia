@@ -1,0 +1,446 @@
+:root {
+  --herobg: #0000008f;
+  --red: #D21312;
+  --blue: #070A52;
+  --white: #ffffff;
+  --black: #000000;
+  --gray:  rgb(247, 245, 245);
+  font-size: 16px;
+  --poppin: 'Poppins', sans-serif;
+  --grayfortext: #7b7b7bc0;
+  --roboto: "Roboto", sans-serif;
+}
+
+/* All the elements that has a font family styling  starts here*/
+.dropdown a,
+.services_list a,
+.flight_drop_down1 a, 
+.show_ter_info a{
+  font-family: var(--poppin);
+}
+
+#second_hero_text{
+  font-family: monospace;
+}
+
+#second_hero_text{
+  font-family: var(--roboto);
+}
+
+#insp{
+  color: orangered;
+}
+
+#flight_status_hero_text,
+#Airline_Information_hero_text,
+#business_opportunity_hero_text,
+#insperation{
+  font-family: var(--poppin);
+}
+
+.grid {
+  font-family: monospace;
+}
+
+.busOppor_label_div > h3,
+.busOppor_text_div > h2,
+.advertise_article_sub_label_unlist li,
+.advertise_article_para p,
+.busOppor_card_h3,
+.busOppor_card_1st_para,
+.link_for_section,
+.terms_of_use_body1,  
+.terms_of_use_body1_label_h2,
+.term_of_use_services_filicity_h3,
+.terms_of_access_label,
+.terms_of_use_body2_menu_items_h3,
+.terms_of_use_body2_menu_items_para, 
+.terms_of_use_body2_menu_items_para1, 
+.terms_of_use_body2_menu_items_para2
+.terms_of_use_document_pdf_link1,
+.terms_of_use_label_donts, 
+.terms_of_use_label_dos,
+.terms_of_use_document_pdf_link2,
+.dos_nons_label_h2,.advertise_email_btn_link
+.advertise_article_main_label,
+.advertise_article_6_para_link,.advertise_call_btn_link
+.advertise_div_to_get_touch,
+.advertise_article_sub_label{
+  font-family: var(--roboto);
+}
+
+.flight_today_h3,
+.flight_search_label,
+.busOppor_card_2nd_para,
+.flight_search_label,
+.flight_search_text,
+.airline_information_label,
+.airline_information_text,
+.FAQ_text_container,
+.flag_container p,
+.faq_text_and_search_container h2,
+.services_content_container h2,
+.services_hero_container h1{
+  font-family: var(--poppin);
+}
+
+.services_list a, i{
+  font-family: var(--poppin);
+}
+
+.table{
+  font-family: sans-serif;
+}
+
+/* All the elements that has a font family styling ends here*/
+
+/* All the elements that has a color and bg-color styling starts here*/
+.active, .advertise_call_btn_link,
+.airline_information_table_container,
+.answer, 
+.black, 
+.busOppor_label_text_cards_container,
+.header_1st_section,
+.lates_news_in_monrovia_master_container,
+.new_website_container
+.newsroom_section1, 
+.newsroom_section2,
+.things_card,
+.things_card1, 
+.things_card2, 
+.things_card3,
+.things_card4,
+.things_card5,
+.things_card6,
+.things_card7,
+.things_to_know_master_section,
+.services_master_container,
+.white, 
+.white_line_list {
+  background-color: var(--white);
+}
+
+#destination_main_container,
+#our_trending_destination_container {
+  background-color: var(--white);
+}  
+
+.logo_div, 
+.advertise_email_btn_link,
+.home_flight_status,
+.find_flight_container,
+.flight_today_container,
+.home_parking,
+.releases_btn{
+  background-color: var(--red);
+}
+
+.lates_news_in_monrovia_master_container,
+.inner_arrivals_and_departure,
+.arrivals_and_departure,
+.terms_of_use_body_menu,
+.latest_news_in_monrovia_container{ 
+  background-color: var(--gray);
+}
+
+.blue_navbar_container,
+.arrivals,
+.readmore_btn,
+.subscribe_to_newsletter_container,
+.dropdown, .advertise_div_to_get_touch,
+.subscribe_form > button,
+.contact_page_submit_btn,
+footer{
+  background: var(--blue);
+}
+
+.business_opportunity_hero_div, 
+.FAQ__hero_article{
+  background-color: var(--herobg);
+}
+
+.dot {
+  background-color: #bbbbbb07;
+}
+
+.handBurger_menu_dropdown {
+  background-color: #070952cb;
+}
+
+.advertise_CTA_section_text_container,
+.Call_to_action_text_container{
+  background-color: #0000008f;
+}
+
+.country_visa{
+  background-color: #00000073;
+}
+
+.find_ur_flight_drop_down {
+  background-color: rgba(0, 0, 0, 0.57);
+}
+
+.newsroom_master_container,
+.article2_more_stories_grid_container{
+  background-color: rgb(237, 235, 218);
+}
+
+.FAQ_main_container{
+  background-color: rgb(251, 251, 251);
+}
+
+.latest_news_in_monrovia_container{
+  background-color: rgb(252, 248, 248);   
+}
+
+
+.transparent_div,
+.airline_information_serve{
+  background: transparent;
+}
+
+.liberia_content > .btm{
+  background: #070A52;
+}
+
+.find_flight_container{
+  background-color: #ff5a3c;
+}
+
+.btm button{
+  background-color: #D21312;
+}
+
+.name_input, 
+.email_input, 
+.subject_input,
+.textarea_input{
+  background: #F5F5F5;
+}
+
+.liberia_content > .btm:hover{
+  background: rgb(164, 163, 163);
+}
+
+.advertise_call_btn_link:hover{
+  background: var(--red);
+}
+
+.advertise_email_btn_link:hover{
+  background: var(--white);
+}
+
+.contact_page_submit_btn:hover{
+  background: var(--red);
+}
+ 
+.right_angle_div:hover{
+  background: var(--blue);
+}  
+
+.left_angle_div:hover{
+  background: var(--blue);
+}
+
+.subscribe_form > button:hover{
+  background: var(--white);
+ }
+
+.subscribe_form > button:active{
+  background: var(--white);
+}
+
+.btm button:hover{
+  background: grey;
+}
+
+.busOppor_cards_main_container .busOppor_card_2nd_para::after{
+  background-color: var(--red);
+}
+
+.FAQ_hero_master_container,
+.Call_to_action_text_container2,
+.business_opportunity_hero_section{
+  background-image: url(../Images/brussels.jpg);
+}
+
+.airline_information_serve_table{
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.911) 99%), url(../Images/bgfrotable.jpg);
+}
+
+.airport_contact_sec_one{
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.826) 0%, rgba(255, 255, 255, 0.977) 50%, rgb(255, 255, 255) 99%), url(../Images/bg1.jpg);
+}
+
+.subscribe_to_newsletter_container{
+  background: linear-gradient(180deg, rgba(21,86,186,1) 0%, rgba(9, 12, 10, 0.284) 36%, rgba(255,29,0,0.8492647058823529) 100%), url(../Images/subscribe-plane.jpg);
+} 
+
+.FAQ_hero_master_container,
+.airport_contact_sec_one,
+.Call_to_action_text_container2,
+.airline_information_serve_table,
+.subscribe_to_newsletter_container,
+.business_opportunity_hero_section{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* All the elements that has a color and bg-color styling ends here*/
+
+
+/* This is the starting fo the red bar after the call to action section */
+
+.home_flight_status{
+  height: 8vh;
+  width: 100%;
+}
+
+.home_flight_status_inner{
+  display: flex;
+  height: 8vh;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 6rem;
+}
+
+h2 .home{
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+ h2 .home:hover{
+  color: var(--blue);
+  transition: all 1s ease-in-out;
+}
+
+.home_flight_status_span{
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.flight_status{
+  color: var(--blue);
+  font-size: 1.2rem;
+  transition: all .3s ease;
+}
+
+.flight_status:hover{
+  color: var(--blue);
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  
+  .home_flight_status_inner{
+    margin-left: 3rem;
+  }
+
+  h2 .home{
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+  
+   h2 .home:hover{
+    color: var(--blue);
+    transition: all 1s ease-in-out;
+  }
+  
+  .home_flight_status_span{
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+  
+  .flight_status{
+    font-size: 1.1rem;
+    transition: all .5s ease-in-out;
+  }
+  
+  .flight_status:hover{
+    color: var(--blue);
+    transition: all .3s ease;
+    font-size: 1.15rem;
+  }
+
+}
+
+@media (max-width: 370px) {
+ 
+  .home_flight_status_inner{
+    margin-left: 1.3rem;
+  }
+
+  h2 .home{
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  
+   h2 .home:hover{
+    color: var(--blue);
+    transition: all 1s ease-in-out;
+  }
+  
+  .home_flight_status_span{
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  
+  .flight_status{
+    font-size: 1rem;
+    transition: all .5s ease-in-out;
+  }
+  
+  .flight_status:hover{
+    color: var(--blue);
+    transition: all .3s ease;
+    font-size: 1.1rem;
+  }
+
+}
+
+/* This is the ending fo the red bar after the call to action section */
+
+/*This is the starting of the uparrow on the home section style*/
+
+.up-arrow {
+  width: 3vw; /* Dynamically adjust based on viewport width */
+  height: 3vw;
+  border-radius: 50%;
+  background: var(--red);
+  z-index: 1;
+  position: fixed;
+  top: 50vh; /* Percentage of viewport height for responsiveness */
+  left: 75vw; /* Percentage of viewport width */
+  border: 2px dotted #070A52;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.up-arrow-a {
+  font-size: 2vw; /* Font size is responsive to viewport width */
+  color: var(--white);
+  font-weight: 900;
+}
+/*This is the ending of the uparrow on the home section style*/
+
+
+@media (max-width: 768px) {
+  .up-arrow {
+    width: 9vw;
+    height: 9vw;
+    top: 60vh;
+    left: 65vw;
+  }
+  .up-arrow-a {
+    font-size: 7vw; /* Adjust font size for smaller screens */
+    margin-bottom: 3px;
+  }
+}
