@@ -31,15 +31,7 @@ html{
 overflow-x: hidden;
 }
 
-/* Apply blur to background only when modal is active */
-body.modal-open {
-    filter: blur(5px); /* or another effect */
-  }
   
-  /* Make sure the blur is removed once the modal closes */
-  body:not(.modal-open) {
-    filter: none;
-  }
 
 
 
@@ -70,7 +62,9 @@ body.modal-open {
 .navbar_container{
     height: 100px;
     width: 100vw;
-    display: flex;   
+    display: flex; 
+    position: absolute;  
+    top: 25vh;
 }
 
 /*HAND BURGER MENU ***************************************************/
