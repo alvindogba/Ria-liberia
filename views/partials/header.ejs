@@ -253,9 +253,12 @@
       </div>
       <div class="modal-body">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/flight-info">Flight INformation</a></li>
+           
+         <% searchResult.forEach(link => {%>
+          <li><a href="<%= link.url %>" class="search_links text-black fs-6" ><%= link.title %></a></li>
+      <%   }); %>
         </ul>
+      
       </div>
      
     </div>
@@ -263,7 +266,7 @@
 </div>
 
 <script>
-  // Get modal and input elements
+// Get modal and input elements
 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
 const myInput = document.getElementById('Search');
 
@@ -272,8 +275,30 @@ const openModal = () => {
     myModal.show();
 };
 
-// Optionally, you can listen for a focus event on the input
+// Listen for input events on the input field
 myInput.addEventListener('input', () => {
+    const filter = myInput.value.toUpperCase(); // Get the search term in uppercase
+    if (filter.length < 2) {
+        myModal.hide(); // Hide modal if input is too short
+        return;
+    }
     openModal();
+    const allLinks = document.querySelectorAll(".search_links"); // Get all links
+    let match = false;
+
+    // Loop through all the links
+    allLinks.forEach(link => {
+        // Check for match
+        if (link.innerText.toUpperCase().includes(filter)) {
+            link.style.display = ''; // Show the link if there's a match
+            match = true; // Set match to true
+        } else {
+            link.style.display = 'none'; // Hide the link if no match
+        }
+    });
 });
+
+
+
+
 </script>

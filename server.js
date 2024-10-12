@@ -3,13 +3,17 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import moment from 'moment-timezone';
 import mailchimp from '@mailchimp/mailchimp_marketing';
-import  pkg   from 'pg';
-
-
+import pkg from 'pg'; // Adjusted import for PostgreSQL client
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 // Initialize environment variables
 dotenv.config();
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Initialize app
 const app = express();
@@ -18,6 +22,8 @@ app.locals.moment=moment; //Package to convert international time to local time
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+// Load the SQL query from the file
+
 // Middleware to parse JSON request bodies
 app.use(express.json()); 
 app.set('view engine', 'ejs');
@@ -29,6 +35,11 @@ const avaition_api_key= process.env.Avaition_stack_Api_key
 const airport_code = process.env.AIRPORT_CODE;
 const news_url=process.env.news_api_url;
 const news_api_key= process.env.news_api_key;
+
+// Load SQL query from file
+const queryFilePath = path.join(__dirname, 'query.sql');
+const sqlQuery = fs.readFileSync(queryFilePath, 'utf8');
+
 
 const {Client} = pkg;
 // Extablixshing database connection 
@@ -44,41 +55,26 @@ const db = new Client({
 });
 db.connect()
     .then(() => {
-        console.log('Connected to the database');
-        // You can run your queries here
+        // CREATING TABLES ======================================
+        return db.query(sqlQuery);
+    })
+    .then(() => {
+        console.log('Table created successfully');
     })
     .catch(err => {
-        console.error('Connection error', err.stack);
-    });
-
+        console.error('Error executing query', err.stack);
+    })
+ 
 
 
 
 
 app.get("/", async (req, res) => {
     try {
-        res.render("home"/*, {articles: articles.slice(0, 4)}*/);
-        // const response = await axios.get("https://newsapi.org/v2/top-headlines", {
-        //     params: {
-        //         language: 'en', // Specify language as English
-        //         country: "US",// Country code for Nigeria
-        //         limit: 2
-        //     },
-        //     headers:{
-        //         Authorization:  news_api_key
-        //     }
-        // });
-
-        // Extract the articles from the response
-        // const articles = response.data.articles;
-
-        // Check if there are articles and send them as JSON
-        // if (articles.length > 0) {
-        //     console.log(articles.slice(0, 4))
-        //     res.render("home", {articles: articles.slice(0, 4)});
-        // } else {
-        //     res.status(404).send("No articles found.");
-        // }
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("home", {searchResult: result.rows});
+   
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");
