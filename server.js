@@ -44,10 +44,10 @@ const sqlQuery = fs.readFileSync(queryFilePath, 'utf8');
 const {Client} = pkg;
 // Extablixshing database connection 
 const db = new Client({
-    user: process.env.user,
-    host: process.env.host,
-    database: process.env.database_name,
-    password: process.env.password,
+    user: process.env.DB_USER ,
+    host: process.env.DB_HOST,
+    database: process.env.DATABASE_NAME,
+    password: process.env.DB_PASSWORD,
     port: process.env.port,
     ssl: {
         rejectUnauthorized: false, // Use this if you're connecting to a self-signed certificate
