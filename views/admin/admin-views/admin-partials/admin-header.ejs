@@ -4,8 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Dashboard - RIA Admin</title>
+  
+  <% if(!locals.title){%>
+    <title>Dashboard - RIA Admin</title>
+  <%} else{%>
+    <title> <%= title  %> </title>
+  <% } %>
+        
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,7 +43,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center justify-content-between">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="/" class="logo d-flex align-items-center">
+      <a href="/" target="_blank" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block">RIA</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>

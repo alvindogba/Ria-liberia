@@ -6,6 +6,7 @@ import mailchimp from '@mailchimp/mailchimp_marketing';
 import pkg from 'pg'; // Adjusted import for PostgreSQL client
 import fs from 'fs';
 import path from 'path';
+import multer from 'multer';
 import { fileURLToPath } from 'url';
 
 
@@ -19,6 +20,23 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 8080;
 app.locals.moment=moment; //Package to convert international time to local time
+
+// Set up multer for file uploads using memory storage
+const storage = multer.memoryStorage();
+const upload = multer({ 
+  storage: storage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // Limit file size to 5MB
+  fileFilter: (req, file, cb) => {
+    const allowedTypes = /jpeg|jpg|png|gif/;
+    const extname = allowedTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimetype = allowedTypes.test(file.mimetype);
+    if (mimetype && extname) {
+      return cb(null, true);
+    }
+    cb(new Error('Only images are allowed!'));
+  }
+});
+
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -287,8 +305,16 @@ app.get("/advertisting", (req, res)=>{
     res.render("advertisting");
 })
 
-app.get("/about", (req, res)=>{
-    res.render("about");
+app.get("/about", async (req, res)=>{
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("about", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
 })
 
 app.get("/parking_transport", (req, res)=>{
@@ -312,7 +338,7 @@ app.get("/destination", (req, res)=>{
 })
 
 app.get("/contact", (req, res)=>{
-    res.render("contact", {title: "Contact | Ria6666"});
+    res.render("contact", {title: "Contact | RIA Website"});
 })
 
 //////////////////////////////////////////////////////////////////////
@@ -347,6 +373,39 @@ app.post('/add-images', async (req, res) => {
     }
 });
 
+// Handle form about submission
+app.post('/ad_about_form', upload.single('image'), async (req, res) => {
+    try {
+        const photo = req.file ? req.file.buffer : null;
+        const photoType = req.file ? req.file.mimetype : null; // Capture MIME type
+        const { label, content } = req.body; 
+
+        // Validate required fields
+        if (!label || !content) {
+            return res.status(400).send('Label and Content are required.');
+        }
+
+        // Inserting the data into the database using parameterized query
+        const query = `INSERT INTO about (label, image, content, photoType) 
+                       VALUES ($1, $2, $3, $4)`;
+        // Parameterized values from the form
+        const values = [label, photo, content, photoType];
+        // Execute the query
+        await db.query(query, values);
+        // Redirect or respond with a success message
+        res.redirect('/ad_about');  // Redirect back to the form or another page
+
+    } catch (error) {
+        console.error('Error inserting image data:', error.stack); // Use stack for more details
+        if (error.code === '23505') { // Unique violation
+            res.status(400).send('Duplicate entry detected.');
+        } else if (error.code === '22021') { // Character not in encoding
+            res.status(400).send('Invalid character encoding in input.');
+        } else {
+            res.status(500).send('An error occurred while saving the images.');
+        }
+    }
+});
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -354,6 +413,21 @@ app.post('/add-images', async (req, res) => {
 app.get('/admin', (req, res)=>{
     res.render('admin/admin-views/admin')
 })
+
+app.get("/ad_about", async (req, res) => {
+    try {
+        const aboutResult = await db.query(`SELECT * FROM about`);
+        console.log(aboutResult.rows);
+        res.render("admin/admin-views/admin_about", {
+            ab_content: aboutResult.rows,
+            title: 'Admin About | RIA Website'
+        });
+    } catch (error) {
+        console.error('Error fetching about content data:', error.stack);
+        res.status(500).send('An error occurred while fetching the about content data.');
+    }
+});
+
 
 // Shutdown handler
 process.on('SIGINT', async () => {
