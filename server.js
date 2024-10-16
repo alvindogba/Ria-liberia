@@ -407,6 +407,43 @@ app.post('/ad_about_form', upload.single('image'), async (req, res) => {
     }
 });
 
+// route for editing the about content
+app.post('/ad_about_form/:id', upload.single('image'), async (req, res) => {
+    try {
+        const { id } = req.params;  // Get the ID from the URL
+        const photo = req.file ? req.file.buffer : null;
+        const photoType = req.file ? req.file.mimetype : null; 
+        const { label, content } = req.body;
+
+        // Validate required fields
+        if (!label || !content) {
+            return res.status(400).send('Label and Content are required.');
+        }
+
+        // Prepare the update query (without updating the image if none provided)
+        let query = `UPDATE about SET label = $1, content = $2`;
+        const values = [label, content];
+
+        if (photo) {
+            query += `, image = $3, photoType = $4 WHERE id = $5`;
+            values.push(photo, photoType, id);
+        } else {
+            query += ` WHERE id = $3`;
+            values.push(id);
+        }
+
+        // Execute the query
+        await db.query(query, values);
+
+        // Redirect or respond with a success message
+        res.redirect('/ad_about');
+    } catch (error) {
+        console.error('Error updating about content:', error.stack);
+        res.status(500).send('An error occurred while updating the about content.');
+    }
+});
+
+
 
 ////////////////////////////////////////////////////////////////////////
 // Administrator
@@ -417,7 +454,7 @@ app.get('/admin', (req, res)=>{
 app.get("/ad_about", async (req, res) => {
     try {
         const aboutResult = await db.query(`SELECT * FROM about`);
-        console.log(aboutResult.rows);
+      
         res.render("admin/admin-views/admin_about", {
             ab_content: aboutResult.rows,
             title: 'Admin About | RIA Website'
