@@ -36,44 +36,44 @@
 <!--A scroll to the arrow div ends here-->
 
  <!----------The History Section---------->
-<section class="about_container">
-  <div class="about_history">
-      <div class="about_history_content">
-        <h2 class="about_history_label">Our History</h2>
-          <p class="about_history_para">Roberts International Airport (IATA: ROR, ICAO: GIRR), informally also known as Robertfield,
-               is the international airport of liberia. Located near the town of Harbel, the single runway
-               airport is about 35 miles (56 km) outside of the nations capital Monronvia.
-               The facility with it's 11,000 feet (3,400 m) long runway was an emergency landing site for 
-               the United States Space Shuttle program and is the principal airport in the country 
-               and one ofonly two with paved runways in the raclon. The airport is named in honor of
-               Joseph Jenkins Roberts. The First President of Liberia.
-           </p>
-             <div ><a href="" class="show_more_link">SHOW MORE &#62;&#62;</a></div> 
-      </div>
+ <section class="about_container">
 
-      <div class="about_history_image">
-        <img src="Images/roberts_new_terminal.jpg" alt="">
-      </div>
+  <!-- About History Section (only displayed once for the first item) -->
+  <% if (ab_content[0]) { %>
+    <div class="about_history">
+        <div class="about_history_content">
+            <h2 class="about_history_label"><%= ab_content[0].label ? ab_content[0].label : 'No Label Provided' %></h2>
+            <p class="about_history_para"><%= ab_content[0].content ? ab_content[0].content : 'No Content Available' %></p>
+            <div><a href="" class="show_more_link">SHOW MORE &#62;&#62;</a></div> 
+        </div>
 
-  </div>
-    
-  <div class="about_map">
+        <div class="about_history_image">
+            <% if (ab_content[0].image) { %>
+                <img src="data:<%= ab_content[0].photoType %>;base64,<%= ab_content[0].image.toString('base64') %>" alt="About History Image">
+            <% } %>
+        </div>
+    </div>
+  <% } %>
 
-  <div class="about_map_image">
-    <img src="Images/Monrovia-airport-slide2.webp" alt="">
-  </div>
+  <!-- About Map Sections (for subsequent items) -->
+  <% ab_content.slice(1).forEach(function(item) { %>
+    <div class="about_map">
+        <div class="about_map_image">
+            <% if (item.image) { %>
+                <img src="data:<%= item.photoType %>;base64,<%= item.image.toString('base64') %>" alt="About Map Image">
+            <% } %>
+        </div>
 
-  <div class="about_map_label_container">
-    <h2 class="about_map_label">Map of Robert International Airport</h2>
-    <p class="about_map_para">Monronvia Robert International Airport is located near the town of Harbel,
-      in Margibi County, Liberia. The single runway airport is about 35 miles (56 km)
-      outside of the nations capital Monronvia and about 15 miles  upstream from 
-      the Atlantic Ocean.
-    </p>
-  </div>
+        <div class="about_map_label_container">
+            <h2 class="about_map_label"><%= item.label ? item.label : 'No Label Provided' %></h2>
+            <p class="about_map_para"><%= item.content ? item.content : 'No Content Available' %></p>
+        </div>
+    </div>
+  <% }) %>
 
-  </div>
 </section>
+
+
 
 <!--The Footer Section-->
 

@@ -1,0 +1,41 @@
+<!-- views/admin/admin-views/login.ejs -->
+<%- include('partials/header') %>
+
+<h2>Admin Login</h2>
+
+<!-- Flash Messages -->
+<% if (success_msg) { %>
+  <div class="alert alert-success"><%= success_msg %></div>
+<% } %>
+<% if (error_msg) { %>
+  <div class="alert alert-danger"><%= error_msg %></div>
+<% } %>
+<% if (error) { %>
+  <div class="alert alert-danger"><%= error %></div>
+<% } %>
+
+<form action="/login" method="POST">
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      required
+    >
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      required
+    >
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+<%- include('partials/footer') %>

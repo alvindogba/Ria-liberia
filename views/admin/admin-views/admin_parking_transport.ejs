@@ -1,0 +1,76 @@
+<!-- Header -->
+<%- include('admin-partials/admin-header') %>
+
+<!-- Sidebars -->
+<%- include('admin-partials/admin-sidebar') %>
+
+  <main id="main" class="main min-vh-100">
+
+    <div class="pagetitle">
+      <h1>Parking and Transport</h1>
+      <nav class="d-flex justify-content-between align-items-center">
+        <div class="breadcrumb mb-0"> <!-- Removed margin-bottom -->
+            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </div>
+    
+        <div class="bs-example">
+            <!-- Button HTML (to Trigger Modal) -->
+            <a href="#myModal" role="button" class="btn bg-lg btn-outline-primary" data-bs-toggle="modal">&plus; Parking & Transport</a>
+            
+          <!-- Modal HTML -->
+          <div id="myModal" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Add Content On The Parking And Transport Page</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Form starts here -->
+                <form action="/ad_park_tran_form" method="POST" enctype="multipart/form-data">
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-3">
+                          <label class="form-label">Label</label>
+                          <input type="text" class="form-control" name="label" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-3">
+                          <label class="form-label">Content</label>
+                          <textarea class="form-control" name="content" required></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Remove 'created_at' field -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Parking & Transport Content</button>
+                  </div>
+                </form>
+                <!-- Form ends here -->
+              </div>
+            </div>
+          </div>
+  
+        </div>
+    </nav>
+    
+    </div><!-- End Page Title -->
+  
+    <section class="section dashboard">
+      <div class="row">
+
+                
+      </div>
+     
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- FOOTER -->
+  <%- include('admin-partials/admin-footer') %>

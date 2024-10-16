@@ -70,76 +70,62 @@
   
   </div><!-- End Page Title -->
 
-  <section class="section dashboard">
-  
-      <% ab_content.forEach(function(item, index) { %>
-      <div class="card_con">
-        <% if (item.image) { %>
-         <img src="data:<%= item.photoType %>;base64,<%= item.image.toString('base64') %>" alt="Image" style="width:100%">
-      <% } %> 
-      <p><%= item.updated_at ? new Date(item.updated_at).toLocaleString() : 'No Updated Date Available' %></p>
-        <h2><%= item.label ? item.label : 'No Label Provided' %></h2>
-        <p><%= item.content ? item.content : 'No Content Available' %></p>
-        <div class="bs-example">
-          <!-- Button HTML (to Trigger Modal) -->
-          <a href="#myModal<%= index %>" role="button" class="btn btn-outline-primary stretched-link" data-bs-toggle="modal">Edit Content</a>
-        
-        <!-- Modal HTML -->
-        <div id="myModal<%= index %>" class="modal fade" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Edit About Content</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+  <section class="section dashboard pt-4">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <% ab_content.forEach(function(item, index) { %>
+          <div class="col">
+            <div class="card h-100">
+              <% if (item.image) { %>
+                <img src="data:<%= item.photoType %>;base64,<%= item.image.toString('base64') %>" alt="Image" class="card-img-top">
+              <% } %>
+              <div class="card-body">
+                <h5 class="card-title"><%= item.label ? item.label : 'No Label Provided' %></h5>
+                <p class="card-text"><%= item.content ? item.content : 'No Content Available' %></p>
               </div>
-              <!-- Form starts here -->
-              <form action="/ad_about_form/<%= item.id %>" method="POST" enctype="multipart/form-data">
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label class="form-label">Label</label>
-                        <input type="text" class="form-control" name="label"  value="<%= item.label %>" required>
-                      </div>
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                <small class="text-muted"><%= item.updated_at ? new Date(item.updated_at).toLocaleString() : 'No Updated Date Available' %></small>
+                <a href="#myModal<%= index %>" role="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit Content</a>
+              </div>
+  
+              <!-- Modal HTML -->
+              <div id="myModal<%= index %>" class="modal fade" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit About Content</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label class="form-label">Image</label>
-                        <input type="file" class="form-control" name="image" accept="image/*">
+                    <form action="/ad_about_form/<%= item.id %>" method="POST" enctype="multipart/form-data">
+                      <div class="modal-body">
+                        <div class="mb-3">
+                          <label class="form-label">Label</label>
+                          <input type="text" class="form-control" name="label" value="<%= item.label %>" required>
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Image</label>
+                          <input type="file" class="form-control" name="image" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                          <label class="form-label">Content</label>
+                          <textarea class="form-control" name="content" required><%= item.content %></textarea>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="mb-3">
-                        <label class="form-label">Content</label>
-                        <textarea class="form-control" name="content" required><%= item.content %></textarea>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
                       </div>
-                    </div>
+                    </form>
                   </div>
-                  <!-- Remove 'created_at' field -->
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-primary">Save Changes</button>
-                </div>
-              </form>
-              <!-- Form ends here -->
+              </div>
             </div>
           </div>
-        </div>
-
+        <% }) %>
       </div>
-        
-      </div> 
-      <% }) %>
-  </div>
-
-
+    </div>
   </section>
-
+  
 </main><!-- End #main -->
 
   <!-- FOOTER -->

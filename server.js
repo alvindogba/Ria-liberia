@@ -262,84 +262,207 @@ app.get("/flight_info", async (req, res)=>{
     
 })
 
-app.get("/newsroom", (req, res)=>{
-    res.render("newsroom");
-});
-
-app.get("/business_opportities", (req, res)=>{
-    res.render("business_opportities");
-});
-
-app.get("/passenager", (req, res)=>{
-    res.render("passenager");
-})
-
-app.get("/privacy_cookies", (req, res)=>{
-    res.render("privacy_cookies");
-})
-
-app.get("/services", (req, res)=>{
-    res.render("services");
-})
-
-app.get("/term_of_use", (req, res)=>{
-    res.render("term_of_use");
-})
-
-app.get("/thingsto_know", (req, res)=>{
-    res.render("thingsto_know");
-})
-
-app.get("/visit_monrovia", async(req, res)=>{
-    try {
-        const result = await db.query(`SELECT hotel_name, description, location, website, large_url, url_1, url_2, url_3 FROM hotels
-            JOIN hotel_image ON hotels.id = hotel_image.hotel_id`)
-            res.render("visit_monrovia", {hotels: result.rows});
-    } catch (error) {
-        console.error('Error fetching flight data:', error.message);
-    }
-
-})
-
-app.get("/advertisting", (req, res)=>{
-    res.render("advertisting");
-})
-
-app.get("/about", async (req, res)=>{
+app.get("/newsroom", async (req, res) => {
     try {
         // QUERING through the links in the database to display it in the searct bar on the home page ===================
         const result = await db.query(`SELECT * FROM  headerLinks`)
-        res.render("about", {searchResult: result.rows});
+        res.render("newsroom", {searchResult: result.rows});
    
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
         res.status(500).send("Failed to fetch data, please try again.");
     }
+});
+
+app.get("/business_opportities", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("business_opportities", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/passenager", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("passenager", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/privacy_cookies", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("privacy_cookies", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/services", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("services", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/term_of_use", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("term_of_use", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/thingsto_know", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("thingsto_know", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/visit_monrovia", async(req, res)=>{
+    try {
+          // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const hlinkresult = await db.query(`SELECT * FROM  headerLinks`)
+        const result = await db.query(`SELECT hotel_name, description, location, website, large_url, url_1, url_2, url_3 FROM hotels
+            JOIN hotel_image ON hotels.id = hotel_image.hotel_id`)
+            res.render("visit_monrovia", {hotels: result.rows, searchResult: hlinkresult.rows});
+    } catch (error) {
+        console.error('Error fetching flight data:', error.message);
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+
 })
 
-app.get("/parking_transport", (req, res)=>{
-    res.render("parking_transport");
-})
+app.get("/advertisting", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("advertisting", {searchResult: result.rows, title: "Advertising | RIA Website"});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
 
-app.get("/faqs", (req, res)=>{
-    res.render("faqs");
-})
+app.get("/about", async (req, res) => {
+    try {
+        const aboutResult = await db.query(`SELECT * FROM about`);
+        // QUERING through the links in the database to display it in the searct bar on the about page =====
+        const result = await db.query(`SELECT * FROM  headerLinks`)
 
-app.get("/see_more", (req, res)=>{
-    res.render("see_more");
-})
+        res.render("about", {
+            ab_content: aboutResult.rows,
+            title: 'About | RIA Website',
+            searchResult: result.rows
+        });
+    } catch (error) {
+        console.error('Error fetching about content data:', error.stack);
+        res.status(500).send('An error occurred while fetching the about content data.');
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
 
-app.get("/show_more", (req, res)=>{
-    res.render("show_more");
-})
+app.get("/parking_transport", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("parking_transport", {searchResult: result.rows, title: "Parking & Transport | RIA Website"});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
 
-app.get("/destination", (req, res)=>{
-    res.render("destination");
-})
+app.get("/faqs", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("faqs", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
 
-app.get("/contact", (req, res)=>{
-    res.render("contact", {title: "Contact | RIA Website"});
-})
+app.get("/see_more", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("see_more", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/show_more", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("show_more", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/destination", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("destination", {searchResult: result.rows});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
+
+app.get("/contact", async (req, res) => {
+    try {
+        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const result = await db.query(`SELECT * FROM  headerLinks`)
+        res.render("contact", {searchResult: result.rows, title: "Contact | RIA Website"});
+   
+    } catch (error) {
+        console.error("Failed to make request:", error.response ? error.response.data : error.message);
+        res.status(500).send("Failed to fetch data, please try again.");
+    }
+});
 
 //////////////////////////////////////////////////////////////////////
 //Administrative Access Only 
@@ -351,6 +474,46 @@ app.get("/add_hotel_image", async(req, res)=>{
         console.error('Error fetching flight data:', error.message);
     }
 })
+
+// Administrator
+app.get('/admin', async (req, res)=>{
+    
+    try {
+        res.render('admin/admin-views/admin', {
+            title: 'Admin Dashbord | RIA Website'
+        });
+    } catch (error) {
+        console.error('Error loading the admin dashboard page:', error.stack);
+        res.status(500).send('An error occurred while displaying.');
+    }
+})
+
+app.get("/ad_about", async (req, res) => {
+    try {
+        const aboutResult = await db.query(`SELECT * FROM about`);
+      
+        res.render("admin/admin-views/admin_about", {
+            ab_content: aboutResult.rows,
+            title: 'Admin About | RIA Website'
+        });
+    } catch (error) {
+        console.error('Error fetching about content data:', error.stack);
+        res.status(500).send('An error occurred while fetching the about content data.');
+    }
+});
+
+app.get("/ad_park_tran", async (req, res) => {
+    try {
+             
+        res.render("admin/admin-views/admin_parking_transport", {
+           
+            title: 'Admin Parking & Transport | RIA Website'
+        });
+    } catch (error) {
+        console.error('Error loading parking/transport page:', error.stack);
+        res.status(500).send('An error occurred while loaging parking/transport page.');
+    }
+});
 
 // Handle form submission
 app.post('/add-images', async (req, res) => {
@@ -442,29 +605,6 @@ app.post('/ad_about_form/:id', upload.single('image'), async (req, res) => {
         res.status(500).send('An error occurred while updating the about content.');
     }
 });
-
-
-
-////////////////////////////////////////////////////////////////////////
-// Administrator
-app.get('/admin', (req, res)=>{
-    res.render('admin/admin-views/admin')
-})
-
-app.get("/ad_about", async (req, res) => {
-    try {
-        const aboutResult = await db.query(`SELECT * FROM about`);
-      
-        res.render("admin/admin-views/admin_about", {
-            ab_content: aboutResult.rows,
-            title: 'Admin About | RIA Website'
-        });
-    } catch (error) {
-        console.error('Error fetching about content data:', error.stack);
-        res.status(500).send('An error occurred while fetching the about content data.');
-    }
-});
-
 
 // Shutdown handler
 process.on('SIGINT', async () => {
