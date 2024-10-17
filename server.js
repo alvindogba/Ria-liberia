@@ -394,9 +394,10 @@ app.get("/about", async (req, res) => {
 
 app.get("/parking_transport", async (req, res) => {
     try {
-        // QUERING through the links in the database to display it in the searct bar on the home page ===================
+        const parkTranResult = await db.query(`SELECT * FROM parking_tran`);
+        // QUERING through the links in the database to display it in the searct bar on the home page ===
         const result = await db.query(`SELECT * FROM  headerLinks`)
-        res.render("parking_transport", {searchResult: result.rows, title: "Parking & Transport | RIA Website"});
+        res.render("parking_transport", {searchResult: result.rows, title: "Parking & Transport | RIA Website",  prakT_content: parkTranResult.rows,});
    
     } catch (error) {
         console.error("Failed to make request:", error.response ? error.response.data : error.message);
@@ -504,14 +505,18 @@ app.get("/ad_about", async (req, res) => {
 
 app.get("/ad_park_tran", async (req, res) => {
     try {
-             
+        const parkTranResult = await db.query(`SELECT * FROM parking_tran`);
+        
+        // Render the EJS template with the retrieved data
         res.render("admin/admin-views/admin_parking_transport", {
-           
+            prakT_content: parkTranResult.rows,
             title: 'Admin Parking & Transport | RIA Website'
         });
+
+      
     } catch (error) {
         console.error('Error loading parking/transport page:', error.stack);
-        res.status(500).send('An error occurred while loaging parking/transport page.');
+        res.status(500).send('An error occurred while loading the parking/transport page.');
     }
 });
 
@@ -570,6 +575,38 @@ app.post('/ad_about_form', upload.single('image'), async (req, res) => {
     }
 });
 
+// Handle parking & transport form submission
+app.post('/ad_park_tran_form', async (req, res) => {
+    try {
+        const { pt_label, pt_content } = req.body;
+
+        // Validate required fields
+        if (!pt_label || !pt_content) {
+            return res.status(400).send('Label and Content are required.');
+        }
+
+        // Inserting the data into the correct table using parameterized query
+        const query = `INSERT INTO parking_tran (pt_label, pt_content) 
+                       VALUES ($1, $2)`;
+        // Parameterized values from the form
+        const values = [pt_label, pt_content];
+        // Execute the query
+        await db.query(query, values);
+
+        // Redirect or respond with a success message
+        res.redirect('/ad_park_tran');  // Redirect back to the form or another page
+
+    } catch (error) {
+        if (error.code === '23505') { // Unique violation
+            res.status(400).send('Duplicate entry detected.');
+        } else {
+            console.error('Error while saving data:', error.stack);  // Log the error
+            res.status(500).send('An error occurred while saving the data.');
+        }
+    }
+});
+
+
 // route for editing the about content
 app.post('/ad_about_form/:id', upload.single('image'), async (req, res) => {
     try {
@@ -602,6 +639,38 @@ app.post('/ad_about_form/:id', upload.single('image'), async (req, res) => {
         res.redirect('/ad_about');
     } catch (error) {
         console.error('Error updating about content:', error.stack);
+        res.status(500).send('An error occurred while updating the about content.');
+    }
+});
+
+// route for editing the parking & transport content
+app.post('/ad_park_tran_form/:id', async (req, res) => {
+    try {
+        const { id } = req.params;  // Get the ID from the URL
+
+        const { pt_label, pt_content } = req.body;
+
+        // Validate required fields
+        if (!label || !content) {
+            return res.status(400).send('Label and Content are required.');
+        }
+
+        // Prepare the update query (without updating the image if none provided)
+        let query = `UPDATE parking_tran SET pt_label = $1, pt_content = $2`;
+        const values = [pt_label, pt_content];
+
+        if (id) {
+            query += ` WHERE id = $3`;
+            values.push(id);
+        }
+
+        // Execute the query
+        await db.query(query, values);
+
+        // Redirect or respond with a success message
+        res.redirect('/ad_park_tran');
+    } catch (error) {
+        console.error('Error updating parking and transport content:', error.stack);
         res.status(500).send('An error occurred while updating the about content.');
     }
 });

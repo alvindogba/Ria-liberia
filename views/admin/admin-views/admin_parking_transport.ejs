@@ -4,36 +4,36 @@
 <!-- Sidebars -->
 <%- include('admin-partials/admin-sidebar') %>
 
-  <main id="main" class="main min-vh-100">
+<main id="main" class="main min-vh-100">
 
-    <div class="pagetitle">
-      <h1>Parking and Transport</h1>
-      <nav class="d-flex justify-content-between align-items-center">
-        <div class="breadcrumb mb-0"> <!-- Removed margin-bottom -->
-            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard</li>
-        </div>
+  <div class="pagetitle">
+    <h1>Parking and Transport</h1>
+    <nav class="d-flex justify-content-between align-items-center">
+      <div class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+    </div>
     
-        <div class="bs-example">
-            <!-- Button HTML (to Trigger Modal) -->
-            <a href="#myModal" role="button" class="btn bg-lg btn-outline-primary" data-bs-toggle="modal">&plus; Parking & Transport</a>
+      <div class="bs-example">
+        <!-- Button HTML (to Trigger Modal) -->
+        <a href="#addModal" role="button" class="btn bg-lg btn-outline-primary" data-bs-toggle="modal">&plus; Parking & Transport</a>
             
-          <!-- Modal HTML -->
-          <div id="myModal" class="modal fade" tabindex="-1">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
+        <!-- Modal HTML -->
+        <div id="addModal" class="modal fade" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
                   <h5 class="modal-title">Add Content On The Parking And Transport Page</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <!-- Form starts here -->
-                <form action="/ad_park_tran_form" method="POST" enctype="multipart/form-data">
+                <form action="/ad_park_tran_form" method="POST">
                   <div class="modal-body">
                     <div class="row">
                       <div class="col-12">
                         <div class="mb-3">
                           <label class="form-label">Label</label>
-                          <input type="text" class="form-control" name="label" required>
+                          <input type="text" class="form-control" name="pt_label" required>
                         </div>
                       </div>
                     </div>
@@ -41,7 +41,7 @@
                       <div class="col-12">
                         <div class="mb-3">
                           <label class="form-label">Content</label>
-                          <textarea class="form-control" name="content" required></textarea>
+                          <textarea class="form-control" name="pt_content" required></textarea>
                         </div>
                       </div>
                     </div>
@@ -57,18 +57,60 @@
             </div>
           </div>
   
-        </div>
+      </div>
     </nav>
     
     </div><!-- End Page Title -->
   
-    <section class="section dashboard">
-      <div class="row">
-
-                
-      </div>
-     
-    </section>
+    <section class="section dashboard pt-4">
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+              <% prakT_content.forEach(function(item, index) { %>
+                <div class="col">
+                  <div class="card h-100">
+                 
+                    <div class="card-body">
+                      <h5 class="card-title"><%= item.pt_label ? item.pt_label : 'No Label Provided' %></h5>
+                      <p class="card-text"><%= item.pt_content ? item.pt_content : 'No Content Available' %></p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                      <small class="text-muted"><%= item.updated_at ? new Date(item.updated_at).toLocaleString() : 'No Updated Date Available' %></small>
+                      <a href="#editModal<%= index %>" role="button" class="btn btn-outline-primary" data-bs-toggle="modal">Edit Content</a>
+                    </div>
+        
+                    <!-- Modal HTML -->
+                    <div id="editModal<%= index %>" class="modal fade" tabindex="-1">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Edit About Content</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                          </div>
+                          <form action="/ad_park_tran_form/<%= item.id %>" method="POST" enctype="multipart/form-data">
+                            <div class="modal-body">
+                              <div class="mb-3">
+                                <label class="form-label">Label</label>
+                                <input type="text" class="form-control" name="pt_label" value="<%= item.pt_label %>" required>
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label">Content</label>
+                                <textarea class="form-control" name="pt_content" required><%= item.pt_content %></textarea>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                              <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+            </div>
+          </div>
+        </section>
 
   </main><!-- End #main -->
 
